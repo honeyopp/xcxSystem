@@ -1,0 +1,126 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('hunqing.tender/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>联系人姓名:<input class="form-control" name="name" id="name"
+                                                         value="<?=$search['name']?>" type="text" placeholder="请输入联系人姓名"
+                                                         style=" width:200px"/></td>
+                                        <td>手机号:<input class="form-control" name="mobile" id="mobile"
+                                                       value="<?=$search['mobile']?>" type="text" placeholder="请输入手机号"
+                                                       style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加招标" href="<?=url('hunqing.tender/create')?>" class="btn btn-sm btn-success"><i
+                                class=" fa fa-plus"></i>添加招标</a>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>婚纱摄影</th>
+                                <th>婚礼策划</th>
+                                <th>婚纱礼服</th>
+                                <th>婚礼跟拍</th>
+                                <th>新娘跟妆</th>
+                                <th>婚宴酒店</th>
+                                <th>婚车租凭</th>
+                                <th>婚礼司仪</th>
+                                <th>联系人姓名</th>
+                                <th>手机号</th>
+                                <th>备注</th>
+
+                                <th>操作</th>
+
+
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->tender_id ?></td>
+                                    <td><?=$val->hssy?></td>
+                                    <td><?=$val->hsch?></td>
+                                    <td><?=$val->hslf?></td>
+                                    <td><?=$val->hlgp?></td>
+                                    <td><?=$val->xngz?></td>
+                                    <td><?=$val->hyjd?></td>
+                                    <td><?=$val->hczp?></td>
+                                    <td><?=$val->hlsy?></td>
+                                    <td><?=$val->name?></td>
+                                    <td><?=$val->mobile?></td>
+                                    <td><?=$val->content?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑招标"
+                                               href="<?=url('hunqing.tender/edit','tender_id='.$val->tender_id)?>"
+                                               class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除招标" mini="act"
+                                               href="<?=url('hunqing.tender/delete','tender_id='.$val->tender_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,234 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('demo.demo/edit',['demo_id'=>$detail->demo_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>标题：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->title)?$detail->title:''?>" placeholder="" id="title" name="title"  class="form-control" /> 
+    </div>
+ </div>
+<link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+<script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+
+
+
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>排序：</label>
+    <div class="col-sm-9 ">      
+        
+        <div id="uploader-demo" style="max-width: 300px">
+            <!--用来存放item-->
+            <div id="orderbyList" class="uploader-list">
+                <?php if(isset($detail['orderby'])){?>
+                <div  class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['orderby']?>"><input type="hidden" value="<?=$detail['orderby']?>" name="orderby" id="orderby"></div>
+                <?php }?>
+            </div>
+            <div id="orderbyPicker">选择图片</div>
+        </div>
+
+           
+    </div>
+</div>    
+        
+ 
+<script>
+
+
+    
+var uploaderorderby = WebUploader.create({
+    auto: true,
+    swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+    server: '<?=url("upload.upload/index",['mdl'=>"demo_orderby"])?>',
+    pick: '#orderbyPicker',
+    resize : false,  
+    duplicate :true
+});
+
+$(document).on('click','.file-item',function(){
+    $(this).remove();
+});
+
+// 当有文件添加进来的时候
+uploaderorderby.on( 'fileQueued', function( file ) {
+    var $li = $(
+            '<div id="' + file.id + '" class="file-item thumbnail">' +
+                '<img>' +
+                '<input type="hidden" value="" name="orderby" id="orderby">' +
+                '<div class="info">' + file.name + '</div>' +
+            '</div>'
+            ),
+        $img = $li.find('img');
+
+
+    // $list为容器jQuery实例
+    $("#orderbyList").html($li);
+
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploaderorderby.makeThumb( file, function( error, src ) {
+        if ( error ) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+
+        $img.attr( 'src', src );
+    }, 100,100 );
+});
+
+
+// 文件上传过程中创建进度条实时显示。
+uploaderorderby.on( 'uploadProgress', function( file, percentage ) {
+    var $li = $( '#'+file.id ),
+        $percent = $li.find('.progress span');
+
+    // 避免重复创建
+    if ( !$percent.length ) {
+        $percent = $('<p class="progress"><span></span></p>')
+                .appendTo( $li )
+                .find('span');
+    }
+
+    $percent.css( 'width', percentage * 100 + '%' );
+});
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploaderorderby.on( 'uploadSuccess', function( file ,response ) {
+    $( '#'+file.id ).addClass('upload-state-done');
+    $("#orderby").val(response._raw);
+});
+
+// 文件上传失败，显示上传出错。
+uploaderorderby.on( 'uploadError', function( file ) {
+    var $li = $( '#'+file.id ),
+        $error = $li.find('div.error');
+
+    // 避免重复创建
+    if ( !$error.length ) {
+        $error = $('<div class="error"></div>').appendTo( $li );
+    }
+
+    $error.text('上传失败');
+});
+
+// 完成上传完了，成功或者失败，先删除进度条。
+uploaderorderby.on( 'uploadComplete', function( file ) {
+    $( '#'+file.id ).find('.progress').remove();
+});
+
+</script>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>图片：</label>
+    <div class="col-sm-9">
+        <textarea  name="photo" placeholder="说点什么...最少输入10个字符" id="photo"  cols="50" rows="10" class="form-control"><?=isset($detail->photo)?$detail->photo:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>111：</label>
+    <div class="col-sm-9">
+  
+        <script id="photos" name="photos" style="width: 800px; min-height: 500px" type="text/plain"><?php if(isset($detail->photos)) echo $detail->photos;?></script>
+        <!-- 配置文件 -->
+        <script type="text/javascript" src="/public/common/ueditor/ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="/public/common/ueditor/ueditor.all.js"></script>
+        <!-- 实例化编辑器 -->
+        <script type="text/javascript">
+            var uephotos = UE.getEditor('photos');
+        </script>
+    
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>222：</label>
+    <div class="col-sm-9">
+        <select class="form-control m-b" name="details" id="details"><option value="0">请选择</option></select>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">333：</label>
+    <div class="col-sm-9">        
+            <div class="radio i-checks">
+                <label>
+                  <input name="cat_id" id="cat_id" value="1" type="radio" <?php if(isset($detail->cat_id)&& $detail->cat_id==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                <label>
+                  <input name="cat_id" id="cat_id" value="0" type="radio" <?php if(isset($detail->cat_id)&& $detail->cat_id==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+            </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">444：</label>
+    <div class="col-sm-9">       
+        <label class="checkbox-inline"><input name="is_show" id="is_show" value="1" type="checkbox" <?php if(isset($detail->is_show)&& $detail->is_show==1){?>checked="checked"<?php }?> >是</label>
+    </div>
+</div>
+<div class="form-group">
+   <label class="col-sm-3 control-label">555：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->is_index)?$detail->is_index:'0'?>"  name="is_index" id="is_index"  class="laydate-icon form-control layer-date">
+       
+   </div>
+</div>
+
+<script>
+ laydate({
+    elem: '#is_index',
+    event: 'focus' ,
+     format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+<div class="form-group">
+   <label class="col-sm-3 control-label">666：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->add_time)?date('Y-m-d',$detail->add_time):''?>"  name="add_time" id="add_time"  class="laydate-icon form-control layer-date">
+       
+   </div>
+</div>
+
+<script>
+ laydate({
+    elem: '#add_time',
+    event: 'focus' ,
+    format: 'YYYY-MM-DD',
+    istime: true
+});
+</script>
+<div class="form-group">
+   <label class="col-sm-3 control-label">777：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->add_ip)?date('Y-m-d H:i:s',$detail->add_ip):''?>"   name="add_ip" id="add_ip"  class="laydate-icon form-control layer-date">
+       
+   </div>
+</div>
+<script>
+ laydate({
+    elem: '#add_ip',
+    event: 'focus' ,
+    format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

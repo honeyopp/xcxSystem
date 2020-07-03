@@ -1,0 +1,59 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('tongcheng.comment/edit',['comment_id'=>$detail->comment_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>会员：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->user_id)?$detail->user_id:''?>" placeholder="" id="user_id" name="user_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>信息id：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->info_id)?$detail->info_id:''?>" placeholder="" id="info_id" name="info_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>内容：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->content)?$detail->content:''?>" placeholder="" id="content" name="content"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>回复：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->reply)?$detail->reply:''?>" placeholder="" id="reply" name="reply"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>回复时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->reply_time)?$detail->reply_time:''?>" placeholder="" id="reply_time" name="reply_time"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>赞数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->zan_num)?$detail->zan_num:''?>" placeholder="" id="zan_num" name="zan_num"  class="form-control" /> 
+    </div>
+ </div>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

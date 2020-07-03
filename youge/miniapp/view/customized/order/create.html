@@ -1,0 +1,139 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('customized.order/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>类型：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="type" id="type">
+                                    
+                                    <option value="0">请选择</option>
+                                  <option  value="1">家庭出游</option>
+                                <option value="2">公司出游</option>
+                                
+                                </select>
+                        
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>出发城市：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="bg_city" id="bg_city">
+                                    <option value="0">请选择</option>
+                                        <?php foreach($citys as $val){?>
+                                     <option value="<?=$val->city_id;?>"><?=$val->city_name;?></option>
+                                        <?php }?>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>目的城市：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="mb_city" id="mb_city">
+                                    <option value="0">请选择</option>
+                                  <?php foreach($citys as $val){?>
+                                     <option value="<?=$val->city_id;?>"><?=$val->city_name;?></option>
+                                        <?php }?>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>用户：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->user_id)?$detail->user_id:''?>" placeholder="" id="user_id" name="user_id"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系人：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系电话：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="c-red">*</span>出发时间：</label>
+                            <div class="col-sm-9">
+                                <input  value="<?=isset($detail->bg_date)?$detail->bg_date:''?>"  name="bg_date" id="bg_date"  class="laydate-icon form-control layer-date">
+
+                            </div>
+                        </div>
+
+                        <script>
+                            laydate({
+                                elem: '#bg_date',
+                                event: 'focus',
+                                format: 'YYYY-MM-DD',
+                                istime: true
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="c-red">*</span>回程日期：</label>
+                            <div class="col-sm-9">
+                                <input  value="<?=isset($detail->end_date)?$detail->end_date:''?>"  name="end_date" id="end_date"  class="laydate-icon form-control layer-date">
+
+                            </div>
+                        </div>
+
+                        <script>
+                            laydate({
+                                elem: '#end_date',
+                                event: 'focus',
+                                format: 'YYYY-MM-DD',
+                                istime: true
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">成人数量：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->num1)?$detail->num1:''?>" placeholder="" id="num1" name="num1"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">儿童数量：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->num2)?$detail->num2:''?>" placeholder="" id="num2" name="num2"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">邮件：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->email)?$detail->email:''?>" placeholder="" id="email" name="email"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">预算（每人）：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->price)?round($detail->price/100,2):''?>" placeholder="" id="price" name="price"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">详细说明：</label>
+                            <div class="col-sm-9">
+                                <textarea  name="content" placeholder="说点什么...最少输入10个字符" id="content"  cols="50" rows="10" class="form-control"><?=isset($detail->content)?$detail->content:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get"  action="<?=url('customized.order/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>类型:
+                                            <select class="form-control"  name="type" id="type">
+                                                <option value="0">请选择</option>
+                                                
+                                                <option <?php if($search['type']==1) echo 'selected="selected"';?> value="1">家庭出游</option>
+                                                <option <?php if($search['type']==2) echo 'selected="selected"';?>  value="2">公司出游</option>
+                                                
+                                            </select>
+                                        
+                                        </td>
+                                        <td>联系人:<input class="form-control" name="name" id="name"  value="<?=$search['name']?>" type="text"  placeholder="请输入联系人"  style=" width:200px"/></td>
+                                        <td>联系电话:<input class="form-control" name="mobile" id="mobile"  value="<?=$search['mobile']?>" type="text"  placeholder="请输入联系电话"  style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>类型</th>
+                                    <th>出发-目的</th>
+                                    <th>用户</th>
+                                    <th>联系人</th>
+                                    <th>联系电话</th>
+                                    <th>游玩时间</th>
+                                    <th>成人/儿童</th>
+                                    <th>邮件</th>
+                                    <th>预算（每人）</th>
+                                    <th>详细说明</th>
+                                    <th>下单时间</th>
+
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td><?= $val->order_id ?></td>
+                                        <td><?=$val->type==1?'家庭出游':'公司出游';?></td>
+                                        <td><?=isset($citys[$val->bg_city])?$citys[$val->bg_city]['city_name']:'';?>-<?=isset($citys[$val->mb_city])?$citys[$val->mb_city]['city_name']:'';?></td>
+                            
+                                        <td><?=isset($users[$val->user_id])?$users[$val->user_id]['nick_name']:'';?></td>
+                                        <td><?=$val->name?></td>
+                                        <td><?=$val->mobile?></td>
+                                        <td><?=$val->bg_date?>至<?=$val->end_date;?></td>
+                           
+                                        <td><?=$val->num1?>/<?=$val->num2?></td>
+                                        <td><?=$val->email?></td>
+                                        <td><?=round($val->price/100,2);?></td>
+                                        <td><textarea><?=$val->content?></textarea></td>
+                                        <td><?=date("Y-m-d H:i:s",$val->add_time)?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑定制游订单"  href="<?=url('customized.order/edit','order_id='.$val->order_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除定制游订单" mini="act"  href="<?=url('customized.order/delete','order_id='.$val->order_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

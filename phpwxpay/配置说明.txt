@@ -1,0 +1,10 @@
+扫码支付只要授权域名对就OK，本地是无法测试。跟openid也没有关系，所以跟支付授权目录页没关系。
+
+
+
+\phpwxpay\weixinpay\cert  证书目录
+
+\phpwxpay\weixinpay\lib\WxPay.Config.php     微信商户信息配置地址 第25行
+
+\phpwxpay\connect.php 修改数据库
+

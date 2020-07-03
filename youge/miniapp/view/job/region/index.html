@@ -1,0 +1,58 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加区域" href="<?=url('setting.region/create',['type'=>$search['type'],'city_id'=>$search['city_id']])?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加区域</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>类型</th>
+                                <th>城市</th>
+                                <th>图片</th>
+                                <th>区域名称</th>
+                                <th>定位地址</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->region_id ?></td>
+                                    <td><?=empty(config("dataattr.regionnames")[$val->type]) ? '' : config("dataattr.regionnames")[$val->type]?></td>
+                                    <td><?=empty($citys[$val->city_id])? '' :$citys[$val->city_id]->city_name ?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=getImg($val->photo,'small')?>"/></td>
+                                    <td><?=$val->region_name?></td>
+                                    <td><?=$val->gps_name?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <!--<a title="区域介绍"-->
+                                               <!--href="<?=url('','region_id='.$val->region_id)?>"-->
+                                               <!--class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>区域介绍</a>-->
+                                            <a title="编辑区域设置"
+                                               href="<?=url('setting.region/edit','region_id='.$val->region_id)?>"
+                                               class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除区域设置" mini="act"
+                                               href="<?=url('setting.region/delete','region_id='.$val->region_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

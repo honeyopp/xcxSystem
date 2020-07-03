@@ -1,0 +1,91 @@
+<style>
+    .bth-a a{margin-right: 10px;}
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('nongjialegw.taocan/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>标题:<input class="form-control" name="title" id="title" value="<?=$search['title']?>" type="text" placeholder="请输入标题" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加产品管理" href="<?=url('nongjialegw.taocan/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加产品管理</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>图片</th>
+                                <th>Banner</th>
+                                <th>起价</th>
+                                <th>地址</th>
+                                <th>排序</th>
+                                <th>是否上架</th>
+                                <th>操作</th>
+
+
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->taocan_id ?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->banner?>"/></td>
+                                    <td><?=$val->price?></td>
+                                    <td><?=$val->address?></td>
+                                    <td><?=$val->is_online?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleTaocan('<?=$val->title?>','<?=$val->taocan_id?>');" href="javascript:void(0);" class="btn btn-xs btn-info">选择套餐</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

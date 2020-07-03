@@ -1,0 +1,212 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="alert alert-block alert-success">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <i class="ace-icon fa fa-times"></i>
+                        </button>
+
+                        <i class="ace-icon fa fa-check green"></i>
+
+                        暂时只支持微信支付！ 请将数字证书文件打开将里面的密钥复制在数字证书的文本框里面
+
+                    </div>
+                    <!-- PAGE CONTENT ENDS -->
+                <form action="<?=url('setting.setting/payment')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right"> <h2>微信公众账号支付配置</h2></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">APPID：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['appid']) ? $setting['payment']['appid']:''?>" placeholder="" id="data[appid]" name="data[appid]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">APPSECREPT：</label>
+                        <div class="col-sm-9">
+                            <input type="password"  value="<?=isset($setting['payment']['appsecrept']) ? $setting['payment']['appsecrept']:''?>" placeholder="" id="data[appsecrept]" name="data[appsecrept]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">商户ID：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['mid']) ? $setting['payment']['mid']:''?>" placeholder="" id="data[mid]" name="data[mid]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">商户密钥：</label>
+                        <div class="col-sm-9">
+                            <input type="password"  value="<?=isset($setting['payment']['apicode']) ? $setting['payment']['apicode']:''?>" placeholder="" id="data[apicode]" name="data[apicode]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">证书签名路径：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['apiclient_key']) ? $setting['payment']['apiclient_key']:''?>" placeholder="" id="data[apiclient_key]" name="data[apiclient_key]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">证书路径：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['apiclient_cert']) ? $setting['payment']['apiclient_cert']:''?>" placeholder="" id="data[apiclient_cert]" name="data[apiclient_cert]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right"> <h2>微信小程序支付</h2></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">APPID：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['mini_appid']) ? $setting['payment']['mini_appid']:''?>" placeholder="" id="data[mini_appid]" name="data[mini_appid]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">APPSECREPT：</label>
+                        <div class="col-sm-9">
+                            <input type="password"  value="<?=isset($setting['payment']['mini_appsecrept']) ? $setting['payment']['mini_appsecrept']:''?>" placeholder="" id="data[mini_appsecrept]" name="data[mini_appsecrept]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">商户ID：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['mini_mid']) ? $setting['payment']['mini_mid']:''?>" placeholder="" id="data[mini_mid]" name="data[mini_mid]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">商户密钥：</label>
+                        <div class="col-sm-9">
+                            <input type="password"  value="<?=isset($setting['payment']['mini_apicode']) ? $setting['payment']['mini_apicode']:''?>" placeholder="" id="data[mini_apicode]" name="data[mini_apicode]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">证书签名路径：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['mini_apiclient_key']) ? $setting['payment']['mini_apiclient_key']:''?>" placeholder="" id="data[mini_apiclient_key]" name="data[mini_apiclient_key]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">证书路径：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['mini_apiclient_cert']) ? $setting['payment']['mini_apiclient_cert']:''?>" placeholder="" id="data[mini_apiclient_cert]" name="data[mini_apiclient_cert]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    
+                    
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right"> <h2>微信APP支付配置</h2></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">APPID：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['wxapp_appid']) ? $setting['payment']['wxapp_appid']:''?>" placeholder="" id="data[wxapp_appid]" name="data[wxapp_appid]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">APPSECREPT：</label>
+                        <div class="col-sm-9">
+                            <input type="password"  value="<?=isset($setting['payment']['wxapp_appsecrept']) ? $setting['payment']['wxapp_appsecrept']:''?>" placeholder="" id="data[wxapp_appsecrept]" name="data[wxapp_appsecrept]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">商户ID：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['wxapp_mid']) ? $setting['payment']['wxapp_mid']:''?>" placeholder="" id="data[wxapp_mid]" name="data[wxapp_mid]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">商户密钥：</label>
+                        <div class="col-sm-9">
+                            <input type="password"  value="<?=isset($setting['payment']['wxapp_apicode']) ? $setting['payment']['wxapp_apicode']:''?>" placeholder="" id="data[wxapp_apicode]" name="data[wxapp_apicode]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">证书签名路径：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['wxapp_apiclient_key']) ? $setting['payment']['wxapp_apiclient_key']:''?>" placeholder="" id="data[wxapp_apiclient_key]" name="data[wxapp_apiclient_key]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">证书路径：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['wxapp_apiclient_cert']) ? $setting['payment']['wxapp_apiclient_cert']:''?>" placeholder="" id="data[wxapp_apiclient_cert]" name="data[wxapp_apiclient_cert]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    
+                    
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right"> <h2>支付宝配置</h2></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">支付宝应用ID：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['alipay_appid']) ? $setting['payment']['alipay_appid']:''?>" placeholder="" id="data[alipay_appid]" name="data[alipay_appid]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">网关地址（支持沙箱测试）：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['alipay_gateway']) ? $setting['payment']['alipay_gateway']:''?>" placeholder="" id="data[alipay_gateway]" name="data[alipay_gateway]"  class="col-xs-10 col-sm-5" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">支付宝公钥：</label>
+                        <div class="col-sm-9">
+                            <textarea id="data[alipay_public_key]" name="data[alipay_public_key]"  cols="50" rows="10"><?=isset($setting['payment']['alipay_public_key']) ? $setting['payment']['alipay_public_key']:''?></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">商户私钥：</label>
+                        <div class="col-sm-9">
+                            <textarea id="data[merchant_private_key]" name="data[merchant_private_key]"  cols="50" rows="10"><?=isset($setting['payment']['merchant_private_key']) ? $setting['payment']['merchant_private_key']:''?></textarea>
+                        </div>
+                    </div>
+                    
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right"> <h2>其他设置</h2></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">房主最低提现金额：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['money']) ? $setting['payment']['money']:''?>" placeholder="" id="data[money]" name="data[money]"  class="col-xs-10 col-sm-2" /> 元（不带小数点，填写整数！）
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">房间佣金：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['commission']) ? $setting['payment']['commission']:''?>" placeholder="" id="data[commission]" name="data[commission]"  class="col-xs-10 col-sm-2" /> %（每间房子平台收取多少服务费）
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">房主提现扣除手续费：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['payment']['fee']) ? $setting['payment']['fee']:''?>" placeholder="" id="data[fee]" name="data[fee]"  class="col-xs-10 col-sm-2" /> %（扣除多少的手续费）
+                        </div>
+                    </div>
+ 
+                    
+                    
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                确定保存
+                            </button>
+
+
+                        </div>
+                    </div>
+                </form>
+
+
+            </div></div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,103 @@
+<style>
+    .tool-a a {margin-top: 6px;margin-right: 6px;}
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('nongjiale.store/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>负责人名称:<input class="form-control" name="store_name" id="store_name" value="<?=$search['store_name']?>" type="text" placeholder="请输入负责人名称" style=" width:200px"/></td>
+                                        <td>农家乐标题:<input class="form-control" name="title" id="title" value="<?=$search['title']?>" type="text" placeholder="请输入农家乐标题" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加农家乐商家" href="<?=url('nongjiale.store/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加农家乐商家</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>农家乐标题</th>
+                                <th>Banner</th>
+                                <th>负责人名称</th>
+                                <th>地址</th>
+                                <th>负责人电话</th>
+                                <th>负责人微信</th>
+                                <th>所属公司</th>
+                                <th>是否营业</th>
+                                <th>评分</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->store_id ?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=getImg($val->banner)?>"></td>
+                                    <td><?=$val->store_name?></td>
+                                    <td><?=$val->address?></td>
+                                    <td><?=$val->store_tel?></td>
+                                    <td><?=$val->store_weixin?></td>
+                                    <td><?=$val->store_company?></td>
+                                    <td><?=round($val->score/10)?>分</td>
+                                    <td><?=$val->is_online == 1 ? '<span class="label label-primary">营业中</span>' : '<span class="label badge-warning">休息</span>'?></td>
+                                    <td  style="width: 500px;">
+                                        <div  class="hidden-sm tool-a hidden-xs btn-group">
+                                            <!--<a title="商户管理员" href="<?=url('nongjiale.store/edit','store_id='.$val->store_id)?>" class="btn btn-xs badge-primary"><i class=" fa fa-edit bigger-120"></i>商户管理员</a>-->
+                                            <a title="套餐管理" href="<?=url('nongjiale.store/edit','store_id='.$val->store_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>套餐管理</a>
+                                            <a title="编辑农家乐商家" href="<?=url('nongjiale.store/edit','store_id='.$val->store_id)?>" class="btn btn-xs  badge-success"><i class=" fa fa-edit bigger-120"></i>房源管理</a>
+                                            <a title="编辑农家乐商家" href="<?=url('nongjiale.store/edit','store_id='.$val->store_id)?>" class="btn btn-xs  badge-warning"><i class=" fa fa-edit bigger-120"></i>套餐价格管理</a>
+                                            <a title="编辑农家乐商家" href="<?=url('nongjiale.store/edit','store_id='.$val->store_id)?>" class="btn btn-xs  badge-danger"><i class=" fa fa-edit bigger-120"></i>房源价格管理</a>
+                                            <a title="相册管理" mini="load" w="80%" h="80%" href="<?=url('nongjiale.store/photo','store_id='.$val->store_id)?>" class="btn btn-xs     badge-primary  " ><i class=" fa fa-edit bigger-120"></i>相册管理</a>
+                                            <a title="文章动态"  mini="load" w="98%" h="98%" href="<?=url('nongjiale.news/index','store_id='.$val->store_id)?>" class="btn btn-xs btn-info "><i class=" fa fa-edit bigger-120"></i>文章动态</a>
+                                            <a title="编辑农家乐商家" href="<?=url('nongjiale.store/edit','store_id='.$val->store_id)?>" class="btn btn-xs  badge-success"><i class=" fa fa-edit bigger-120"></i>项目管理</a>
+                                            <a title="编辑农家乐商家" href="<?=url('nongjiale.store/edit','store_id='.$val->store_id)?>" class="btn btn-xs  badge-warning "><i class=" fa fa-edit bigger-120"></i>订单评论</a>
+                                            <a title="<?=$val->is_online == 1 ? '休息？' : '营业？'?>" mini="act" href="<?=url('nongjiale.store/online','store_id='.$val->store_id)?>" class="btn btn-xs badge-danger "><i class=" fa fa-edit bigger-120"></i><?=$val->is_online == 1? '单击休息' : '单击营业'?></a>
+                                            <a title="编辑农家乐商家" href="<?=url('nongjiale.store/edit','store_id='.$val->store_id)?>" class="btn btn-xs   badge-primary"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除农家乐商家" mini="act" href="<?=url('nongjiale.store/delete','store_id='.$val->store_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

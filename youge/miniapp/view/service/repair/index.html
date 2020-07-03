@@ -1,0 +1,91 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('service.repair/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>标题:<input class="form-control" name="title" id="title" value="<?=$search['title']?>" type="text" placeholder="请输入标题" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加维修类管理" href="<?=url('service.repair/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加维修类管理</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>列表图片</th>
+                                <th>分类</th>
+                                <th>标题</th>
+                                <th>副标题</th>
+                                <th>预约价格</th>
+                                <th>推荐到首页</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->repair_id ?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=empty($category[$val->category_id]) ? '' : $category[$val->category_id]->name?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><?=$val->title2?></td>
+                                    <td><?=round($val->price/100,2)?></td>
+                                    <td><?=$val->is_hot == 1 ? '<span class="label label-success">是</span>' : '<span class="label label-warning">否</span>'?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑维修类管理" href="<?=url('service.repair/edit','repair_id='.$val->repair_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除维修类管理" mini="act" href="<?=url('service.repair/delete','repair_id='.$val->repair_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

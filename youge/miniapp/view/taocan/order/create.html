@@ -1,0 +1,155 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form action="<?=url('taocan.order/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+                    
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>会员：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->user_id)?$detail->user_id:''?>" placeholder="" id="user_id" name="user_id"  class="form-control" /> 会员
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>套餐：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->taocan_id)?$detail->taocan_id:''?>" placeholder="" id="taocan_id" name="taocan_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>商家：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->stroe_id)?$detail->stroe_id:''?>" placeholder="" id="stroe_id" name="stroe_id"  class="form-control" /> 商家id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>套餐门票：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->package_id)?$detail->package_id:''?>" placeholder="" id="package_id" name="package_id"  class="form-control" /> 房源id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>门票数量：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->package_num)?$detail->package_num:''?>" placeholder="" id="package_num" name="package_num"  class="form-control" /> 票的数量
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>总价格：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->total_price)?$detail->total_price:''?>" placeholder="" id="total_price" name="total_price"  class="form-control" /> 一共需要支付
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>需要支付 ：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->need_pay)?$detail->need_pay:''?>" placeholder="" id="need_pay" name="need_pay"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>已支付：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_money)?$detail->pay_money:''?>" placeholder="" id="pay_money" name="pay_money"  class="form-control" /> 已支付余额
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>优惠券：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_coupon)?$detail->pay_coupon:''?>" placeholder="" id="pay_coupon" name="pay_coupon"  class="form-control" /> 优惠券
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>在线立减：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lijian)?$detail->lijian:''?>" placeholder="" id="lijian" name="lijian"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>优惠券id：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_coupon_id)?$detail->pay_coupon_id:''?>" placeholder="" id="pay_coupon_id" name="pay_coupon_id"  class="form-control" /> 优惠卷id
+    </div>
+ </div>
+<div class="form-group">
+   <label class="col-sm-3 control-label"><span class="c-red">*</span>支付时间：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->pay_time)?date('Y-m-d H:i:s',$detail->pay_time):'0'?>"   name="pay_time" id="pay_time"  class="laydate-icon form-control layer-date">
+       支付时间
+   </div>
+</div>
+<script>
+ laydate({
+    elem: '#pay_time',
+    event: 'focus' ,
+    format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>支付时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_time)?$detail->pay_time:''?>" placeholder="" id="pay_time" name="pay_time"  class="form-control" /> 支付时间
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>支付信息：</label>
+    <div class="col-sm-9">
+        <textarea  name="pay_info" placeholder="说点什么...最少输入10个字符" id="pay_info"  cols="50" rows="10" class="form-control"><?=isset($detail->pay_info)?$detail->pay_info:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系人名称：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name"  class="form-control" /> 联系人姓名
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系人电话：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile"  class="form-control" /> 联系人手机
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>身份证号：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->idcard)?$detail->idcard:''?>" placeholder="" id="idcard" name="idcard"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>状态：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->status)?$detail->status:''?>" placeholder="" id="status" name="status"  class="form-control" /> 0未支付 1等待商户接单 2待使用 3 取消订单, 8完成
+    </div>
+ </div>
+<div class="form-group">
+   <label class="col-sm-3 control-label"><span class="c-red">*</span>游玩时间：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->play_time)?$detail->play_time:'0000-00-00'?>"  name="play_time" id="play_time"  class="laydate-icon form-control layer-date">
+       入住时间
+   </div>
+</div>
+
+<script>
+ laydate({
+    elem: '#play_time',
+    event: 'focus' ,
+     format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

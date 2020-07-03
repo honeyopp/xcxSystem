@@ -1,0 +1,58 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-success">
+                充值置顶说明<br>
+                1: 会员过期后系统会保留充值者等级但不会享受会员系统服务<br>
+                2: 置顶天数可以叠加如:已购买剩余n天又买x天则总天数为n+x天<br>
+                3: 排序规则 过期时间 购买时间 后台排序字段（后台可修改）系统默认添加（后添加则靠前） 所以 购买天数越多越靠前<br>
+                4: 您最多只能添加5条数据，但可以更改以及删除 删除后 可以添加等同数量<br>
+                5: 充值过程中失败 请仔细检查您在 支付设置 是否正确 您也可以联系官方唯一客服：0551-65560407
+            </div>
+        </div>
+    </div>
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加服务价格" href="<?=url('tongcheng.price/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加服务价格</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>置顶天数</th>
+                                <th>价格</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?=$val->price_id?></td>
+                                    <td><?=$val->day_num?>天</td>
+                                    <td>￥<?=sprintf('%.2f',$val->price/100)?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑服务价格" href="<?=url('tongcheng.price/edit','price_id='.$val->price_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除服务价格" mini="act" href="<?=url('tongcheng.price/delete','price_id='.$val->price_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

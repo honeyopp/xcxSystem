@@ -1,0 +1,102 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get"  action="<?=url('mendian.order/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>用户ID:<input class="form-control" name="user_id" id="user_id"  value="<?=$search['user_id']?>" type="text"  placeholder="请输入用户ID"  style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>用户ID</th>
+                                    <th>支付金额</th>
+                                    <th>红包抵扣</th>
+                                    <th>实际支付</th>
+                                    <th>是否已支付</th>
+                                    <th>操作时间</th>
+                                    <th>操作IP</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td><?= $val->order_id ?></td>
+                                        <td><?=$val->user_id?></td>
+                                        <td><?=round($val->total_money/100,2)?></td>
+                                        <td><?=round($val->pay_coupon/100,2)?></td>
+                                        <td><?=round($val->pay_money/100,2)?></td>
+                                        <td><?=$val->is_paid==1?'已支付':'未支付'?></td>
+                                        <td><?=date('Y-m-d H:i:s',$val->add_time)?></td>
+                                        <td><?=$val->add_ip?></td>
+
+
+                                    
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

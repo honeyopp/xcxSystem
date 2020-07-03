@@ -1,0 +1,63 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="alert alert-success">
+                            TIPS:此功能用于显示首页导航位置图标最佳大小：74px X 74px 推荐图片格式:PNG  您最多可以添加20 个导航
+                            每个城市显示不同的导航！<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加自定义图标分类" href="<?=url('tongcheng.category/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加自定义导航（分类）</a>
+                        <a title="添加系统图标分类" href="<?=url('tongcheng.category/baototo')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>官方导航图标（分类）</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>分类名称</th>
+                                <th>分类图标</th>
+                                <th>颜色</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->category_id ?></td>
+                                    <td><?=$val->name?></td>
+                                    <td><img style="background-color: <?=$val->color?>" width="50" src="/attachs/uploads/<?=$val->ico?>"/></td>
+                                    <td><div style="width: 10px;height: 10px;background-color: <?=$val->color?>"></div></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑分类" href="<?=url('tongcheng.category/edit','category_id='.$val->category_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除分类" mini="act" href="<?=url('tongcheng.category/delete','category_id='.$val->category_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

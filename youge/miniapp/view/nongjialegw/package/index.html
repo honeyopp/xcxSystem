@@ -1,0 +1,117 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('nongjialegw.package/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>所属套餐:
+                                                <input id="taocanname" name="taocanname" type="text" value="<?=$search['taocanname']?>" placeholder="请单击选择套餐"  class="form-control"/>
+                                                <input type="hidden" value="<?=$search['taocan_id']?>" name="taocan_id" id="taocan_id">
+                                                <button style="display: none" id="taocan-btn" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/nongjialegw.taocan/select')?>" class="btn btn-w-m btn-info">不可更改</button>
+                                            <script>
+                                                $("#taocanname").focus(function () {
+                                                    $("#taocan-btn").click();
+                                                })
+                                                function seleTaocan(city_name,city_id){
+                                                    layer.closeAll();
+                                                    layer.msg('操作成功！');
+                                                    $("#taocanname").val(city_name);
+                                                    $("#taocan_id").val(city_id);
+                                                }
+                                            </script>
+                                        </td>
+                                        <td>标题:<input class="form-control" name="title" id="title" value="<?=$search['title']?>" type="text" placeholder="请输入标题" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加套餐内容" href="<?=url('nongjialegw.package/create',['taocan_id'=>$search['taocan_id']])?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加套餐内容</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>所属套餐</th>
+                                <th>标题</th>
+                                <th>列表缩略图</th>
+                                <th>日常价格</th>
+                                <th>单日最大预定数</th>
+                                <th>是否可以取消</th>
+                                <th>是否可以改签</th>
+                                <th>是否上架</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->package_id ?></td>
+                                    <td><?=empty($taocans[$val->taocan_id]) ? '' : $taocans[$val->taocan_id]->title?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><img width="80" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=sprintf("%.2f",$val->price/100)?></td>
+                                    <td><?=$val->day_num?>个</td>
+                                    <td><?=$val->is_cancel?></td>
+                                    <td><?=$val->is_changes?></td>
+                                    <td><?=$val->is_online?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑套餐内容"
+                                               href="<?=url('nongjialegw.package/edit','package_id='.$val->package_id)?>"
+                                               class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除套餐内容" mini="act"
+                                               href="<?=url('nongjialegw.package/delete','package_id='.$val->package_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

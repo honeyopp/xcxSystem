@@ -1,0 +1,66 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="alert alert-success">
+                            TIPS:此功能用于显示首页导航位置ico 图标最佳大小：74px X 74px  推荐图片格式:PNG 最佳形状为:  您最多可以添加20 个导航 需要在城市设置中关联导航 每个城市显示不同的导航！<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加自定义导航（分类）" href="<?=url('taocan.nav/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加自定义导航（分类）</a>
+                        <a title="宝兔兔官方导航图标" href="<?=url('taocan.nav/baototo')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>宝兔兔官方导航图标（分类）</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>导航名称</th>
+                                <th>导航图标</th>
+                                <th>是否展示</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->nav_id ?></td>
+                                    <td><?=$val->nav_name?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->nav_ico?>"/></td>
+                                    <td><?=$val->is_show ? '<span class="label label-primary">展示</span>' : '<span class="label label-warning">不展示</span>'?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑导航（分类）" href="<?=url('taocan.nav/edit','nav_id='.$val->nav_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除导航（分类）" mini="act" href="<?=url('taocan.nav/delete','nav_id='.$val->nav_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            <a title="<?=$val->is_show == 1 ? '隐藏该ICO' : '展示该ICO' ?>" mini="act" href="<?=url('taocan.nav/show','nav_id='.$val->nav_id)?>" class="btn btn-xs btn-success"></i><?=$val->is_show == 1 ? '隐藏该ICO' : '展示该ICO' ?></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

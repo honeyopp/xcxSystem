@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="/public/home/css/wdetails.css?v=20170831"/>
+<link rel="stylesheet" href="/public/home/css/index.css"/>
+<div class="wdetails-body">
+    <div class="wdetails-top">
+        <span><?=$detail->title;?></span>
+    </div>
+    <div class="details_info">
+        <div class="app_base">
+            <div class="swiper_flashbox lt" >
+                    <div class="swiper-wrapper" >
+                       <img src="/attachs/uploads/<?=getImg($detail->photo)?>" width="400" href="289">
+                    </div>
+            </div>
+            <div class="rt app_info">
+                <?php if(!empty($detail->qrcode)){?>
+                <div class="show_code">
+                    <img width="200" src="/attachs/uploads/<?=getImg($detail->qrcode)?>"/>
+                    <div>扫一扫看演示</div>
+                </div>
+                <?php }?>
+                
+                <div class="app_info_title"></div>
+                <div class="app_info_item">
+                    <div class="lt">
+                        模板价格：
+                    </div>
+                    <div class="rt price">
+                       活动价 ¥<?= sprintf("%.2f",$detail->price/100)?>
+                        <div style="font-size: 16px; color: #c0c0c0;text-decoration:line-through">(原价：<?= sprintf("%.2f",$detail->activity_price/100)?>元)</div>
+                    </div>
+                </div>
+                <div class="app_info_item">
+                    <div class="lt">
+                        服务周期：
+                    </div>
+                    <div class="rt fw-days">
+                        <?=config('setting.service_day')?>天
+                    </div>
+                </div>
+                
+
+                <div class="app_info_item">
+                    <a href="<?=url('manage/passport/login');?>"><div class="lt btn_use">开始试用(<?=$detail->expire_day?>天)</div>
+                    <div class="rt btn_pay" style="margin-left: 40px;">立即购买</div>
+                    </a>
+                    <a style="padding-left: 40px; color: red;font-weight: bold;" href="/home/news/detail/news_id/14.html">不懂如何使用？</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="app_details_info">
+            <div class="title" style="margin-bottom: 10;">模板截图</div>
+            <div class="imgs">
+                <?php foreach($photos as $val) {?>
+                <img  style="margin: 6px 14px; width: 346px; height: 647px;" src="/attachs/uploads/<?=getImg($val->photo)?>"/>
+                <?php } ?>
+                
+            </div>
+            <div class="title">详细介绍</div>
+            <div class="info">
+                <?php foreach($describes as $val) { ?>
+                <p class="text-p" style="text-indent:1em;font-size: 1rem;">
+                    <?=str_replace("\r\n", "<br>",$val->describe);    ?>
+                    <?php if(!empty($val->photo)) { ?>
+                    <img style="width: 100%;height: 50%; max-width: 100%" alt="image" class="img-responsive" src="/attachs/uploads/<?=getImg($val->photo)?>">
+                    <?php } ?>
+                </p>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>

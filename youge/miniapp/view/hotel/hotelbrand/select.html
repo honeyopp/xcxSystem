@@ -1,0 +1,73 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('hotel.hotelbrand/select')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            品牌名：
+                                            <input class="form-control" value="<?=empty($search['brand_name']) ? '' : $search['brand_name'] ?>" name="brand_name"  placeholder="请输入品牌名称">
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>品牌名称</th>
+                                <th>所属集团</th>
+                                <th>图片</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($list as $val){ ?>
+                            <tr>
+                                <td><?= $val->brand_id ?></td>
+                                <td><?=$val->brand_name?></td>
+                                <td><?=$val->bloc?></td>
+                                <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                <td><?=$val->orderby?></td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seletBrand('<?=$val->brand_name?>','<?=$val->brand_id?>');" href="javascript:void(0);" class="btn btn-xs btn-info">选择该酒店品牌</a>                             </div>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

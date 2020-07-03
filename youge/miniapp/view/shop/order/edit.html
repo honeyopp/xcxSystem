@@ -1,0 +1,179 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('shop.order/edit',['order_id'=>$detail->order_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_miniapp_id)?$detail->member_miniapp_id:''?>" placeholder="" id="member_miniapp_id" name="member_miniapp_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->user_id)?$detail->user_id:''?>" placeholder="" id="user_id" name="user_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->total_price)?$detail->total_price:''?>" placeholder="" id="total_price" name="total_price"  class="form-control" /> 总价
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->need_pay)?$detail->need_pay:''?>" placeholder="" id="need_pay" name="need_pay"  class="form-control" /> 实际需要支付
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_coupon)?$detail->pay_coupon:''?>" placeholder="" id="pay_coupon" name="pay_coupon"  class="form-control" /> 优惠券
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_lijian)?$detail->pay_lijian:''?>" placeholder="" id="pay_lijian" name="pay_lijian"  class="form-control" /> 在线立减
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_integral)?$detail->pay_integral:''?>" placeholder="" id="pay_integral" name="pay_integral"  class="form-control" /> 积分抵扣
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_coupon_id)?$detail->pay_coupon_id:''?>" placeholder="" id="pay_coupon_id" name="pay_coupon_id"  class="form-control" /> 优惠卷id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_money)?$detail->pay_money:''?>" placeholder="" id="pay_money" name="pay_money"  class="form-control" /> 已支付
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_time)?$detail->pay_time:''?>" placeholder="" id="pay_time" name="pay_time"  class="form-control" /> 支付时间
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_info)?$detail->pay_info:''?>" placeholder="" id="pay_info" name="pay_info"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->is_comment)?$detail->is_comment:''?>" placeholder="" id="is_comment" name="is_comment"  class="form-control" /> 是否评论
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->status)?$detail->status:''?>" placeholder="" id="status" name="status"  class="form-control" /> 0 等待支付  1待发货    2已发货   4申请取消  5已退款   8订单已完成
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->mail_number)?$detail->mail_number:''?>" placeholder="" id="mail_number" name="mail_number"  class="form-control" /> 快递信息
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->address)?$detail->address:''?>" placeholder="" id="address" name="address"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->gps_addr)?$detail->gps_addr:''?>" placeholder="" id="gps_addr" name="gps_addr"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lng)?$detail->lng:''?>" placeholder="" id="lng" name="lng"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lat)?$detail->lat:''?>" placeholder="" id="lat" name="lat"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->cancel_type)?$detail->cancel_type:''?>" placeholder="" id="cancel_type" name="cancel_type"  class="form-control" /> 1用户取消2:商户取消
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->cancel_time)?$detail->cancel_time:''?>" placeholder="" id="cancel_time" name="cancel_time"  class="form-control" /> 取消时间
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->cancel_info)?$detail->cancel_info:''?>" placeholder="" id="cancel_info" name="cancel_info"  class="form-control" /> 取消理由
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->is_delete)?$detail->is_delete:''?>" placeholder="" id="is_delete" name="is_delete"  class="form-control" /> 1：会员订单不显示
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->add_time)?$detail->add_time:''?>" placeholder="" id="add_time" name="add_time"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->add_ip)?$detail->add_ip:''?>" placeholder="" id="add_ip" name="add_ip"  class="form-control" /> 
+    </div>
+ </div>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

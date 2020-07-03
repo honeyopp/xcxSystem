@@ -1,0 +1,4367 @@
+[ 2018-03-14T00:00:32+08:00 ] 118.190.96.62 101.226.33.200 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.020957s][吞吐率：47.72req/s] [内存消耗：2,690.01kb] [文件加载：70]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0.1; OPPO R9s Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQBrowser/6.2 TBS/043015 Safari/537.36 V1_AND_SQ_6.6.9_482_YYB_D QQ/6.6.9.3060 NetType/4G WebP/0.3.0 Pixel/1080',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:00:32+08:00 ] 118.190.96.62 101.226.33.200 GET /home/mobile/index.html
+[ log ] xcx.cpasem.com/home/mobile/index.html [运行时间：0.034359s][吞吐率：29.10req/s] [内存消耗：4,372.24kb] [文件加载：83]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'mobile',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0.1; OPPO R9s Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/53.0.2785.49 Mobile MQQBrowser/6.2 TBS/043015 Safari/537.36 V1_AND_SQ_6.6.9_482_YYB_D QQ/6.6.9.3060 NetType/4G WebP/0.3.0 Pixel/1080',
+  'accept' => '*/*',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Mobile->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Mobile.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/mobile/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:00:52+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036534s][吞吐率：27.37req/s] [内存消耗：4,414.82kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.1294127480949746700.1520956439406.763; PHPSESSID=20bd3q5olqp4m07n9mc8fc54m5; monitor_count=10',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:00:55+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036846s][吞吐率：27.14req/s] [内存消耗：4,414.82kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.1294127480949746700.1520956439406.763; PHPSESSID=20bd3q5olqp4m07n9mc8fc54m5; monitor_count=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:00:56+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.037479s][吞吐率：26.68req/s] [内存消耗：4,414.82kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.1294127480949746700.1520956439406.763; PHPSESSID=20bd3q5olqp4m07n9mc8fc54m5; monitor_count=12',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:00:57+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.037511s][吞吐率：26.66req/s] [内存消耗：4,414.82kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.1294127480949746700.1520956439406.763; PHPSESSID=20bd3q5olqp4m07n9mc8fc54m5; monitor_count=13',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:24+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/index/index.html
+[ log ] xcx.cpasem.com/admin/index/index.html [运行时间：0.036257s][吞吐率：27.58req/s] [内存消耗：4,369.45kb] [文件加载：85]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=15',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:24+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/index/main
+[ log ] xcx.cpasem.com/admin/index/main [运行时间：0.034577s][吞吐率：28.92req/s] [内存消耗：4,285.33kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->main[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/main.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:30+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/admin.admin/index.html
+[ log ] xcx.cpasem.com/admin/admin.admin/index.html [运行时间：0.038590s][吞吐率：25.91req/s] [内存消耗：4,702.97kb] [文件加载：91]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin.admin',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\admin\Admin->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/admin/Admin.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/admin/admin/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+  9 => 'roles',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:38+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/setting.agent/agent.html
+[ log ] xcx.cpasem.com/admin/setting.agent/agent.html [运行时间：0.037959s][吞吐率：26.34req/s] [内存消耗：4,542.35kb] [文件加载：89]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'setting.agent',
+    2 => 'agent',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\setting\Agent->agent[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/setting/Agent.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/setting/agent/agent.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'agent',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:40+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/admin.role/index.html
+[ log ] xcx.cpasem.com/admin/admin.role/index.html [运行时间：0.037311s][吞吐率：26.80req/s] [内存消耗：4,555.84kb] [文件加载：88]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin.role',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\admin\Role->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/admin/Role.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/admin/role/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:41+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/admin.admin/index.html
+[ log ] xcx.cpasem.com/admin/admin.admin/index.html [运行时间：0.038850s][吞吐率：25.74req/s] [内存消耗：4,702.97kb] [文件加载：91]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin.admin',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\admin\Admin->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/admin/Admin.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/admin/admin/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+  9 => 'roles',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:42+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/admin.role/index.html
+[ log ] xcx.cpasem.com/admin/admin.role/index.html [运行时间：0.038238s][吞吐率：26.15req/s] [内存消耗：4,555.84kb] [文件加载：88]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin.role',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\admin\Role->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/admin/Role.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/admin/role/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:48+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/admin.role/index.html
+[ log ] xcx.cpasem.com/admin/admin.role/index.html [运行时间：0.038304s][吞吐率：26.11req/s] [内存消耗：4,555.84kb] [文件加载：88]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin.role',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\admin\Role->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/admin/Role.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/admin/role/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:50+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/member.member/index.html
+[ log ] xcx.cpasem.com/admin/member.member/index.html [运行时间：0.043723s][吞吐率：22.87req/s] [内存消耗：4,904.90kb] [文件加载：93]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member.member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\member\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/member/Member.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/member/member/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'agent',
+  6 => 'search',
+  7 => 'list',
+  8 => 'page',
+  9 => 'totalNum',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:04:58+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/admin.admin/index.html
+[ log ] xcx.cpasem.com/admin/admin.admin/index.html [运行时间：0.038946s][吞吐率：25.68req/s] [内存消耗：4,702.97kb] [文件加载：91]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin.admin',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\admin\Admin->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/admin/Admin.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/admin/admin/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+  9 => 'roles',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:05:08+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/admin.admin/index.html
+[ log ] xcx.cpasem.com/admin/admin.admin/index.html [运行时间：0.039192s][吞吐率：25.52req/s] [内存消耗：4,702.97kb] [文件加载：91]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'admin.admin',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\admin\Admin->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/admin/Admin.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/admin/admin/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+  9 => 'roles',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:05:11+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/member.member/index.html
+[ log ] xcx.cpasem.com/admin/member.member/index.html [运行时间：0.044058s][吞吐率：22.70req/s] [内存消耗：4,904.90kb] [文件加载：93]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member.member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\member\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/member/Member.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/member/member/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'agent',
+  6 => 'search',
+  7 => 'list',
+  8 => 'page',
+  9 => 'totalNum',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:05:38+08:00 ] 118.190.96.62 101.226.33.205 GET /admin/setting.agent/agent.html
+[ log ] xcx.cpasem.com/admin/setting.agent/agent.html [运行时间：0.021608s][吞吐率：46.28req/s] [内存消耗：2,786.89kb] [文件加载：71]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'setting.agent',
+    2 => 'agent',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:09:51+08:00 ] 118.190.96.62 125.82.164.29 GET /favicon.ico
+[ log ] xcx.cpasem.com/favicon.ico [运行时间：0.019340s][吞吐率：51.71req/s] [内存消耗：2,392.80kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:09:51+08:00 ] 118.190.96.62 125.82.164.29 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.037522s][吞吐率：26.65req/s] [内存消耗：4,413.70kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:09:55+08:00 ] 118.190.96.62 125.82.164.29 GET /home/shop/index.html
+[ log ] xcx.cpasem.com/home/shop/index.html [运行时间：0.039889s][吞吐率：25.07req/s] [内存消耗：4,490.80kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=17',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shop->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/shop/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:10:02+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.025165s][吞吐率：39.74req/s] [内存消耗：2,987.85kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=18',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:11:03+08:00 ] 118.190.96.62 125.82.164.29 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.036655s][吞吐率：27.28req/s] [内存消耗：4,419.43kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=19',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:11:28+08:00 ] 118.190.96.62 125.82.164.29 GET /home/faq/index.html
+[ log ] xcx.cpasem.com/home/faq/index.html [运行时间：0.024706s][吞吐率：40.48req/s] [内存消耗：2,992.09kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'faq',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=21',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Faq->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Faq.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/faq/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:11:28+08:00 ] 118.190.96.62 125.82.164.29 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.025269s][吞吐率：39.57req/s] [内存消耗：3,002.57kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/faq/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=22',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:11:49+08:00 ] 118.190.96.62 125.82.164.29 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.024805s][吞吐率：40.31req/s] [内存消耗：3,002.57kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=23',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:11:50+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.027610s][吞吐率：36.22req/s] [内存消耗：2,987.85kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:12:03+08:00 ] 118.190.96.62 101.226.33.226 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.035656s][吞吐率：28.05req/s] [内存消耗：4,418.74kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:12:28+08:00 ] 118.190.96.62 61.129.7.217 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.027290s][吞吐率：36.64req/s] [内存消耗：3,001.92kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.104 Safari/537.36 Core/1.53.2141.400 QQBrowser/9.5.10219.400',
+  'accept' => '*/*',
+  'referer' => 'http://xcx.cpasem.com/home/faq/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:12:35+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.024843s][吞吐率：40.25req/s] [内存消耗：2,988.41kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=25',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:12:43+08:00 ] 118.190.96.62 125.86.88.23 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.025001s][吞吐率：40.00req/s] [内存消耗：3,002.73kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/news/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:12:48+08:00 ] 118.190.96.62 125.86.88.23 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.027491s][吞吐率：36.38req/s] [内存消耗：3,003.15kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/news/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; monitor_count=1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:12:57+08:00 ] 118.190.96.62 125.86.88.23 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.025369s][吞吐率：39.42req/s] [内存消耗：3,002.88kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; monitor_count=2',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:13:02+08:00 ] 118.190.96.62 125.86.88.23 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.024649s][吞吐率：40.57req/s] [内存消耗：2,988.06kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; monitor_count=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:13:28+08:00 ] 118.190.96.62 125.86.88.23 GET /admin/login/index.html
+[ log ] xcx.cpasem.com/admin/login/index.html [运行时间：0.024360s][吞吐率：41.05req/s] [内存消耗：3,019.16kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; monitor_count=5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/login/index.html [ array (
+  0 => 'leftCheck',
+  1 => 'urlHere',
+  2 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:13:30+08:00 ] 118.190.96.62 125.86.88.23 GET /favicon.ico
+[ log ] xcx.cpasem.com/favicon.ico [运行时间：0.019934s][吞吐率：50.17req/s] [内存消耗：2,392.81kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:13:30+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.058481s][吞吐率：17.10req/s] [内存消耗：4,413.70kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:13:34+08:00 ] 118.190.96.62 125.86.88.23 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.025950s][吞吐率：38.54req/s] [内存消耗：3,002.84kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:13:38+08:00 ] 118.190.96.62 125.86.88.23 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.026064s][吞吐率：38.37req/s] [内存消耗：2,987.72kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:14:03+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.028613s][吞吐率：34.95req/s] [内存消耗：2,987.72kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=28',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:14:06+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.025015s][吞吐率：39.98req/s] [内存消耗：2,988.41kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=29',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:14:31+08:00 ] 118.190.96.62 125.82.164.29 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036401s][吞吐率：27.47req/s] [内存消耗：4,413.70kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=31',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:14:36+08:00 ] 118.190.96.62 125.82.164.29 GET /admin
+[ log ] xcx.cpasem.com/admin [运行时间：0.047945s][吞吐率：20.86req/s] [内存消耗：4,368.60kb] [文件加载：85]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=32',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:14:36+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/index/main
+[ log ] xcx.cpasem.com/admin/index/main [运行时间：0.034485s][吞吐率：29.00req/s] [内存消耗：4,285.45kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=33',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->main[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/main.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:14:43+08:00 ] 118.190.96.62 125.82.164.29 GET /public/admin/css/bootstrap.min.css.map
+[ log ] xcx.cpasem.com/public/admin/css/bootstrap.min.css.map [运行时间：0.019413s][吞吐率：51.51req/s] [内存消耗：2,393.09kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'admin',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=33',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:14:55+08:00 ] 118.190.96.62 125.86.88.23 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.024363s][吞吐率：41.05req/s] [内存消耗：2,988.41kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:15:43+08:00 ] 118.190.96.62 61.151.178.174 GET /public/admin/css/bootstrap.min.css.map
+[ log ] xcx.cpasem.com/public/admin/css/bootstrap.min.css.map [运行时间：0.019340s][吞吐率：51.71req/s] [内存消耗：2,392.80kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'admin',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:15:56+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.038831s][吞吐率：25.75req/s] [内存消耗：4,413.70kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=10',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:15:58+08:00 ] 118.190.96.62 125.86.88.23 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.025498s][吞吐率：39.22req/s] [内存消耗：2,988.16kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=11',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:17+08:00 ] 118.190.96.62 125.86.88.23 GET /home/faq/index.html
+[ log ] xcx.cpasem.com/home/faq/index.html [运行时间：0.024623s][吞吐率：40.61req/s] [内存消耗：2,992.09kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'faq',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=12',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Faq->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Faq.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/faq/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:18+08:00 ] 118.190.96.62 125.86.88.23 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.029164s][吞吐率：34.29req/s] [内存消耗：3,002.57kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/faq/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=13',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:19+08:00 ] 118.190.96.62 125.86.88.23 GET /manage/passport/register.html
+[ log ] xcx.cpasem.com/manage/passport/register.html [运行时间：0.028395s][吞吐率：35.22req/s] [内存消耗：3,020.90kb] [文件加载：74]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'passport',
+    2 => 'register',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=14',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\manage\controller\Passport->register[ /www/wwwroot/xcx.cpasem.com/youge/manage/controller/Passport.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/manage/view/passport/register.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:31+08:00 ] 118.190.96.62 125.86.88.23 GET /home/news/index.html
+[ log ] xcx.cpasem.com/home/news/index.html [运行时间：0.036191s][吞吐率：27.63req/s] [内存消耗：4,467.87kb] [文件加载：87]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'news',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=15',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\News->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/News.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/news/index.html [ array (
+  0 => 'footer',
+  1 => 'page',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:35+08:00 ] 118.190.96.62 125.86.88.23 GET /home/shop/index.html
+[ log ] xcx.cpasem.com/home/shop/index.html [运行时间：0.038529s][吞吐率：25.95req/s] [内存消耗：4,490.91kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/news/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=16',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shop->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/shop/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:42+08:00 ] 118.190.96.62 125.86.88.23 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.036628s][吞吐率：27.30req/s] [内存消耗：4,419.43kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=17',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:44+08:00 ] 118.190.96.62 125.86.88.23 GET /manage/passport/login.html
+[ log ] xcx.cpasem.com/manage/passport/login.html [运行时间：0.023991s][吞吐率：41.68req/s] [内存消耗：3,016.31kb] [文件加载：74]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'passport',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=18',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\manage\controller\Passport->login[ /www/wwwroot/xcx.cpasem.com/youge/manage/controller/Passport.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/manage/view/passport/login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:52+08:00 ] 118.190.96.62 125.86.88.23 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.038255s][吞吐率：26.14req/s] [内存消耗：4,420.20kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=19',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:53+08:00 ] 118.190.96.62 125.86.88.23 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.036720s][吞吐率：27.23req/s] [内存消耗：4,420.20kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=20',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:54+08:00 ] 118.190.96.62 125.86.88.23 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.036541s][吞吐率：27.37req/s] [内存消耗：4,420.20kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=21',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:54+08:00 ] 118.190.96.62 125.86.88.23 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.036849s][吞吐率：27.14req/s] [内存消耗：4,420.20kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=22',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:55+08:00 ] 118.190.96.62 125.86.88.23 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.036558s][吞吐率：27.35req/s] [内存消耗：4,420.20kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=23',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:16:55+08:00 ] 118.190.96.62 125.86.88.23 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.037144s][吞吐率：26.92req/s] [内存消耗：4,420.20kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=23',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:17:45+08:00 ] 118.190.96.62 125.82.164.29 GET /admin
+[ log ] xcx.cpasem.com/admin [运行时间：0.036930s][吞吐率：27.08req/s] [内存消耗：4,368.60kb] [文件加载：85]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=33',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:15+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/news.news/index.html
+[ log ] xcx.cpasem.com/admin/news.news/index.html [运行时间：0.041128s][吞吐率：24.31req/s] [内存消耗：4,664.42kb] [文件加载：89]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'news.news',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=33',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\news\News->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/news/News.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/news/news/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:22+08:00 ] 118.190.96.62 42.156.251.206 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.020824s][吞吐率：48.02req/s] [内存消耗：2,690.27kb] [文件加载：70]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0.2; SM-A5000 Build/LRX22C  ) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89 Tx(Tx/6.8.1) WindVane/8.2.0 750x1334',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=gm5gho57h5mngov3akg3le5lk7; path=/',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'host' => 'xcx.cpasem.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:22+08:00 ] 118.190.96.62 42.156.251.206 GET /home/mobile/index.html
+[ log ] xcx.cpasem.com/home/mobile/index.html [运行时间：0.034072s][吞吐率：29.35req/s] [内存消耗：4,372.41kb] [文件加载：83]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'mobile',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0.1; SM-N9100 Build/LRX22C  ) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=gm5gho57h5mngov3akg3le5lk7; path=/',
+  'accept-language' => 'zh-CN,zh;q=0.8,en;q=0.6',
+  'host' => 'xcx.cpasem.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Mobile->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Mobile.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/mobile/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:23+08:00 ] 118.190.96.62 42.156.251.206 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.021141s][吞吐率：47.30req/s] [内存消耗：2,689.77kb] [文件加载：70]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0.2; SM-A5000 Build/LRX22C  ) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89 Tx(Tx/6.8.1) WindVane/8.2.0 750x1334',
+  'connection' => 'Keep-Alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,en,*',
+  'host' => 'xcx.cpasem.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:23+08:00 ] 118.190.96.62 42.156.251.206 GET /home/mobile/index.html
+[ log ] xcx.cpasem.com/home/mobile/index.html [运行时间：0.033710s][吞吐率：29.66req/s] [内存消耗：4,371.79kb] [文件加载：83]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'mobile',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 5.0.2; SM-A5000 Build/LRX22C  ) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89 Tx(Tx/6.8.1) WindVane/8.2.0 750x1334',
+  'connection' => 'Keep-Alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,en,*',
+  'host' => 'xcx.cpasem.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Mobile->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Mobile.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/mobile/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:31+08:00 ] 118.190.96.62 60.221.215.163 GET /admin/login/index.html
+[ log ] xcx.cpasem.com/admin/login/index.html [运行时间：0.024767s][吞吐率：40.38req/s] [内存消耗：3,018.70kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/login/index.html [ array (
+  0 => 'leftCheck',
+  1 => 'urlHere',
+  2 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:32+08:00 ] 118.190.96.62 60.221.215.163 GET /favicon.ico
+[ log ] xcx.cpasem.com/favicon.ico [运行时间：0.019759s][吞吐率：50.61req/s] [内存消耗：2,393.02kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=1mpn0693tj0oni8d885m68mkr1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:48+08:00 ] 118.190.96.62 60.221.215.163 POST /admin/login/loging.html
+[ log ] xcx.cpasem.com/admin/login/loging.html [运行时间：0.037354s][吞吐率：26.77req/s] [内存消耗：4,254.74kb] [文件加载：86]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'loging',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://xcx.cpasem.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36',
+  'referer' => 'http://xcx.cpasem.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=1mpn0693tj0oni8d885m68mkr1',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '32',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '111111aa',
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->loging[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:51+08:00 ] 118.190.96.62 60.221.215.163 GET /admin/index/index.html
+[ log ] xcx.cpasem.com/admin/index/index.html [运行时间：0.036320s][吞吐率：27.53req/s] [内存消耗：4,369.40kb] [文件加载：85]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=1mpn0693tj0oni8d885m68mkr1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:51+08:00 ] 118.190.96.62 60.221.215.163 GET /admin/index/main
+[ log ] xcx.cpasem.com/admin/index/main [运行时间：0.034811s][吞吐率：28.73req/s] [内存消耗：4,285.21kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=1mpn0693tj0oni8d885m68mkr1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->main[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/main.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:18:57+08:00 ] 118.190.96.62 60.221.215.163 GET /admin/miniapp.miniapp/index.html
+[ log ] xcx.cpasem.com/admin/miniapp.miniapp/index.html [运行时间：0.041229s][吞吐率：24.25req/s] [内存消耗：4,740.73kb] [文件加载：89]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'miniapp.miniapp',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=1mpn0693tj0oni8d885m68mkr1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\miniapp\Miniapp->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/miniapp/Miniapp.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/miniapp/miniapp/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+  5 => 'search',
+  6 => 'list',
+  7 => 'page',
+  8 => 'totalNum',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:19:09+08:00 ] 118.190.96.62 60.221.215.163 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036954s][吞吐率：27.06req/s] [内存消耗：4,414.23kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'PHPSESSID=1mpn0693tj0oni8d885m68mkr1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:20:42+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036840s][吞吐率：27.14req/s] [内存消耗：4,413.70kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=24',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:20:47+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036991s][吞吐率：27.03req/s] [内存消耗：4,414.41kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=25',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:20:48+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036384s][吞吐率：27.48req/s] [内存消耗：4,414.41kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=26',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:20:49+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.039674s][吞吐率：25.21req/s] [内存消耗：4,414.41kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2453576109093440500.1520957680435.2664; PHPSESSID=h63pqonio9u0s5fa1faqahh6c6; monitor_count=27',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:20:52+08:00 ] 118.190.96.62 125.86.88.23 GET /favicon.ico
+[ log ] xcx.cpasem.com/favicon.ico [运行时间：0.019558s][吞吐率：51.13req/s] [内存消耗：2,392.70kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:20:53+08:00 ] 118.190.96.62 125.86.88.23 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036754s][吞吐率：27.21req/s] [内存消耗：4,413.72kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:21:13+08:00 ] 118.190.96.62 182.37.80.135 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036417s][吞吐率：27.46req/s] [内存消耗：4,413.88kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:21:16+08:00 ] 118.190.96.62 182.37.80.135 GET /manage/passport/login.html
+[ log ] xcx.cpasem.com/manage/passport/login.html [运行时间：0.024237s][吞吐率：41.26req/s] [内存消耗：3,015.77kb] [文件加载：74]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'passport',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\manage\controller\Passport->login[ /www/wwwroot/xcx.cpasem.com/youge/manage/controller/Passport.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/manage/view/passport/login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:21:24+08:00 ] 118.190.96.62 125.86.88.23 GET /manage/passport/login.html
+[ log ] xcx.cpasem.com/manage/passport/login.html [运行时间：0.024546s][吞吐率：40.74req/s] [内存消耗：3,016.16kb] [文件加载：74]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'passport',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2305231890128590800.1520958170255.5237; monitor_count=1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\manage\controller\Passport->login[ /www/wwwroot/xcx.cpasem.com/youge/manage/controller/Passport.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/manage/view/passport/login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:21:52+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/login/logout.html
+[ log ] xcx.cpasem.com/admin/login/logout.html [运行时间：0.024886s][吞吐率：40.18req/s] [内存消耗：3,016.51kb] [文件加载：76]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'logout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=35',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->logout[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/thinkphp/tpl/dispatch_jump.tpl [ array (
+  0 => 'leftCheck',
+  1 => 'urlHere',
+  2 => 'leftMenus',
+  3 => 'code',
+  4 => 'msg',
+  5 => 'data',
+  6 => 'url',
+  7 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:21:55+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/index/index.html
+[ log ] xcx.cpasem.com/admin/index/index.html [运行时间：0.021734s][吞吐率：46.01req/s] [内存消耗：2,785.93kb] [文件加载：71]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/login/logout.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=36',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:21:55+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/login/index.html
+[ log ] xcx.cpasem.com/admin/login/index.html [运行时间：0.025880s][吞吐率：38.64req/s] [内存消耗：3,019.01kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/admin/login/logout.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=36',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/login/index.html [ array (
+  0 => 'leftCheck',
+  1 => 'urlHere',
+  2 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:22:09+08:00 ] 118.190.96.62 125.86.88.23 GET /home/faq/index.html
+[ log ] xcx.cpasem.com/home/faq/index.html [运行时间：0.024560s][吞吐率：40.72req/s] [内存消耗：2,991.99kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'faq',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2305231890128590800.1520958170255.5237; monitor_count=3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Faq->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Faq.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/faq/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:22:12+08:00 ] 118.190.96.62 125.86.88.23 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.025800s][吞吐率：38.76req/s] [内存消耗：2,988.11kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/faq/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2305231890128590800.1520958170255.5237; monitor_count=4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:22:31+08:00 ] 118.190.96.62 125.86.88.23 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.027259s][吞吐率：36.69req/s] [内存消耗：2,988.11kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2305231890128590800.1520958170255.5237; monitor_count=6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:22:36+08:00 ] 118.190.96.62 125.86.88.23 GET /manage/passport/register.html
+[ log ] xcx.cpasem.com/manage/passport/register.html [运行时间：0.024192s][吞吐率：41.34req/s] [内存消耗：3,020.79kb] [文件加载：74]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'passport',
+    2 => 'register',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.2305231890128590800.1520958170255.5237; monitor_count=7',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\manage\controller\Passport->register[ /www/wwwroot/xcx.cpasem.com/youge/manage/controller/Passport.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/manage/view/passport/register.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:23:57+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.024588s][吞吐率：40.67req/s] [内存消耗：2,988.34kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=37',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:23:58+08:00 ] 118.190.96.62 125.82.164.29 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.036222s][吞吐率：27.61req/s] [内存消耗：4,419.43kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=38',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:24:00+08:00 ] 118.190.96.62 125.82.164.29 GET /home/shop/index.html
+[ log ] xcx.cpasem.com/home/shop/index.html [运行时间：0.042269s][吞吐率：23.66req/s] [内存消耗：4,490.91kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=39',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shop->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/shop/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:24:01+08:00 ] 118.190.96.62 125.82.164.29 GET /home/news/index.html
+[ log ] xcx.cpasem.com/home/news/index.html [运行时间：0.036879s][吞吐率：27.12req/s] [内存消耗：4,467.87kb] [文件加载：87]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'news',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=40',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\News->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/News.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/news/index.html [ array (
+  0 => 'footer',
+  1 => 'page',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:24:02+08:00 ] 118.190.96.62 125.82.164.29 GET /home/faq/index.html
+[ log ] xcx.cpasem.com/home/faq/index.html [运行时间：0.025647s][吞吐率：38.99req/s] [内存消耗：2,992.13kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'faq',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/news/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=41',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Faq->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Faq.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/faq/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:24:03+08:00 ] 118.190.96.62 125.82.164.29 GET /home/member/index.html
+[ log ] xcx.cpasem.com/home/member/index.html [运行时间：0.025757s][吞吐率：38.82req/s] [内存消耗：3,002.57kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/faq/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=42',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Member.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/member/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:24:04+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.025135s][吞吐率：39.79req/s] [内存消耗：2,987.80kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/member/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=43',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:25:01+08:00 ] 118.190.96.62 61.151.178.179 GET /home/news/index.html
+[ log ] xcx.cpasem.com/home/news/index.html [运行时间：0.037459s][吞吐率：26.70req/s] [内存消耗：4,466.76kb] [文件加载：87]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'news',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0',
+  'accept' => '*/*',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\News->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/News.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/news/index.html [ array (
+  0 => 'footer',
+  1 => 'page',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:25:18+08:00 ] 118.190.96.62 125.82.164.29 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.038145s][吞吐率：26.22req/s] [内存消耗：4,419.43kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=44',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:27:43+08:00 ] 118.190.96.62 182.37.80.135 GET /home/shop/index.html
+[ log ] xcx.cpasem.com/home/shop/index.html [运行时间：0.038659s][吞吐率：25.87req/s] [内存消耗：4,490.13kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shop->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/shop/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:28:19+08:00 ] 118.190.96.62 125.82.164.29 GET /favicon.ico
+[ log ] xcx.cpasem.com/favicon.ico [运行时间：0.021186s][吞吐率：47.20req/s] [内存消耗：2,392.80kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=45',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:28:19+08:00 ] 118.190.96.62 125.82.164.29 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.037604s][吞吐率：26.59req/s] [内存消耗：4,413.70kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=45',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:28:21+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.024660s][吞吐率：40.55req/s] [内存消耗：2,988.16kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=46',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:28:54+08:00 ] 118.190.96.62 125.82.164.29 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036831s][吞吐率：27.15req/s] [内存消耗：4,413.70kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=47',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:28:55+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.024750s][吞吐率：40.40req/s] [内存消耗：2,988.16kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=48',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:29:24+08:00 ] 118.190.96.62 125.82.164.29 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.038639s][吞吐率：25.88req/s] [内存消耗：4,420.20kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=49',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:29:38+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.025525s][吞吐率：39.18req/s] [内存消耗：2,987.74kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=50',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:29:39+08:00 ] 118.190.96.62 114.96.114.122 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036818s][吞吐率：27.16req/s] [内存消耗：4,413.69kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:29:40+08:00 ] 118.190.96.62 125.82.164.29 GET /home/shop/index.html
+[ log ] xcx.cpasem.com/home/shop/index.html [运行时间：0.038022s][吞吐率：26.30req/s] [内存消耗：4,490.92kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/about/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=51',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shop->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/shop/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:29:40+08:00 ] 118.190.96.62 125.82.164.29 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.037561s][吞吐率：26.62req/s] [内存消耗：4,419.43kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=52',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:29:49+08:00 ] 118.190.96.62 114.96.114.122 GET /favicon.ico
+[ log ] xcx.cpasem.com/favicon.ico [运行时间：0.020039s][吞吐率：49.90req/s] [内存消耗：2,393.13kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:29:56+08:00 ] 118.190.96.62 114.96.114.122 GET /admin/login/index.html
+[ log ] xcx.cpasem.com/admin/login/index.html [运行时间：0.028619s][吞吐率：34.94req/s] [内存消耗：3,018.82kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/login/index.html [ array (
+  0 => 'leftCheck',
+  1 => 'urlHere',
+  2 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:30:00+08:00 ] 118.190.96.62 125.82.164.29 GET /home/index/index.html
+[ log ] xcx.cpasem.com/home/index/index.html [运行时间：0.039144s][吞吐率：25.55req/s] [内存消耗：4,420.20kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=53',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:30:05+08:00 ] 118.190.96.62 114.96.114.122 POST /admin/login/loging.html
+[ log ] xcx.cpasem.com/admin/login/loging.html [运行时间：0.035456s][吞吐率：28.20req/s] [内存消耗：4,255.34kb] [文件加载：86]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'loging',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://xcx.cpasem.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'dnt' => '1',
+  'referer' => 'http://xcx.cpasem.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=lju35tvf5mt75v05523t6e9q47',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'content-length' => '32',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '111111aa',
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->loging[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:30:08+08:00 ] 118.190.96.62 114.96.114.122 GET /admin/index/index.html
+[ log ] xcx.cpasem.com/admin/index/index.html [运行时间：0.040898s][吞吐率：24.45req/s] [内存消耗：4,369.29kb] [文件加载：85]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'referer' => 'http://xcx.cpasem.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=lju35tvf5mt75v05523t6e9q47',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:30:08+08:00 ] 118.190.96.62 114.96.114.122 GET /admin/index/main
+[ log ] xcx.cpasem.com/admin/index/main [运行时间：0.037028s][吞吐率：27.01req/s] [内存消耗：4,285.42kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.168 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'dnt' => '1',
+  'referer' => 'http://xcx.cpasem.com/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=lju35tvf5mt75v05523t6e9q47',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->main[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/index/main.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:30:22+08:00 ] 118.190.96.62 125.82.164.29 GET /favicon.ico
+[ log ] xcx.cpasem.com/favicon.ico [运行时间：0.019365s][吞吐率：51.64req/s] [内存消耗：2,392.70kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:30:23+08:00 ] 118.190.96.62 125.82.164.29 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.043561s][吞吐率：22.96req/s] [内存消耗：4,413.72kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:33:11+08:00 ] 118.190.96.62 125.82.164.29 GET /public/admin/css/bootstrap.min.css.map
+[ log ] xcx.cpasem.com/public/admin/css/bootstrap.min.css.map [运行时间：0.020087s][吞吐率：49.78req/s] [内存消耗：2,393.09kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'admin',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=54',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:37:02+08:00 ] 118.190.96.62 125.82.164.29 GET /
+[ log ] xcx.cpasem.com/ [运行时间：0.036719s][吞吐率：27.23req/s] [内存消耗：4,413.70kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=54',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/index/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:37:04+08:00 ] 118.190.96.62 125.82.164.29 GET /home/shop/index.html
+[ log ] xcx.cpasem.com/home/shop/index.html [运行时间：0.050515s][吞吐率：19.80req/s] [内存消耗：4,490.81kb] [文件加载：84]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=55',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shop->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/shop/index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:37:05+08:00 ] 118.190.96.62 125.82.164.29 GET /home/news/index.html
+[ log ] xcx.cpasem.com/home/news/index.html [运行时间：0.037701s][吞吐率：26.52req/s] [内存消耗：4,467.87kb] [文件加载：87]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'news',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/shop/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\News->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/News.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/news/index.html [ array (
+  0 => 'footer',
+  1 => 'page',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:37:05+08:00 ] 118.190.96.62 125.82.164.29 GET /home/faq/index.html
+[ log ] xcx.cpasem.com/home/faq/index.html [运行时间：0.027940s][吞吐率：35.79req/s] [内存消耗：2,992.13kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'faq',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/news/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=57',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Faq->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/Faq.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/faq/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:37:07+08:00 ] 118.190.96.62 125.82.164.29 GET /home/about/index.html
+[ log ] xcx.cpasem.com/home/about/index.html [运行时间：0.025359s][吞吐率：39.43req/s] [内存消耗：2,987.74kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://xcx.cpasem.com/home/faq/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=58',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ /www/wwwroot/xcx.cpasem.com/youge/home/controller/About.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/home/view/about/index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:44:21+08:00 ] 118.190.96.62 125.82.164.29 GET /public/admin/css/bootstrap.min.css.map
+[ log ] xcx.cpasem.com/public/admin/css/bootstrap.min.css.map [运行时间：0.019721s][吞吐率：50.71req/s] [内存消耗：2,393.09kb] [文件加载：66]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'public',
+    1 => 'admin',
+    2 => 'css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=59',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:44:28+08:00 ] 118.190.96.62 125.82.164.29 GET /admin
+[ log ] xcx.cpasem.com/admin [运行时间：0.022732s][吞吐率：43.99req/s] [内存消耗：2,785.53kb] [文件加载：71]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=59',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-14T00:44:28+08:00 ] 118.190.96.62 125.82.164.29 GET /admin/login/index.html
+[ log ] xcx.cpasem.com/admin/login/index.html [运行时间：0.024683s][吞吐率：40.51req/s] [内存消耗：3,019.06kb] [文件加载：75]
+[ info ] [ LANG ] /www/wwwroot/xcx.cpasem.com/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'xcx.cpasem.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=33379127.3913702276364991000.1520952090834.0386; PHPSESSID=3p9q3236i18e6gcsj9tndu50o0; monitor_count=59',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ /www/wwwroot/xcx.cpasem.com/youge/admin/controller/Login.php ]
+[ info ] [ VIEW ] /www/wwwroot/xcx.cpasem.com/youge/admin/view/login/index.html [ array (
+  0 => 'leftCheck',
+  1 => 'urlHere',
+  2 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

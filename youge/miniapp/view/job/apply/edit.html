@@ -1,0 +1,68 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('job.apply/edit',['apply_id'=>$detail->apply_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>申请用户：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->user_id)?$detail->user_id:''?>" placeholder="" id="user_id" name="user_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>职位招聘：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->job_id)?$detail->job_id:''?>" placeholder="" id="job_id" name="job_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>公司：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->company_id)?$detail->company_id:''?>" placeholder="" id="company_id" name="company_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>状态：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->status)?$detail->status:''?>" placeholder="" id="status" name="status"  class="form-control" /> 0 待查看 1已查看 2 有意 3 暂不合适 4 邀请
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>企业查看：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->look_num)?$detail->look_num:''?>" placeholder="" id="look_num" name="look_num"  class="form-control" /> 企业查看次数
+    </div>
+ </div>
+<div class="form-group">
+   <label class="col-sm-3 control-label"><span class="c-red">*</span>申请时间：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->add_time)?date('Y-m-d H:i:s',$detail->add_time):'0'?>"   name="add_time" id="add_time"  class="laydate-icon form-control layer-date">
+       
+   </div>
+</div>
+<script>
+ laydate({
+    elem: '#add_time',
+    event: 'focus' ,
+    format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

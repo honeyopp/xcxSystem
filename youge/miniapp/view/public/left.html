@@ -1,0 +1,95 @@
+<!--左侧导航开始-->
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse left-menu">
+        <div class="basemenu">
+            <div class="left-scrool-panel">
+                <div class="leftMenu-box">
+                    <div class="leftMenu active">
+                      <div class="leftMenu-header">
+                        <i class="fa fa-home"></i>
+                        <span>管理中心</span>
+                        <i class="indexImg firstMenuDown"></i>
+                        <i class="indexImg firstMenuUp"></i>
+                      </div>
+                      <ul class="secondMenu">
+                        <li class="active">
+                          <a class="J_menuItem" href="<?=url('index/main')?>">
+                            <i class="secondMenuIcon"></i>
+                            <span>主页</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!--菜单循环 begin-->
+                    <?php foreach($leftMenus as $k=>$val){?>
+                    <div class="leftMenu active">
+                      <div class="leftMenu-header">
+                        <i class="fa <?=$val['icon']?>"></i>
+                        <span><?=$val['name']?></span>
+                        <i class="indexImg firstMenuDown"></i>
+                        <i class="indexImg firstMenuUp"></i>
+                      </div>
+                      <ul class="secondMenu">
+                         <?php foreach($val['menu'] as $val1){ if($val1['is_show']==1){?>
+                        <li class="">
+                          <a class="J_menuItem" href="<?=$val1['is_sub'] == 1 ? '' : url('admin/'.$val1['link']);?>">
+                            <i class="secondMenuIcon"></i>
+                            <span><?=$val1['name']?></span>
+                          </a>
+                          <?php if($val1['is_sub'] == 1) { ?>
+                          <ul class="threeMenu">
+                              <?php foreach($val1['sub'] as $val2){ if($val2['is_show']==1){?>
+                              <li><a class="J_menuItem" href="<?=url('admin/'.$val2['link']);?>"><?=$val2['name']?></a>
+                              </li>
+                              <?php }} ?>
+                          </ul>
+                          <?php } ?>
+                        </li>
+                        <?php }} ?>
+                      </ul>
+                    </div>
+                    <?php } ?>
+                    <!--菜单循环 end-->
+                </div>
+            </div>
+      </div>
+        <!-- <ul class="nav" id="side-menu">
+            <li>
+                <a class="J_menuItem" href="<?=url('index/main')?>">
+                    <i class="fa fa-home"></i>
+                    <span class="nav-label">主页</span>
+                </a>
+            </li>
+            <?php foreach($leftMenus as $k=>$val){?>
+            <li>
+                <a href="#"><i class="fa <?=$val['icon']?>"></i> <span class="nav-label"><?=$val['name']?></span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <?php foreach($val['menu'] as $val1){ if($val1['is_show']==1){?>
+                    <li><a class="J_menuItem"
+                           href="<?=$val1['is_sub'] == 1 ? '' : url('admin/'.$val1['link']);?>"><?=$val1['name']?> <?=$val1['is_sub'] == 1 ? '<span class="fa arrow">
+                        ' : ''?></a>
+                        <?php if($val1['is_sub'] == 1) { ?>
+                        <ul class="nav nav-third-level">
+                            <?php foreach($val1['sub'] as $val2){ if($val2['is_show']==1){?>
+                            <li><a class="J_menuItem" href="<?=url('admin/'.$val2['link']);?>"><?=$val2['name']?></a>
+                            </li>
+                            <?php }} ?>
+                        </ul>
+                        <?php } ?>
+                    </li>
+                    <?php } } ?>
+                </ul>
+            </li>
+            <?php } ?>
+        </ul> -->
+    </div>
+</nav>
+<script type="text/javascript">
+  $(function(){
+  /*左边菜单点击伸缩效果*/
+  $(".leftMenu-header").click(function(){
+    $(this).parent(".leftMenu").toggleClass("active")
+  });
+})
+</script>

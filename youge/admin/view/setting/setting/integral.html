@@ -1,0 +1,147 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    
+                                                <!-- PAGE CONTENT BEGINS -->
+                            <div class="alert alert-block alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">
+                                            <i class="ace-icon fa fa-times"></i>
+                                    </button>
+                                    <i class="ace-icon fa fa-check green"></i>
+                                    积分和红包设置
+                            </div>
+                            <!-- PAGE CONTENT ENDS -->
+                <form action="<?=url('setting.setting/integral')?>"  id="form-create" method="post" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right"> <h2>消费送红包设置</h2></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">消费每满100元：</label>
+                        <div class="col-sm-9">
+                            赠送积分
+                            <input type="text"  value="<?=isset($setting['integral']['integral100']) ? $setting['integral']['integral100']:''?>" placeholder="" id="data[integral100]" name="data[integral100]"  />
+                            赠送红包
+                            <input type="text"  value="<?=isset($setting['integral']['hongbao100']) ? $setting['integral']['hongbao100']:''?>" placeholder="" id="data[hongbao100]" name="data[hongbao100]"  />
+                            
+                            红包的单位是元；
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">积分红包过期时间：</label>
+                        <div class="col-sm-9">
+                           积分过期
+                            <input type="text"  value="<?=isset($setting['integral']['integralday']) ? $setting['integral']['integralday']:''?>" placeholder="" id="data[integralday]" name="data[integralday]"  />
+                            红包过期
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaoday']) ? $setting['integral']['hongbaoday']:''?>" placeholder="" id="data[hongbaoday]" name="data[hongbaoday]"  />
+                          
+                            单位天
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">红包开始使用时间：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaouse']) ? $setting['integral']['hongbaouse']:''?>" placeholder="" id="data[hongbaouse]" name="data[hongbaouse]"  />
+                            单位天；0代表当天就可以用 其他的天数代表从今天起计算！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">红包需要满足多少钱：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaomoney']) ? $setting['integral']['hongbaomoney']:'10'?>" placeholder="" id="data[hongbaomoney]" name="data[hongbaomoney]"  />
+                            红包需要满足多少钱才能使用这里是每一块钱红包满足需满足消费多少使用默认是10块钱
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right"> <h2>新用户注册红包设置</h2></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">注册即送：</label>
+                        <div class="col-sm-9">
+                            赠送积分
+                            <input type="text"  value="<?=isset($setting['integral']['integralregister']) ? $setting['integral']['integralregister']:''?>" placeholder="" id="data[integralregister]" name="data[integralregister]"  />
+                            赠送红包
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaoregister']) ? $setting['integral']['hongbaoregister']:''?>" placeholder="" id="data[hongbaoregister]" name="data[hongbaoregister]"  />
+                            红包的单位是元；
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">积分红包过期时间：</label>
+                        <div class="col-sm-9">
+                           积分过期
+                            <input type="text"  value="<?=isset($setting['integral']['integralregisterday']) ? $setting['integral']['integralregisterday']:''?>" placeholder="" id="data[integralregisterday]" name="data[integralregisterday]"  />
+                            红包过期
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaoregisterday']) ? $setting['integral']['hongbaoregisterday']:''?>" placeholder="" id="data[hongbaoregisterday]" name="data[hongbaoregisterday]"  />
+
+                            单位天
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">红包开始使用时间：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaoregisteruse']) ? $setting['integral']['hongbaoregisteruse']:''?>" placeholder="" id="data[hongbaoregisteruse]" name="data[hongbaoregisteruse]"  />
+                            单位天；0代表当天就可以用 其他的天数代表从今天起计算！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">红包需要满足多少钱：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaoregistermoney']) ? $setting['integral']['hongbaoregistermoney']:'10'?>" placeholder="" id="data[hongbaoregistermoney]" name="data[hongbaoregistermoney]"  />
+                            这里是指需要满足多少即可；
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right"> <h2>新用户首单红包设置</h2></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">新用户首单每满100元：</label>
+                        <div class="col-sm-9">
+                            赠送积分
+                            <input type="text"  value="<?=isset($setting['integral']['integralfirstorder']) ? $setting['integral']['integralfirstorder']:''?>" placeholder="" id="data[integralfirstorder]" name="data[integralfirstorder]"  />
+                            赠送红包
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaofirstorder']) ? $setting['integral']['hongbaofirstorder']:''?>" placeholder="" id="data[hongbaofirstorder]" name="data[hongbaofirstorder]"  />
+                            红包的单位是元；
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">积分红包过期时间：</label>
+                        <div class="col-sm-9">
+                           积分过期
+                            <input type="text"  value="<?=isset($setting['integral']['integralfirstorderday']) ? $setting['integral']['integralfirstorderday']:''?>" placeholder="" id="data[integralfirstorderday]" name="data[integralfirstorderday]"  />
+                            红包过期
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaofirstorderday']) ? $setting['integral']['hongbaofirstorderday']:''?>" placeholder="" id="data[hongbaofirstorderday]" name="data[hongbaofirstorderday]"  />
+
+                            单位天
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">红包开始使用时间：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['integral']['hongbaofirstorderuse']) ? $setting['integral']['hongbaofirstorderuse']:''?>" placeholder="" id="data[hongbaofirstorderuse]" name="data[hongbaofirstorderuse]"  />
+                            单位天；0代表当天就可以用 其他的天数代表从今天起计算！
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">红包需要满足多少钱：</label>
+                        <div class="col-sm-9">
+                            <input type="text"   value="<?=isset($setting['integral']['hongbaofirstordermoney']) ? $setting['integral']['hongbaofirstordermoney']:'10'?>" placeholder="" id="data[hongbaofirstordermoney]" name="data[hongbaofirstordermoney]"  />
+                            红包需要满足多少钱才能使用这里是每一块钱红包满足需满足消费多少使用默认是10块钱
+                        </div>
+                    </div>
+
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                确定保存
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div></div>
+    </div>
+</div>
+</div>

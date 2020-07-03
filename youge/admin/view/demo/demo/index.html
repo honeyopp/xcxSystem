@@ -1,0 +1,131 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('demo.demo/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 <td>标题:<input name="title" id="title"  value="<?=$search['title']?>" type="text"  placeholder="请输入标题"  style=" width:200px"/></td>
+<td>222:<select name="details" id="details"></select></td>
+
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" class="btn btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加demo" href="<?=url('demo.demo/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加demo</a>
+     <a mini="list" for="mini_list" title="批量删除demo" href="<?=url('demo.demo/delete')?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+    
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>标题</th>
+<th>排序</th>
+<th>图片</th>
+<th>222</th>
+<th>333</th>
+<th>444</th>
+<th>555</th>
+<th>666</th>
+<th>777</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td class="center">
+                                            <label class="pos-rel">
+                                                <input id="demo_id_<?=$val->demo_id;?>" name="demo_id[]" value="<?=$val->demo_id;?>" type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+
+                                        <td><?= $val->demo_id ?></td>
+                                        <td><?=$val->title?></td>
+<td><img width="80" src="/attachs/uploads/<?=$val->orderby?>"/></td>
+<td><?=$val->photo?></td>
+<td><?=$val->details?></td>
+<td><?=$val->cat_id?></td>
+<td><?=$val->is_show?></td>
+<td><?=$val->is_index?></td>
+<td><?=date("Y-m-d",$val->add_time)?></td>
+<td><?=date("Y-m-d H:i:s",$val->add_ip)?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑demo"  href="<?=url('demo.demo/edit','demo_id='.$val->demo_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除demo" mini="act"  href="<?=url('demo.demo/delete','demo_id='.$val->demo_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

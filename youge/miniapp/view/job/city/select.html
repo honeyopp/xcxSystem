@@ -1,0 +1,96 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('publicmodel.city/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>省份:
+                                            <select class="form-control" style="width:200px;" name="province_id">
+                                                <option style="font-size: 2rem">请选择</option>
+                                                <?php foreach($province as $k=>$v) {?>
+                                                <option disabled class="form-control"><h3><?=$k?></h3></option>
+                                                <?php foreach($v as $val) { ?>
+                                                <option  style="font-size: 2rem" <?=$search['province_id'] == $val['id'] ? 'selected' : ''?> value="<?=$val['id']?>">&nbsp;&nbsp;&nbsp;&nbsp;<?=$val['name']?></option>
+                                                <?php } ?>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
+                                        <td>城市名称:<input class="form-control" name="city_name" id="city_name" value="<?=$search['city_name']?>" type="text" placeholder="请输入城市名称" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">搜索</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>省份</th>
+                                <th>城市名称</th>
+                                <th>拼音（全拼）</th>
+                                <th>拼音（首字母）</th>
+                                <th>景点个数</th>
+                                <th>商圈个数</th>
+                                <th>行政区域个数</th>
+                                <th>车站个数</th>
+                                <th>高校个数</th>
+                                <th>医院个数</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td colspan="11" style="text-align: center">选择全部城市（或者不选择城市 请根据实际情况选择）</td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleCity('全部城市(不选择城市)','0');" href="javascript:void(0);" class="btn btn-xs btn-info">选择全部城市</a>                                    </div>
+                                </td>
+                             </tr>
+                            <?php foreach($list as $val){ ?>
+                            <tr>
+                                <td><?= $val->city_id ?></td>
+                                <td><?=empty($province[$val->province_id]) ? '' : $province[$val->province_id]['name']?></td>
+                                <td><?=$val->city_name?></td>
+                                <td><?=$val->pinyin?></td>
+                                <td><?=$val->initial?></td>
+                                <td><?=$val->scenic_spot_num?>个</td>
+                                <td><?=$val->area_num?>个</td>
+                                <td><?=$val->administration_num?>个</td>
+                                <td><?=$val->station_num?>个</td>
+                                <td><?=$val->colleges_num?>个</td>
+                                <td><?=$val->hospital_num?>个</td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleCity('<?=$val->city_name?>','<?=$val->city_id?>');" href="javascript:void(0);" class="btn btn-xs btn-info">选择该城市</a>                                    </div>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

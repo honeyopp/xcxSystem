@@ -1,0 +1,37 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('job.privilege/create')?>" id="form-create" method="post"
+                          class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>特权说明：</label>
+                            <div class="col-sm-9">
+                                <textarea name="privilege" placeholder="除了系统所带的特权 您的其他增值服务 如果没有其他服务 请为空" id="privilege" cols="50" rows="10" class="form-control"><?=isset($detail->privilege)?$detail->privilege:''?></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>充值说明：</label>
+                            <div class="col-sm-9">
+                                <textarea name="explain" placeholder="充值需要遵循 您的那些协议" id="explain" cols="50" rows="10" class="form-control"><?=isset($detail->explain)?$detail->explain:''?></textarea>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

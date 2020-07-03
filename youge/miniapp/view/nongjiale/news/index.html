@@ -1,0 +1,135 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get"  action="<?=url('nongjiale.news/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>类型:
+                                            <select class="form-control"  name="type" id="type">
+                                                <option <?php if($search['type']==1) echo 'selected="selected"';?> value="1">文章</option>
+                                                <option  <?php if($search['type']==2) echo 'selected="selected"';?> value="2">视频</option>
+                                            </select>
+
+                                        </td>
+                                        <td>头条标题:<input class="form-control" name="title" id="title"  value="<?=$search['title']?>" type="text"  placeholder="请输入头条标题"  style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加头条" href="javascript:void(0);" data-toggle="modal" data-target="#myModal"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加头条</a>
+
+                        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content animated bounceInRight">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                                        </button>
+                                        <h4 class="modal-title">选择发布类型</h4>
+                                    </div>
+                                    <div  style="text-align: center;" class="modal-body">
+                                        <a href="<?=url('nongjiale.news/create',['store_id'=>$detail->store_id]);?>"  class="btn btn-success">发布视频</a>
+                                        <a href="<?=url('nongjiale.news/create2',['store_id'=>$detail->store_id]);?>" class="btn btn-primary" >发布文章</a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>ID</th>
+                                    <th>类型</th>
+                                    <th>头条标题</th>
+                                    <th>作者</th>
+                                    <th>评论数</th>
+                                    <th>流量</th>
+                                    <th>转发</th>
+                                    <th>发布时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+
+                                        <td><?= $val->news_id ?></td>
+                                        <td><?=$val->type==1?'文章':'视频';?></td>
+                                        <td><?=$val->title?></td>
+                                        <td><?=$val->author?></td>
+                                        <td><?=$val->comment_num?></td>
+                                        <td><?=$val->views?></td>
+                                        <td><?=$val->share_num;?></td>
+                                        <td><?=date('Y-m-d H:i:s',$val->add_time);?></td>
+                                        <td>
+                                            
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                
+                                                <?php if($val->type==2){?>
+                                                <a title="编辑头条"  href="<?=url('nongjiale.news/edit','news_id='.$val->news_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <?php }else{?>
+                                                <a title="编辑头条"  href="<?=url('nongjiale.news/edit2','news_id='.$val->news_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <?php }?>
+                                                <a title="删除头条" mini="act"  href="<?=url('nongjiale.news/delete','news_id='.$val->news_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

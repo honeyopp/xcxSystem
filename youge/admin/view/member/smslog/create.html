@@ -1,0 +1,57 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form action="<?=url('member.smslog/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+                    
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>用户：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_id)?$detail->member_id:''?>" placeholder="" id="member_id" name="member_id"  class="form-control" /> 用户id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>使用途径：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->log_type)?$detail->log_type:''?>" placeholder="" id="log_type" name="log_type"  class="form-control" /> 1充值短信 ,2分配短信
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>短信条数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->sms_num)?$detail->sms_num:''?>" placeholder="" id="sms_num" name="sms_num"  class="form-control" /> 短信条数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>分配小程序：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_miniapp_id)?$detail->member_miniapp_id:''?>" placeholder="" id="member_miniapp_id" name="member_miniapp_id"  class="form-control" /> 分配的小程序id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>当前剩余：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->this_sms_num)?$detail->this_sms_num:''?>" placeholder="" id="this_sms_num" name="this_sms_num"  class="form-control" /> 当前剩余短信条数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>使用类型：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->is_consume)?$detail->is_consume:''?>" placeholder="" id="is_consume" name="is_consume"  class="form-control" /> 1收入，2支出
+    </div>
+ </div>
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

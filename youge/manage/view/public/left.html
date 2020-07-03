@@ -1,0 +1,93 @@
+<!--左侧导航开始-->
+<?php
+    $SettingModel = new \app\common\model\setting\SettingModel();
+     $setting = $SettingModel->fetchAll(true);
+     $agent = $setting['agent'];
+?>
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse left-menu">
+      <div class="basemenu">
+        <div class="left-scrool-panel">
+          <div class="leftMenu-box">
+            <div class="leftMenu active">
+              <div class="leftMenu-header">
+                <i class="fa fa-home"></i>
+                <span>管理中心</span>
+                <i class="indexImg firstMenuDown"></i>
+                <i class="indexImg firstMenuUp"></i>
+              </div>
+              <ul class="secondMenu">
+                <li class="">
+                  <a class="J_menuItem" href="<?=url('index/main')?>">
+                    <i class="secondMenuIcon"></i>
+                    <span>应用大厅</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--菜单循环 begin-->
+            <?php foreach($leftMenus as $k=>$val){?>
+            <div class="leftMenu active">
+              <div class="leftMenu-header">
+                <i class="fa <?=$val['icon']?>"></i>
+                <span><?=$val['name']?></span>
+                <i class="indexImg firstMenuDown"></i>
+                <i class="indexImg firstMenuUp"></i>
+              </div>
+              <ul class="secondMenu">
+                 <?php foreach($val['menu'] as $val1){ if($val1['is_show']==1){?>
+                <li class="">
+                  <a <?php if(isset($val1['blank'])){ echo 'id="_blank"'; } ?> class="J_menuItem" href="<?=$val1['is_sub'] == 1 ? '' : url('admin/'.$val1['link']);?>
+                    <?php if(isset($val1['blank'])){ echo '?id='.$member->member_id; } ?>">
+                    <i class="secondMenuIcon"></i>
+                    <span><?=$val1['name']?></span>
+                  </a>
+                </li>
+                <?php }} ?>
+              </ul>
+            </div>
+            <?php } ?>
+	
+		
+		 <?php if(empty($agent[$member->type])) {?>
+			
+			<?php }else{ ?> 
+		<div class="leftMenu active">
+              <div class="leftMenu-header">
+                <i class="fa fa-viacoin"></i>
+                <span>代理商资料</span>
+                <i class="indexImg firstMenuDown"></i>
+                <i class="indexImg firstMenuUp"></i>
+              </div>
+              <ul class="secondMenu">
+                <li class="">
+                  <a  class="J_menuItem" href="/manage/member/usertext">
+                    <i class="secondMenuIcon"></i>
+                    <span>代理商资料</span>
+                  </a>
+                </li>
+            </ul>
+        </div> <?php } ?>
+
+            <!--菜单循环 end-->
+          </div>
+        </div>
+      </div>
+        
+    </div>
+</nav>
+<script type="text/javascript">
+  $(function(){
+  /*左边菜单点击伸缩效果*/
+  $(".leftMenu-header").click(function(){
+    $(this).parent(".leftMenu").toggleClass("active")
+  });
+
+  var url = $('#_blank').attr('href');
+  $('#_blank').attr('href','javascript:;');
+
+  $('#_blank').click(function(){
+      window.open(url);
+  })
+})
+</script>

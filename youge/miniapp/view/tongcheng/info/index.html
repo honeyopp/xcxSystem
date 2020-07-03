@@ -1,0 +1,134 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-success">
+                     请管理员认真查看每条信息 并及时删除不良信息！！！
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('tongcheng.info/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            会员:
+                                            <input id="username" type="text" name="username"  value="<?=input('get.username')?>" placeholder="请单击选择会员"  class="form-control"/>
+                                            <input type="hidden" value="<?=$search['user_id']?>" name="user_id" id="user_id">
+                                            <button id="show-btn1" style="display: none" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/user.user/select')?>" class="btn btn-w-m btn-info">选择酒店</button>
+                                            <script>
+                                                $("#username").focus(function () {
+                                                    $("#show-btn1").click();
+                                                })
+                                                function seleUser(user_name,user_id){
+                                                    layer.closeAll();
+                                                    layer.msg('操作成功！');
+                                                    $("#username").val(user_name);
+                                                    $("#user_id").val(user_id);
+                                                }
+                                            </script>
+                                        </td>
+                                        <td>发布日期:
+                                            <input style="height: 34px;" value="<?=empty($search['date']) ? '' :$search['date'] ?>" placeholder="发布日期" name="date" id="decoration_time" class="laydate-icon form-control layer-date">
+                                            <script>
+                                                laydate({
+                                                    elem: '#decoration_time',
+                                                    event: 'focus',
+                                                    format: 'YYYY-MM-DD',
+                                                    istime: true
+                                                });
+                                            </script>
+                                        </td>
+                                        <td>发布分类:
+                                            <select class="form-control" name="category_id">
+                                                <option value="0">请选择</option>
+                                                <?php foreach($category as $val) {?>
+                                                      <option  <?=$val->category_id == $search['category_id'] ? 'selected' : ''?> value="<?=$val->category_id?>"><?=$val->name?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加发布信息" href="<?=url('tongcheng.info/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加发布信息</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>发布会员</th>
+                                <th>分类</th>
+                                <th>内容</th>
+                                <th>地址</th>
+                                <th>查看数</th>
+                                <th>评论数</th>
+                                <th>联系方式</th>
+                                <th>系统排序</th>
+                                <th>置顶过期时间</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?=$val->info_id ?></td>
+                                    <td><?=empty($user[$val->user_id]) ? '系统发布' : $user[$val->user_id]->nick_name?></td>
+                                    <td><?=empty($category[$val->category_id]) ? '已删除分类' : $category[$val->category_id]->name?></td>
+                                    <td><textarea><?=$val->info?></textarea></td>
+                                    <td><textarea><?=$val->address?></textarea></td>
+                                    <td><?=$val->view_num?></td>
+                                    <td><?=$val->comment_num?></td>
+                                    <td><?=$val->tel?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td><?=$val->expire_time == 0 ? '未置顶' :  date("Y-m-d H:i:s",$val->expire_time)?></td>
+                                    <td><?=date("Y-m-d H:i:s",$val->add_time)?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑发布信息" href="<?=url('tongcheng.info/edit','info_id='.$val->info_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除发布信息" mini="act" href="<?=url('tongcheng.info/delete','info_id='.$val->info_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

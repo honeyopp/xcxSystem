@@ -1,0 +1,73 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form action="<?=url('ktv.enroll/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+                    
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>包间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->room_id)?$detail->room_id:''?>" placeholder="" id="room_id" name="room_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系人：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系方式：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+   <label class="col-sm-3 control-label"><span class="c-red">*</span>预约日期：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->enroll_date)?$detail->enroll_date:''?>"  name="enroll_date" id="enroll_date"  class="laydate-icon form-control layer-date">
+       
+   </div>
+</div>
+
+<script>
+ laydate({
+    elem: '#enroll_date',
+    event: 'focus' ,
+     format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>预约时长：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->enroll_time)?$detail->enroll_time:''?>" placeholder="" id="enroll_time" name="enroll_time"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>预约时 包间价格：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->enroll_room_price)?$detail->enroll_room_price:''?>" placeholder="" id="enroll_room_price" name="enroll_room_price"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>状态：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->status)?$detail->status:''?>" placeholder="" id="status" name="status"  class="form-control" /> 
+    </div>
+ </div>
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

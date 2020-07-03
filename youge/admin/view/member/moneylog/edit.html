@@ -1,0 +1,53 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('member.moneylog/edit',['log_id'=>$detail->log_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>用户：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_id)?$detail->member_id:''?>" placeholder="" id="member_id" name="member_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>消费类型：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->log_type)?$detail->log_type:''?>" placeholder="" id="log_type" name="log_type"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>消费金额：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->money)?$detail->money:''?>" placeholder="" id="money" name="money"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>当前剩余：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->this_money)?$detail->this_money:''?>" placeholder="" id="this_money" name="this_money"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>支出收入：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->is_consume)?$detail->is_consume:''?>" placeholder="" id="is_consume" name="is_consume"  class="form-control" /> 
+    </div>
+ </div>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

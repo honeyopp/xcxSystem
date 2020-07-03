@@ -1,0 +1,88 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('service.enroll/ayi')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>姓名:<input class="form-control" name="name" id="name" value="<?=$search['name']?>" type="text" placeholder="请输入姓名" style=" width:200px"/></td>
+                                        <td>联系方式:<input class="form-control" name="mobile" id="mobile" value="<?=$search['mobile']?>" type="text" placeholder="请输入联系方式" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">搜索</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>预约联系人</th>
+                                <th>预约服务</th>
+                                <th>支付状态</th>
+                                <th>订单状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($list as $val){ ?>
+                            <tr>
+                                <td><?= $val->enroll_id?></td>
+                                <td style="width: 30%">
+                                    联系人:<?=$val->name?><br>
+                                    联系方式:<?=$val->mobile?><br>
+                                    服务地址:<?=$val->address?><br>
+                                </td>
+                                <td>
+                                    服务名称:<?=empty($type[$val->type_id]) ? '' : $type[$val->type_id]->name?><br>
+                                    服务日期:<?=$val->date?>
+                                </td>
+                                <td>
+                                    需要支付押金:<?=round($val->total_money/100,2)?><br>
+                                    已支付押金:<?=round($val->pay_money/100,2)?><br>
+                                    支付时间: <?=$val->pay_time == 0 ? '未支付' : date("Y-m-d H:i:s",$val->pay_time) ?>
+                                </td>
+                                <td>
+                                    <?=$val->status ?>
+                                    订单状态：<?=empty(config('dataattr.jzorder')[$val->status]) ? '' : config('dataattr.jzorder')[$val->status]?><br>
+                                    下单时间：<?=date("Y-m-d H:i:s",$val->add_time)?></td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group"><a title="删除预约管理" mini="act" href="<?=url('service.enroll/delete','enroll_id='.$val->enroll_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a></div>
+                                    <?php if($val->status == 0 || $val->status == 1 ){ ?>
+                                    <div class="hidden-sm hidden-xs btn-group"><a title="拒绝预约" mini="act" href="<?=url('service.enroll/no','enroll_id='.$val->enroll_id)?>" class="btn btn-xs btn-warning">拒绝预约</a></div>
+                                    <div class="hidden-sm hidden-xs btn-group"><a title="接受预约" mini="act" href="<?=url('service.enroll/ok','enroll_id='.$val->enroll_id)?>" class="btn btn-xs btn-warning">接受预约</a></div>
+                                    <?php }else if($val->status ==3 || $val->status == 4) { ?>
+                                    <div class="hidden-sm hidden-xs btn-group"><a title="接受预约" mini="load" w="50%" h="50%" href="<?=url('service.enroll/tuikuan','enroll_id='.$val->enroll_id)?>" class="btn btn-xs btn-warning">退款给他</a></div>
+                                    <?php } ?>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container-->
+            </div>
+        </div>
+    </div>
+</div>

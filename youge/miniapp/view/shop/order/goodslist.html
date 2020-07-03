@@ -1,0 +1,36 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>商品ID</th>
+                                <th>类型</th>
+                                <th>数量</th>
+                                <th>单价</th>
+
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($sku as $val){ ?>
+                                    <tr>
+                                        <td><textarea><?=empty($goods[$val->goods_id]) ? '' : $goods[$val->goods_id]->goods_name?></textarea></td>
+                                        <td><?=empty($type[$val->type_id]) ? '' : $type[$val->type_id]->type_name?></td>
+                                        <td><?=$val->num?></td>
+                                        <td><?=round($val->price/100,2)?></td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

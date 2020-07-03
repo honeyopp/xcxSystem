@@ -1,0 +1,93 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('miniapp.miniapp/select')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>小程序标题:<input class="form-control" name="title" id="title" value="<?=$search['title']?>" type="text" placeholder="请输入小程序标题" style=" width:200px"/></td>
+                                        <td>价格:<input class="form-control" name="price" id="price" value="<?=empty($search['price']) ? '' : $search['price']?>" type="text" placeholder="请输入价格" style=" width:200px"/></td>
+                                        <td>是否上架:
+                                            <select name="is_online" class="form-control">
+                                                <option  <?=$search['is_online'] == 0 ? 'selected' : ''?> class="form-control" value="0">请选择</option>
+                                                <option  <?=$search['is_online'] == 1 ? 'selected' : ''?> class="form-control" value="1">上架</option>
+                                                <option  <?=$search['is_online'] == 2 ? 'selected' : ''?> class="form-control" value="2">未上架</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">搜索</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>小程序标题</th>
+                                <th>展示图片</th>
+                                <th>版本号</th>
+                                <th>体验天数</th>
+                                <th>价格</th>
+                                <th>活动价</th>
+                                <th>模板</th>
+                                <th>小程序目录</th>
+                                <th>是否上架</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->miniapp_id ?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><img width="80" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=$val->version?></td>
+                                    <td>可试用<?=$val->expire_day?>天</td>
+                                    <td><?=sprintf("%.2f",$val->activity_price/100)?>￥</td>
+                                    <td><?=sprintf("%.2f",$val->price/100)?>￥</td>
+                                    <td><?=$val->template_id?></td>
+                                    <td><?=$val->miniapp_dir?></td>
+                                    <td><?=$val->is_online == 1  ? '<span class="label label-primary">是</span>' : '<span class="label label-danger">否</span>'  ?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a  onclick="parent.selMiniapp('<?=$val->title?>','<?=$val->miniapp_id?>');" href="javascript:void(0);" class="btn btn-xs btn-info">选择该模板</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!--main-container-->
+            </div>
+        </div>
+    </div>
+</div>
+

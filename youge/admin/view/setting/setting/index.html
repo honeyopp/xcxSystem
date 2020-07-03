@@ -1,0 +1,75 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    
+                                                <!-- PAGE CONTENT BEGINS -->
+                            <div class="alert alert-block alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">
+                                            <i class="ace-icon fa fa-times"></i>
+                                    </button>
+
+                                    <i class="ace-icon fa fa-check green"></i>
+
+                                    这里主要设置网站的SEO以及基础信息！
+
+                            </div>
+                            <!-- PAGE CONTENT ENDS -->
+                   
+                <form action="<?=url('setting.setting/index')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">网站名称：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['site']['sitename']) ? $setting['site']['sitename']:''?>" placeholder="" id="data[sitename]" name="data[sitename]"  class=" form-control" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">SEO标题：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['site']['title']) ? $setting['site']['title']:''?>" placeholder="" id="data[title]" name="data[title]"  class=" form-control" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">关键字：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['site']['keywords']) ? $setting['site']['keywords']:''?>" placeholder="" id="data[keywords]" name="data[keywords]"  class=" form-control" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">描述：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['site']['description']) ? $setting['site']['description']:''?>" placeholder="" id="data[description]" name="data[description]"  class=" form-control" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">tel：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['site']['tel']) ? $setting['site']['tel']:''?>" placeholder="" id="data[tel]" name="data[tel]"  class=" form-control" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">ICP：</label>
+                        <div class="col-sm-9">
+                            <input type="text"  value="<?=isset($setting['site']['ICP']) ? $setting['site']['ICP']:''?>" placeholder="" id="data[ICP]" name="data[ICP]"  class=" form-control" /> 
+                        </div>
+                    </div>
+
+                    
+                    <div class="clearfix form-actions">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                <i class="ace-icon fa fa-check bigger-110"></i>
+                                确定保存
+                            </button>
+
+                          
+                        </div>
+                    </div>
+                </form>
+
+            </div></div>
+    </div>
+</div>
+</div>

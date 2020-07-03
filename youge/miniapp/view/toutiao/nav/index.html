@@ -1,0 +1,62 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加导航设置" href="<?=url('toutiao.nav/create')?>" class="btn btn-sm btn-success"><i
+                                class=" fa fa-plus"></i>添加导航设置</a>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>导航名称</th>
+                                <th>是否展示</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->nav_id ?></td>
+                                    <td><?=$val->nav_name?></td>
+                                    <td><?=$val->is_show?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑导航设置" href="<?=url('toutiao.nav/edit','nav_id='.$val->nav_id)?>"
+                                               class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除导航设置" mini="act"
+                                               href="<?=url('toutiao.nav/delete','nav_id='.$val->nav_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

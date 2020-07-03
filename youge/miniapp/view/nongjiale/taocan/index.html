@@ -1,0 +1,154 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('nongjiale.taocan/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 <td>所在城市:<input class="form-control" name="city_id" id="city_id"  value="<?=$search['city_id']?>" type="text"  placeholder="请输入所在城市"  style=" width:200px"/></td>
+<td>游玩类型:<input class="form-control" name="nav_id" id="nav_id"  value="<?=$search['nav_id']?>" type="text"  placeholder="请输入游玩类型"  style=" width:200px"/></td>
+<td>标题:<input class="form-control" name="title" id="title"  value="<?=$search['title']?>" type="text"  placeholder="请输入标题"  style=" width:200px"/></td>
+
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加产品管理" href="<?=url('nongjiale.taocan/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加产品管理</a>
+     <a mini="list" for="mini_list" title="批量删除产品管理" href="<?=url('nongjiale.taocan/delete')?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+    
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>所在城市</th>
+<th>游玩类型</th>
+<th>产品类型</th>
+<th>标题</th>
+<th>图片</th>
+<th>Banner</th>
+<th>评分</th>
+<th>起价</th>
+<th>经度</th>
+<th>纬度</th>
+<th>地址</th>
+<th>是否上架</th>
+<th>预定限制</th>
+<th>使用时间</th>
+<th>服务</th>
+<th>使用方式</th>
+<th>其他</th>
+<th>加购</th>
+<th>是否热门</th>
+<th>排序</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td class="center">
+                                            <label class="pos-rel">
+                                                <input id="taocan_id_<?=$val->taocan_id;?>" name="taocan_id[]" value="<?=$val->taocan_id;?>" type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+
+                                        <td><?= $val->taocan_id ?></td>
+                                        <td><?=$val->city_id?></td>
+<td><?=$val->nav_id?></td>
+<td><?=$val->type_id?></td>
+<td><?=$val->title?></td>
+<td><img width="80" src="/attachs/uploads/<?=$val->photo?>"/></td>
+<td><img width="80" src="/attachs/uploads/<?=$val->banner?>"/></td>
+<td><?=$val->score?></td>
+<td><?=$val->price?></td>
+<td><?=$val->lat?></td>
+<td><img width="80" src="/attachs/uploads/<?=$val->lng?>"/></td>
+<td><?=$val->address?></td>
+<td><?=$val->is_online?></td>
+<td><?=$val->restrict?></td>
+<td><?=$val->usetime?></td>
+<td><?=$val->service?></td>
+<td><?=$val->method?></td>
+<td><?=$val->other?></td>
+<td><?=$val->plus?></td>
+<td><?=$val->is_hot?></td>
+<td><?=$val->orderby?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑产品管理"  href="<?=url('nongjiale.taocan/edit','taocan_id='.$val->taocan_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除产品管理" mini="act"  href="<?=url('nongjiale.taocan/delete','taocan_id='.$val->taocan_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

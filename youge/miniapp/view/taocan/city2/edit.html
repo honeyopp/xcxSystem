@@ -1,0 +1,75 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('taocan.city/edit',['city_id'=>$detail->city_id])?>" id="form-create" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>城市名称：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->city_name)?$detail->city_name:''?>"
+                                       placeholder="" id="city_name" name="city_name" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>经度纬度：</label>
+                            <div class="col-sm-3"  style="margin-right: 0; padding-right: 0;">
+                                <input type="text" readonly style="background-color: transparent;" class="form-control"  value="<?=isset($detail->lat)?$detail->lat:'';?>" placeholder="" id="lat" name="lat"/>
+                            </div>
+                            <div class="col-sm-1" style="margin: 0;padding: 0;width: 1rem; line-height: 3rem">--</div>
+                            <div class="col-sm-3" style="margin-left: 0; padding-left: 0;" >
+                                <input type="text"  readonly style="background-color: transparent;" class="form-control" value="<?=isset($detail->lng)?$detail->lng:'';?>" placeholder="" id="lng" name="lng"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button"  mini="load" w="1000px" h="800px" href="<?=url('index/map',['callback'=>'showLatLng']);?>?lat=<?=isset($detail->lat)?$detail->lat:'0';?>&lng=<?=isset($detail->lng)?$detail->lng:'0';?>" class="btn btn-w-m btn-info">选择地址</button>
+                            </div>
+                            <script>
+                                function showLatLng(lat,lng){
+                                    layer.closeAll();
+                                    layer.msg('选取经纬度成功！');
+                                    $("#lat").val(lat);
+                                    $("#lng").val(lng);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>拼音（全拼）：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->pinyin)?$detail->pinyin:''?>" placeholder=""
+                                       id="pinyin" name="pinyin" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>拼音（首字母）：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->initial)?$detail->initial:''?>"
+                                       placeholder="" id="initial" name="initial" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>当前站点是否开通该城市：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_open" id="is_online" value="1" type="radio" <?php if(isset($detail->is_open)&&$detail->is_open==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_open" id="is_online2" value="0" type="radio" <?php if(isset($detail->is_open)&&$detail->is_open==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<link href="/public/admin/css/uploadwxb.css" rel="stylesheet">
+<script src="/public/common/ajaxfileupload.js"></script>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('hair.works/edit',['works_id'=>$detail->works_id])?>" id="form-create" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>标题：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->title)?$detail->title:''?>" placeholder="" id="title" name="title" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>作品集：</label>
+                            <div class="col-sm-9">
+                                <div style="" class="photolist">
+                                    <div data-type="0" class="content jq_photolist">
+                                        <div class="addimg">
+                                            <img onclick="$('#file').click();" src="/public/admin/img/add_img.png"/>
+                                            <input type="file" name="file" id="file" style="display:none;"/>
+                                            <div style=" margin-top: 10px; text-align: center;font-size: 14px; ">添加新图片
+                                            </div>
+                                        </div>
+                                        <?php foreach($photo as $val) {?>
+                                        <div class="imgitem">
+                                            <input type="hidden" name="imgs[]" value="<?=getImg($val->photo)?>">
+                                            <img src="/attachs/uploads/<?=getImg($val->photo)?>"/>
+                                            <div class="action">
+                                                <button type="button" class="jq_delete_imgitem btn btn-outline btn-danger">删除</button>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="imgitemtpl" type="text/html">
+    <div class="imgitem">
+        <input type="hidden" name="imgs[]" value="{{d.img}}">
+        <img src="<?php echo IMG_URL;?>{{d.img}}"/>
+        <div class="action">
+            <button type="button" class="jq_delete_imgitem btn btn-outline btn-danger">删除</button>
+        </div>
+    </div>
+</script>
+<script>
+    var day = '<?=date("Y-m-d",time());?>';
+    var imgurl = '<?php echo IMG_URL;?>';
+    var uploadUrl = '<?=url("upload.upload/index",["mdl"=>"toutiao_photo"])?>';
+    $(document).on("click", '.jq_delete_imgitem', function () {
+        var obj = $(this).parent().parent();
+        layer.confirm("您确定删除该图片么111", {
+            btn: ['确定', '取消'] //按钮
+        }, function () {
+            layer.closeAll();//关闭所有的窗口
+            obj.remove();
+        });
+    });
+</script>
+<script src="/public/admin/js/wxbupload.js"></script>

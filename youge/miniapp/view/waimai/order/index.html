@@ -1,0 +1,125 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+            <div class="alert alert-success">
+                           订单状态请添加手机管理员，在手机小程序上面会自动识别拥有最后一个后台按钮的访问权限，进行订单状态的操作！ 
+        </div>
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get"  action="<?=url('waimai.order/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>用户名:<input class="form-control" name="name" id="name"  value="<?=$search['name']?>" type="text"  placeholder="请输入用户名"  style=" width:200px"/></td>
+                                        <td>手机号:<input class="form-control" name="mobile" id="mobile"  value="<?=$search['mobile']?>" type="text"  placeholder="请输入手机号"  style=" width:200px"/></td>
+                                        <td>地址:<input class="form-control" name="address" id="address"  value="<?=$search['address']?>" type="text"  placeholder="请输入地址"  style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>用户ID</th>
+                                    <th>订单总价格</th>
+                                    <th>红包抵扣</th>
+                                    <th>在线支付</th>
+                                    <th>订单状态</th>
+                                    <th>用户名</th>
+                                    <th>手机号</th>
+                                    <th>地址</th>
+                                    <th>GPS地址</th>
+                                    <th>下单时间</th>
+                                    <th>下单IP</th>
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td><?=$val->order_id;?></td>
+                                        <td><?=$val->user_id;?></td>
+                                        <td><?=round($val->total_price/100,2)?></td>
+                                        <td><?=round($val->pay_hongbao/100,2)?></td>
+                                        <td><?=round($val->pay_money/100,2)?></td>
+                                        <td>
+                                            <?php if($val->status == 0){?>
+                                            <span class="label label-warning">等待支付</span>
+                                            <?php }?>
+                                            <?php if($val->status ==1){?>
+                                            <span class="label label-info ">等待审核</span>
+                                            <?php }?>
+                                            <?php if($val->status == 2){?>
+                                            <span class="label label-primary ">等待配送</span>
+                                            <?php }?>
+                                            <?php if($val->status == 4){?>
+                                            <span class="label">取消订单</span>
+                                            <?php }?>
+                                            <?php if($val->status == 0){?>
+                                            <span class="label label-success">订单已完成</span>
+                                            <?php }?>
+                                        </td>
+                                        <td><?=$val->name?></td>
+                                        <td><?=$val->mobile?></td>
+                                        <td><?=$val->address?></td>
+                                        <td><?=$val->gps_addr?></td>
+                                        <td><?=date("Y-m-d H:i:s",$val->add_time)?></td>
+                                        <td><?=$val->add_ip?></td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

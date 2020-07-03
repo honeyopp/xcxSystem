@@ -1,0 +1,154 @@
+<style>
+    .edit-a a{ margin-bottom: 2px;}
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('taocan.taocan/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>所在城市:
+                                            <input id="cityname" name="cityname" type="text" value="<?=input('get.cityname')?>" placeholder="请单击选择城市"  class="form-control"/>
+                                            <input type="hidden" value="<?=$search['city_id']?>" name="city_id" id="city_id">
+                                            <button id="city-btn" style="display: none" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/taocan.city/select')?>" class="btn btn-w-m btn-info">选择该城市</button>
+                                            <script>
+                                                $("#cityname").focus(function () {
+                                                    $("#city-btn").click();
+                                                })
+                                                function seleCity(city_name,city_id){
+                                                    layer.closeAll();
+                                                    layer.msg('操作成功！');
+                                                    $("#cityname").val(city_name);
+                                                    $("#city_id").val(city_id);
+                                                }
+                                            </script>
+                                        </td>
+                                        <td>导航(分类):
+                                            <select class="form-control" name="nav_id">
+                                                <option class="form-control" value="0">请选择</option>
+                                                <?php foreach($navs as $val) {?>
+                                                <option  <?=$search['nav_id'] == $val->nav_id ? 'selected' : ''?> class="form-control"  value="<?=$val->nav_id?>"><?=$val->nav_name?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
+                                        <td>所属商家:
+                                            <input id="storename" type="text" name="storename"   value="<?=input('storename')?>" placeholder="请单击选择商家"  class="form-control"/>
+                                            <input type="hidden" value="<?=$search['store_id']?>" name="store_id" id="store_id">
+                                            <button id="store-btn" style="display: none" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/taocan.store/select')?>" class="btn btn-w-m btn-info">选择商家</button>
+                                            <script>
+                                                $("#storename").focus(function () {
+                                                    $("#store-btn").click();
+                                                })
+                                                function seleStore(city_name,city_id){
+                                                    layer.closeAll();
+                                                    layer.msg('操作成功！');
+                                                    $("#storename").val(city_name);
+                                                    $("#store_id").val(city_id);
+                                                }
+                                            </script>
+                                        </td>
+                                        <td>套餐名称:<input class="form-control" name="taocan_name" id="taocan_name" value="<?=$search['taocan_name']?>" type="text" placeholder="请输入套餐名称" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加套餐管理" href="<?=url('taocan.taocan/create',['store_id'=>$search['store_id']])?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加套餐管理</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>所在城市</th>
+                                <th>导航(分类)</th>
+                                <th>套餐类型</th>
+                                <th>所属商家</th>
+                                <th>套餐名称</th>
+                                <th>负责人电话</th>
+                                <th>图片</th>
+                                <th>banner</th>
+                                <th>评分</th>
+                                <th>订单数</th>
+                                <th>好评数</th>
+                                <th>差评数</th>
+                                <th>起价</th>
+                                <th>地址</th>
+                                <th>排序</th>
+                                <th>热门</th>
+                                <th>是否上架</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?=$val->taocan_id ?></td>
+                                    <td><?=empty($citys[$val->city_id]) ? '' : $citys[$val->city_id]->city_name ?></td>
+                                    <td><?=empty($navs[$val->nav_id]) ? '' : $navs[$val->nav_id]->nav_name ?></td>
+                                    <td><?=empty(config('dataattr.taocantypenames')[$val->type] ) ? '' : config('dataattr.taocantypenames')[$val->type] ?></td>
+                                    <td><?=empty($stores[$val->store_id]) ? '' : $stores[$val->store_id]->store_name ?></td>
+                                    <td><?=$val->taocan_name?></td>
+                                    <td><?=$val->taocan_tel?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->banner?>"/></td>
+                                    <td><?=round($val->score/10)?>分</td>
+                                    <td><?=$val->order_num?>个</td>
+                                    <td><?=$val->praise_num?>个</td>
+                                    <td><?=$val->bad_num?>个</td>
+                                    <td>￥<?=sprintf("%.2f",$val->price/100)?>元</td>
+                                    <td><textarea><?=$val->address?></textarea></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td><?=$val->is_hot == 1 ? '<span class="label label-primary">是</span>' : '<span class="label label-warning">否</span>'?></td>
+                                    <td><?=$val->is_online == 1 ? '<span class="label label-primary">是</span>' : '<span class="label label-warning">否</span>'?></td>
+
+                                    <td style="width: 16%"  class="edit-a">
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑套餐管理" href="<?=url('taocan.taocan/edit','taocan_id='.$val->taocan_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="<?=$val->is_online ==1 ? '下架套餐' : '上架套餐'?>" mini="act" href="<?=url('taocan.taocan/online','taocan_id='.$val->taocan_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i><?=$val->is_online ==1 ? '下架套餐' : '上架套餐'?></a>
+                                            <a title="套餐内容" href="<?=url('/miniapp/taocan.package/index','taocan_id='.$val->taocan_id . '&taocanname=' . $val->taocan_name)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>套餐内容管理</a>
+                                            <a title="周边推荐设置" mini="load" w="80%" h="80%"  href="<?=url('taocan.taocan/destination','taocan_id='.$val->taocan_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>周边推荐设置</a>
+                                            <a title="相册管理" mini="load" w="80%" h="80%" href="<?=url('taocan.taocan/photo','taocan_id='.$val->taocan_id)?>" class="btn btn-xs btn-info"><i class=" fa  fa-photo  bigger-120"></i>相册管理</a>
+                                            <a title="套餐评论" href="<?=url('taocan.comment/index','taocan_id='.$val->taocan_id . '&taocanname=' . $val->taocan_name)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>套餐评论</a>
+                                            <a title="价格设置" mini="load" w="80%" h="80%"  href="<?=url('/miniapp/taocan.taocan/price','taocan_id='.$val->taocan_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-rmb bigger-120"></i>价格设置</a>
+                                            <a title="删除套餐管理" mini="act" href="<?=url('taocan.taocan/delete','taocan_id='.$val->taocan_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

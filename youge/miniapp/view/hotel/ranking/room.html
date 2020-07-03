@@ -1,0 +1,120 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('hotel.ranking/room')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                    <tr>
+                                        <td style="width: 300px;">
+                                            酒店:
+                                            <input id="hotelname" type="text" name="hotelname"  value="<?=input('get.hotelname')?>" placeholder="请单击选择酒店"  class="form-control"/>
+                                            <input type="hidden" value="<?=$search['hotel_id']?>" name="hotel_id" id="hotel_id">
+                                            <button id="show-btn" style="display: none" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/hotel.hotel/select')?>" class="btn btn-w-m btn-info">选择酒店</button>
+                                            <script>
+                                                $("#hotelname").focus(function () {
+                                                    $("#show-btn").click();
+                                                })
+                                                function seleHotel(hotel_name,hotel_id){
+                                                    layer.closeAll();
+                                                    layer.msg('操作成功！');
+                                                    $("#hotelname").val(hotel_name);
+                                                    $("#hotel_id").val(hotel_id);
+                                                }
+                                            </script>
+                                        </td>
+                                        <td>开始时间<input name="bg_time" class="form-control layer-date" id="bg_time"
+                                                       value="<?=$search['bg_date']?>" type="text"
+                                                       onclick="laydate({istime: false, format: 'YYYY-MM-DD'})"
+                                                       placeholder="输入开始时间" style=" width:200px"/></td>
+                                        <td>结束时间<input name="end_time" class="form-control layer-date" id="end_time"
+                                                       value="<?=$search['end_date']?>" type="text"
+                                                       onclick="laydate({istime: false, format: 'YYYY-MM-DD'})"
+                                                       placeholder="输入结束时间" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="wrapper wrapper-content animated fadeInRight">
+
+                        <div class="ibox-content m-b-sm border-bottom">
+                            <div class="p-xs">
+                                <div class="pull-left col-sm-5 text-right">
+                                    <i class="fa fa-globe text-navy mid-icon"></i>
+                                </div>
+                                <h2>房间销量排名</h2>
+                            </div>
+                        </div>
+                        <div class="ibox-content forum-container">
+                            <?php foreach($data as $val) { ?>
+                            <div class="forum-item active">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="forum-icon">
+                                            <i style="color: <?=$val['corlor']?> " class="fa jinse fa-trophy"></i>
+                                        </div>
+                                        <div class="forum-sub-title">
+                                            <h1 class="forum-item-title"><?=$val['room_name']?></h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 forum-info">
+                                        <span class="views-number" style="color: #c0c0c0">
+                                            所属酒店 ：<?=$val['hotel_name']?>
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-1 forum-info">
+                                        <span class="views-number">
+                                            第<?=$val['level']?>名
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-1 forum-info">
+                                        <span class="views-number">
+                                            <?=$val['num']?>
+                                        </span>
+                                        <div>
+                                            <small>订单数</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div>
+                        <?php echo $page ?>
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.main-container -->
+        </div>
+    </div>
+</div>
+

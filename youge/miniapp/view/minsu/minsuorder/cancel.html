@@ -1,0 +1,47 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('minsu.minsuorder/cancel',['order_id'=>$order_id])?>" id="form-create" method="post" class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>拒绝方：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input  <?=$order->cancel_type == 1 ? 'checked' : ''?> name="cancel_type" value="1" type="radio" > <i></i> 会员拒绝</label>
+                                    <label>
+                                        <input  <?=$order->cancel_type == 2 ? 'checked' : ''?> name="cancel_type"  value="2" type="radio"  > <i></i> 酒店拒绝</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>拒绝理由：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($order->cancel_info)?$order->cancel_info:''?>"
+                                       placeholder="为什么拒绝此订单呢" id="cancel_info" name="cancel_info" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">回退金额：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="" placeholder="回退金额不得大于已支付金额 为 0 则不会退任何金额" id="money" name="money" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    确认
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

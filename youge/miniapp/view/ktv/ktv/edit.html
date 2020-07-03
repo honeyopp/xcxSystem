@@ -1,0 +1,59 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('ktv.ktv/edit',['member_miniapp_id'=>$detail->member_miniapp_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>经度：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lat)?$detail->lat:''?>" placeholder="" id="lat" name="lat"  class="form-control" /> 经度
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>纬度：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lng)?$detail->lng:''?>" placeholder="" id="lng" name="lng"  class="form-control" /> 纬度
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>地址：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->address)?$detail->address:''?>" placeholder="" id="address" name="address"  class="form-control" /> 地址
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>营业时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->trade)?$detail->trade:''?>" placeholder="" id="trade" name="trade"  class="form-control" /> 营业时间
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系方式：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->tel)?$detail->tel:''?>" placeholder="" id="tel" name="tel"  class="form-control" /> 联系方式
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>介绍：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->introduce)?$detail->introduce:''?>" placeholder="" id="introduce" name="introduce"  class="form-control" /> 介绍
+    </div>
+ </div>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

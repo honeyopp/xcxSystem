@@ -1,0 +1,41 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-info alert-dismissable text-center">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                    这里选择该酒店所在的区域 请根据实际位置选择区域  可以不填写
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('/miniapp/minsu.minsu/region',['minsu_id'=>$minsu->minsu_id])?>" id="form-create" method="post" class="form-horizontal" role="form">
+                        <?php  foreach($region as $k=>$v) { ?>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><?=empty(config('dataattr.regionnames')[$k]) ? '' :  config('dataattr.regionnames')[$k] ?>：</label>
+                            <div class="col-sm-3">
+                                <select class="form-control" name="<?=empty(config('dataattr.regionfield')[$k]) ? '' : config('dataattr.regionfield')[$k] ?>_id">
+                                    <option class="form-control" >请选择</option>
+                                    <?php   foreach($v as $val) { ?>
+                                        <?php $file = empty(config('dataattr.regionnames')[$k]) ? '' :  config('dataattr.regionfield')[$k] . '_id'; ?>
+                                       <option  <?=$minsu->$file == $val->region_id ? 'selected' : ''?> value="<?=$val->region_id?>" class="form-control" ><?=$val->region_name?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <?php } ?>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div></div>
+        </div>
+    </div>
+</div>

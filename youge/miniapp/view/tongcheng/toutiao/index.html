@@ -1,0 +1,111 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('tongcheng.toutiao/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>分类ID:
+                                            <select class="form-control" name="nav_id" id="nav_id">
+                                                <option value="0">请选择</option>
+                                                <?php foreach($nav as $val){?>
+                                                <option
+                                                <?php if($search['nav_id']==$val->nav_id) echo
+                                                'selected="selected"';?>value="<?=$val->nav_id;?>"><?=$val->
+                                                nav_name;?></option>
+                                                <?php }?>
+                                            </select>
+                                        </td>
+                                        <td>头条标题:<input class="form-control" name="title" id="title"
+                                                        value="<?=$search['title']?>" type="text" placeholder="请输入头条标题"
+                                                        style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a href="<?=url('tongcheng.toutiao/create2');?>" class="btn btn-primary">发布文章</a>
+                    </div>
+                </div>
+            <div class="table-responsive">
+                <table id="simple-table" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>类型</th>
+                        <th>分类ID</th>
+                        <th>头条标题</th>
+                        <th>作者</th>
+                        <th>评论数</th>
+                        <th>流量</th>
+                        <th>转发</th>
+                        <th>发布时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <form id="mini_list">
+                        <tbody>
+                        <?php foreach($list as $val){ ?>
+                        <tr>
+                            <td><?= $val->toutiao_id ?></td>
+                            <td><?=$val->type==1?'文章':'视频';?></td>
+                            <td><?=isset($nav[$val->nav_id])?$nav[$val->nav_id]['nav_name']:'未归类';?></td>
+                            <td><?=$val->title?></td>
+                            <td><?=$val->author?></td>
+                            <td><?=$val->comment_num?></td>
+                            <td><?=$val->views?></td>
+                            <td><?=$val->share_num;?></td>
+                            <td><?=date('Y-m-d H:i:s',$val->add_time);?></td>
+                            <td>
+                                <div class="hidden-sm hidden-xs btn-group">
+                                    <?php if($val->type==2){?>
+                                    <a title="编辑头条"
+                                       href="<?=url('tongcheng.toutiao/edit','toutiao_id='.$val->toutiao_id)?>"
+                                       class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                    <?php }else{?>
+                                    <a title="编辑头条"
+                                       href="<?=url('tongcheng.toutiao/edit2','toutiao_id='.$val->toutiao_id)?>"
+                                       class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                    <?php }?>
+                                    <a title="删除头条" mini="act"
+                                       href="<?=url('tongcheng.toutiao/delete','toutiao_id='.$val->toutiao_id)?>"
+                                       class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                        </tbody>
+                    </form>
+                </table>
+                <div>
+                    <?php echo $page; ?>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.main-container -->
+    </div>
+</div>
+</div>
+</div>

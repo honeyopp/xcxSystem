@@ -1,0 +1,175 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('setting.region/create')?>" id="form-create" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>区域名称：</label>
+                            <div class="col-sm-9"><input type="text" value="<?=isset($detail->region_name)?$detail->region_name:''?>" placeholder="" id="region_name" name="region_name" class="form-control"/></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>类型：</label>
+                            <div class="col-sm-9">
+                                  <select name="type" class="form-control">
+                                      <?php foreach(config("dataattr.regionnames") as $key=>$val ) : ?>
+                                            <option  <?=$type == $key ? 'selected' : ''?> class="form-control" value="<?=$key?>"><?=$val?></option>
+                                      <?php endforeach ?>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>城市：</label>
+                            <div class="col-sm-6">
+                                <input id="cityname" type="text" disabled style="background-color: transparent;" value="<?=empty($city) ? '' : $city->city_name?>" placeholder=""  class="form-control"/>
+                                <input type="hidden" value="<?=empty($city) ? '' : $city->city_id?>" name="city_id" id="city_id">
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/setting.city/select')?>" class="btn btn-w-m btn-info">选择该城市</button>
+                            </div>
+                            <script>
+                                function seleCity(city_name,city_id){
+                                    layer.closeAll();
+                                    layer.msg('操作成功！');
+                                    $("#cityname").val(city_name);
+                                    $("#city_id").val(city_id);
+                                }
+                            </script>
+                        </div>
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>图片：</label>
+                            <div class="col-sm-9 ">
+
+                                <div id="uploader-demo" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="photoList" class="uploader-list">
+                                        <?php if(isset($detail['photo'])){?>
+                                        <div class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['photo']?>"><input type="hidden" value="<?=$detail['photo']?>" name="photo" id="photo">
+                                        </div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="photoPicker">选择图片</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            var uploaderphoto = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"city_photo"])?>',
+                                pick: '#photoPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderphoto.on('fileQueued', function (file) {
+                                var $li = $(
+                                        '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                        '<img>' +
+                                        '<input type="hidden" value="" name="photo" id="photo">' +
+                                        '<div class="info">' + file.name + '</div>' +
+                                        '</div>'
+                                    ),
+                                    $img = $li.find('img');
+                                // $list为容器jQuery实例
+                                $("#photoList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderphoto.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderphoto.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderphoto.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#photo").val(response._raw);
+                            });
+                            // 文件上传失败，显示上传出错。
+                            uploaderphoto.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderphoto.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>经度纬度：</label>
+                            <div class="col-sm-3"  style="margin-right: 0; padding-right: 0;">
+                                <input type="text" readonly style="background-color: transparent;" class="form-control"  value="<?=isset($detail->lat)?$detail->lat:'';?>" placeholder="" id="lat" name="lat"/>
+                            </div>
+                            <div class="col-sm-1" style="margin: 0;padding: 0;width: 1rem; line-height: 3rem">--</div>
+                            <div class="col-sm-3" style="margin-left: 0; padding-left: 0;" >
+                                <input type="text"  readonly style="background-color: transparent;" class="form-control" value="<?=isset($detail->lng)?$detail->lng:'';?>" placeholder="" id="lng" name="lng"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button"  mini="load" w="1000px" h="800px" href="<?=url('index/map',['callback'=>'showLatLng']);?>?lat=<?=isset($detail->lat)?$detail->lat:'0';?>&lng=<?=isset($detail->lng)?$detail->lng:'0';?>" class="btn btn-w-m btn-info">选择地址</button>
+                            </div>
+                                <script>
+                                    function showLatLng(lat,lng,address){
+                                        layer.closeAll();
+                                        layer.msg('选取经纬度成功！');
+                                        $("#lat").val(lat);
+                                        $("#lng").val(lng);
+                                        $("#gps_name").val(address);
+                                    }
+                                </script>
+                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>定位地址：</label>
+                            <div class="col-sm-9">
+                                <input type="text" readonly style="background-color: transparent;"  value="<?=isset($detail->gps_name)?$detail->gps_name:''?>" placeholder="" id="gps_name" name="gps_name" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

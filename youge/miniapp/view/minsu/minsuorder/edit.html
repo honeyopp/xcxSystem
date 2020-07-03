@@ -1,0 +1,170 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('hotel.hotelorder/edit',['order_id'=>$detail->order_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">小程序：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_miniapp_id)?$detail->member_miniapp_id:''?>" placeholder="" id="member_miniapp_id" name="member_miniapp_id"  class="form-control" /> 小程序id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">类型：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->type)?$detail->type:''?>" placeholder="" id="type" name="type"  class="form-control" /> 1酒店2民宿
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">会员：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->user_id)?$detail->user_id:''?>" placeholder="" id="user_id" name="user_id"  class="form-control" /> 会员
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">酒店：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->hotel_id)?$detail->hotel_id:''?>" placeholder="" id="hotel_id" name="hotel_id"  class="form-control" /> 酒店id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">房间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->room_id)?$detail->room_id:''?>" placeholder="" id="room_id" name="room_id"  class="form-control" /> 房源id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">房间数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->room_num)?$detail->room_num:''?>" placeholder="" id="room_num" name="room_num"  class="form-control" /> 房间数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">人数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->person_num)?$detail->person_num:''?>" placeholder="" id="person_num" name="person_num"  class="form-control" /> 人数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">支付方式：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_type)?$detail->pay_type:''?>" placeholder="" id="pay_type" name="pay_type"  class="form-control" /> 1余额支付 2微信支付 3线下支付
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">总价格：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->total_price)?$detail->total_price:''?>" placeholder="" id="total_price" name="total_price"  class="form-control" /> 一共需要支付
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">实际支付：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_money)?$detail->pay_money:''?>" placeholder="" id="pay_money" name="pay_money"  class="form-control" /> 已支付余额
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">优惠券：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_juan)?$detail->pay_juan:''?>" placeholder="" id="pay_juan" name="pay_juan"  class="form-control" /> 优惠券
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">优惠券id：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pay_juan_id)?$detail->pay_juan_id:''?>" placeholder="" id="pay_juan_id" name="pay_juan_id"  class="form-control" /> 优惠卷id
+    </div>
+ </div>
+<div class="form-group">
+   <label class="col-sm-3 control-label">支付时间：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->pay_time)?date('Y-m-d H:i:s',$detail->pay_time):'0'?>"   name="pay_time" id="pay_time"  class="laydate-icon form-control layer-date">
+       支付时间
+   </div>
+</div>
+<script>
+ laydate({
+    elem: '#pay_time',
+    event: 'focus' ,
+    format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">联系人姓名：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name"  class="form-control" /> 联系人姓名
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">联系人手机：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile"  class="form-control" /> 联系人手机
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">是否以评论：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->is_comment)?$detail->is_comment:''?>" placeholder="" id="is_comment" name="is_comment"  class="form-control" /> 是否评论
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">状态：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->status)?$detail->status:''?>" placeholder="" id="status" name="status"  class="form-control" /> 0未支付 1等待入住 2 取消订单 8完成
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">入住时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->check_in_time)?$detail->check_in_time:''?>" placeholder="" id="check_in_time" name="check_in_time"  class="form-control" /> 入住时间
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">离店时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->leave_time)?$detail->leave_time:''?>" placeholder="" id="leave_time" name="leave_time"  class="form-control" /> 离店时间
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">取消方：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->cancel_type)?$detail->cancel_type:''?>" placeholder="" id="cancel_type" name="cancel_type"  class="form-control" /> 1用户取消2:商户取消
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">取消时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->cancel_time)?$detail->cancel_time:''?>" placeholder="" id="cancel_time" name="cancel_time"  class="form-control" /> 取消时间
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">取消原因：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->cancel_info)?$detail->cancel_info:''?>" placeholder="" id="cancel_info" name="cancel_info"  class="form-control" /> 取消时间
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">是否删除：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->is_delete)?$detail->is_delete:''?>" placeholder="" id="is_delete" name="is_delete"  class="form-control" /> 1：会员订单不显示
+    </div>
+ </div>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

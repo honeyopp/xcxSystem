@@ -1,0 +1,91 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('shop2.goods/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input  value="<?=$search['goods_name']?>" name="goods_name" class="form-control" placeholder="请输入产品名称">
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 10%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加商品管理" href="<?=url('shop2.goods/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加商品管理</a>
+                    </div>
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>商品分类</th>
+                                <th>商品名称</th>
+                                <th>商品图片</th>
+                                <th>赠送积分</th>
+                                <th>最大使用积分</th>
+                                <th>销量</th>
+                                <th>是否包邮</th>
+                                <th>是否上架</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->goods_id ?></td>
+                                    <td><?=empty($category[$val->category_id]) ? '' : $category[$val->category_id]->type_name ?></td>
+                                    <td><textarea><?=$val->goods_name?></textarea></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=$val->give_integral?></td>
+                                    <td><?=$val->user_integral?></td>
+                                    <td><?=$val->sales_volume?></td>
+                                    <td><?=$val->is_mail == 1 ? '<span class="label label-success">是</span>' : '<span class="label label-info">否</span>'?></td>
+                                    <td><?=$val->is_online == 1 ? '<span class="label label-success">上架中</span>' : '<span class="label label-info">下架产品</span>'?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑商品管理" href="<?=url('shop2.goods/edit','goods_id='.$val->goods_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除商品管理" mini="act" href="<?=url('shop2.goods/delete','goods_id='.$val->goods_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('zhuangxiu.cases/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>标题:<input class="form-control" name="title" id="title" value="<?=$search['title']?>" type="text" placeholder="请输入标题" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加效果图设置" href="<?=url('zhuangxiu.cases/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加效果图设置</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>风格分类</th>
+                                <th>空间分类</th>
+                                <th>色系主题分类</th>
+                                <th>标题</th>
+                                <th>封面</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->case_id ?></td>
+                                    <td><?=empty($cats[$val->cat_id]) ? '' : $cats[$val->cat_id]->cat_name?></td>
+                                    <td><?=empty($spaces[$val->space_id]) ? '' : $spaces[$val->space_id]->space_name?></td>
+                                    <td><?=empty($colors[$val->color_id]) ? '' : $colors[$val->color_id]->color_name?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=getImg($val->photo)?>"/></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="图册"  mini="load" w="80%" h="80%" href="<?=url('zhuangxiu.cases/photo','case_id='.$val->case_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>图册</a>
+                                            <a title="编辑效果图设置" href="<?=url('zhuangxiu.cases/edit','case_id='.$val->case_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a  title="删除效果图设置" mini="act" href="<?=url('zhuangxiu.cases/delete','case_id='.$val->case_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

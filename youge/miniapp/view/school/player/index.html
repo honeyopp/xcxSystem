@@ -1,0 +1,104 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('school.player/index',['vote_id'=>$vote_id])?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>选手名称:<input class="form-control" name="player_name" id="player_name"
+                                                        value="<?=$search['player_name']?>" type="text"
+                                                        placeholder="请输入选手名称" style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加选手" href="<?=url('school.player/create',['vote_id'=>$vote_id])?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加选手</a>
+                    </div>
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>选手名称</th>
+                                <th>选手图片</th>
+                                <th>介绍</th>
+                                <th>投票数</th>
+                                <th>浏览数</th>
+                                <th>编号</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->vote_id ?></td>
+                                    <td><?=$val->player_name?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><textarea><?=$val->introduce?></textarea></td>
+                                    <td><?=$val->vote_num?></td>
+                                    <td><?=$val->view_num?></td>
+                                    <td><?=$val->number?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑"
+                                               href="<?=url('school.player/edit','vote_id='.$val->vote_id)?>"
+                                               class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除选手" mini="act"
+                                               href="<?=url('school.player/delete','vote_id='.$val->vote_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('service.skill/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 <td>名称:<input class="form-control" name="name" id="name"  value="<?=$search['name']?>" type="text"  placeholder="请输入名称"  style=" width:200px"/></td>
+
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加阿姨技能" href="<?=url('service.skill/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加阿姨技能</a>
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>名称</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td><?= $val->skill_id ?></td>
+                                        <td><?=$val->name?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑阿姨技能"  href="<?=url('service.skill/edit','skill_id='.$val->skill_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除阿姨技能" mini="act"  href="<?=url('service.skill/delete','skill_id='.$val->skill_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

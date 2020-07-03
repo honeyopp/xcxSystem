@@ -1,0 +1,250 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('nongjialegw.package/create')?>" id="form-create" method="post"
+                          class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>所属套餐：</label>
+                            <div class="col-sm-6">
+                                <input id="taocanname" type="text" disabled style="background-color: transparent;" value="<?=empty($taocan) ? '' : $taocan->taocan_name ?>" placeholder="请单击选择套餐"  class="form-control"/>
+                                <input type="hidden" value="<?=empty($taocan) ? '' : $taocan->taocan_id ?>" name="taocan_id" id="taocan_id">
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/nongjialegw.taocan/select')?>" class="btn btn-w-m btn-info">选择套餐</button>
+                            </div>
+                            <script>
+                                function seleTaocan(city_name,city_id){
+                                    layer.closeAll();
+                                    layer.msg('操作成功！');
+                                    $("#taocanname").val(city_name);
+                                    $("#taocan_id").val(city_id);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>标题：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->title)?$detail->title:''?>" placeholder=""
+                                       id="title" name="title" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>单日预定最大数：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->day_num)?$detail->day_num:''?>" placeholder=""
+                                       id="day_num" name="day_num" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>列表缩略图：</label>
+                            <div class="col-sm-9 ">
+                                <div id="uploader-demo" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="photoList" class="uploader-list">
+                                        <?php if(isset($detail['photo'])){?>
+                                        <div class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['photo']?>"><input type="hidden" value="<?=$detail['photo']?>" name="photo" id="photo"></div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="photoPicker">选择图片</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+
+
+                            var uploaderphoto = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"package_photo"])?>',
+                                pick: '#photoPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderphoto.on('fileQueued', function (file) {
+                                var $li = $(
+                                        '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                        '<img>' +
+                                        '<input type="hidden" value="" name="photo" id="photo">' +
+                                        '<div class="info">' + file.name + '</div>' +
+                                        '</div>'
+                                    ),
+                                    $img = $li.find('img');
+
+
+                                // $list为容器jQuery实例
+                                $("#photoList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderphoto.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+
+
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderphoto.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderphoto.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#photo").val(response._raw);
+                            });
+
+                            // 文件上传失败，显示上传出错。
+                            uploaderphoto.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderphoto.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>日常价格：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->price)?$detail->price:''?>" placeholder=""
+                                       id="price" name="price" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否可以取消：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_cancel" id="is_cancel" value="1" type="radio" <?php if(isset($detail->is_cancel)&&$detail->is_cancel==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_cancel" id="is_cancel" value="0" type="radio" <?php if(isset($detail->is_cancel)&&$detail->is_cancel==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否可以改签：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_changes" id="is_changes" value="1"
+                                               type="radio" <?php if(isset($detail->is_changes)&&
+                                        $detail->is_changes==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_changes" id="is_changes" value="0"
+                                               type="radio" <?php if(isset($detail->is_changes)&&
+                                        $detail->is_changes==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>详情说明：</label>
+                            <div class="col-sm-9">
+                                <textarea name="details" placeholder="说点什么...最少输入10个字符" id="details" cols="50" rows="10"
+                                          class="form-control"><?=isset($detail->
+                                    details)?$detail->details:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>特别说明：</label>
+                            <div class="col-sm-9">
+                                <textarea name="especially" placeholder="说点什么...最少输入10个字符" id="especially" cols="50"
+                                          rows="10" class="form-control"><?=isset($detail->
+                                    especially)?$detail->especially:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>退订规则：</label>
+                            <div class="col-sm-9">
+                                <textarea name="cancel" placeholder="说点什么...最少输入10个字符" id="cancel" cols="50" rows="10"
+                                          class="form-control"><?=isset($detail->cancel)?$detail->cancel:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>改签政策：</label>
+                            <div class="col-sm-9">
+                                <textarea name="changes" placeholder="说点什么...最少输入10个字符" id="changes" cols="50" rows="10"
+                                          class="form-control"><?=isset($detail->
+                                    changes)?$detail->changes:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否上架：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_online" id="is_online" value="1"
+                                               type="radio" <?php if(isset($detail->is_online)&&
+                                        $detail->is_online==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_online" id="is_online" value="0"
+                                               type="radio" <?php if(isset($detail->is_online)&&
+                                        $detail->is_online==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button  mini="submit" for="form-create" class="btn btn-info" type="submit">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

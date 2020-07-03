@@ -1,0 +1,278 @@
+<link href="/public/admin/css/uploadwxb.css" rel="stylesheet">
+<script src="/public/common/ajaxfileupload.js"></script>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('service.nanny/create')?>" id="form-create" method="post" class="form-horizontal" role="form">
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>头像：</label>
+                            <div class="col-sm-9 ">
+                                <div id="uploader-demo" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="photoList" class="uploader-list">
+                                        <?php if(isset($detail['photo'])){?>
+                                        <div class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['photo']?>"><input type="hidden" value="<?=$detail['photo']?>" name="photo" id="photo">
+                                        </div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="photoPicker">选择图片</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+
+
+                            var uploaderphoto = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"nanny_photo"])?>',
+                                pick: '#photoPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderphoto.on('fileQueued', function (file) {
+                                var $li = $(
+                                    '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                    '<img>' +
+                                    '<input type="hidden" value="" name="photo" id="photo">' +
+                                    '<div class="info">' + file.name + '</div>' +
+                                    '</div>'
+                                    ),
+                                    $img = $li.find('img');
+
+
+                                // $list为容器jQuery实例
+                                $("#photoList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderphoto.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+
+
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderphoto.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderphoto.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#photo").val(response._raw);
+                            });
+
+                            // 文件上传失败，显示上传出错。
+                            uploaderphoto.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderphoto.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>名称：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->name)?$detail->name:''?>" placeholder="阿姨的称呼" id="name" name="name" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">年龄：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->age)?$detail->age:''?>" placeholder="年龄" id="age" name="age" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">籍贯：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->place)?$detail->place:''?>" placeholder="籍贯" id="place" name="place" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">现居住地：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->home)?$detail->home:''?>" placeholder="现居住地" id="home" name="home" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">工作经验：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->work)?$detail->work:''?>" placeholder="工作经验 单位:年" id="work" name="work" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">学历：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->education)?$detail->education:''?>" placeholder="学历" id="education" name="education" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">民族：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->nation)?$detail->nation:''?>" placeholder="民族" id="nation" name="nation" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">已有证件：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->certificates)?$detail->certificates:''?>" placeholder="如：健康证、母婴护理证" id="certificates" name="certificates" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>价格：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->prie)?$detail->prie:''?>" placeholder="价格" id="prie" name="prie" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>该价格
+                                服务多少天：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->day)?$detail->day:''?>" placeholder="该价格服务的天数 如：价格 10 元 服务天数 12 天 则显示 10元/12天" id="day" name="day" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>预约需要支付的价格：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->yv_price)?$detail->yv_price:''?>" placeholder="预约此阿姨是需要支付多少元不可为0 最低1元" id="yv_price" name="yv_price" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>阿姨相册：</label>
+                            <div class="col-sm-9">
+                                <div style="" class="photolist">
+                                    <div data-type="0" class="content jq_photolist">
+                                        <div class="addimg">
+                                            <img onclick="$('#file').click();" src="/public/admin/img/add_img.png"  />
+                                            <input type="file" name="file" id="file" style="display:none;"/>
+                                            <div style=" margin-top: 10px; text-align: center;font-size: 14px; ">添加新图片</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>分类：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="category_id" id="category_id">
+                                    <option value="0">请选择</option>
+                                    <?php foreach($category as $val) { ?>
+                                    <option value="<?=$val->category_id?>"><?=$val->name?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">类型：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="type" id="type">
+                                      <option value="0">请选择</option>
+                                        <?php foreach(config('dataattr.jzaytype') as $key=>$val)  {?>
+                                    <option value="<?=$key?>"><?=$val?></option>
+                                        <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>技能：</label>
+                            <div class="col-sm-9">
+                                <div class="checkbox i-checks">
+                                    <?php foreach($skilpid as $val) { ?>
+                                    <p><?=$val->name?></p>
+                                    <?php if(!empty($skilarray[$val->skill_id])) { ?>
+                                      <?php $i=0; foreach($skilarray[$val->skill_id] as $v) {$i++;  ?>
+                                    <label><input type="checkbox" value="<?=$v->skill_id?>" name="skill[]"><?=$v->name?></label><?=$i%5 == 0 ? '<br>' : '';?>
+                                    <?php } } } ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">综合评价：</label>
+                            <div class="col-sm-9">
+                                <textarea name="evaluate" placeholder="说点什么...最少输入10个字符" id="evaluate" cols="50" rows="10" class="form-control"><?=isset($detail->evaluate)?$detail->evaluate:''?></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>预约数：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->prie)?$detail->prie:''?>" placeholder="可以填写一个虚拟预约数 当然也会实际增长" id="yvyue_num" name="yvyue_num" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">排序：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->orderby)?$detail->orderby:''?>" placeholder="" id="orderby" name="orderby" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="imgitemtpl" type="text/html">
+<div class="imgitem">
+    <input type="hidden"  name="imgs[]" value="{{d.img}}">
+    <img src="<?php echo IMG_URL;?>{{d.img}}"  />
+    <div class="action">
+        <button type="button"  class="jq_delete_imgitem btn btn-outline btn-danger">删除</button>
+    </div>
+</div>
+</script>
+<script>
+var day = '<?=date("Y-m-d",time());?>';
+var imgurl = '<?php echo IMG_URL;?>';
+var uploadUrl = '<?=url("upload.upload/index",["mdl"=>"toutiao_photo"])?>';
+</script>
+<script src="/public/admin/js/wxbupload.js"></script>

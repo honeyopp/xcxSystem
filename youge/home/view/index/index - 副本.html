@@ -1,0 +1,92 @@
+
+<!-- 广告位置-->
+<link rel="stylesheet" href="/public/home/css/index.css?v=201708230932"/>
+
+<div class="flashBox">
+    <div class="swiper-container" style="height: 500px; margin-top: -3px;" id="swiper-container-id">
+        <div class="swiper-wrapper">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=67930603&site=qq&menu=yes" style="background: url('/public/home/banner/baner0919.png') no-repeat top center;" class="swiper-slide swiper-slide-1"></a>
+           <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=67930603&site=qq&menu=yes" style="background: url('/public/home/banner/1.png') no-repeat top center;" class="swiper-slide swiper-slide-1"></a>
+           <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=67930603&site=qq&menu=yes" style="background: url('/public/home/banner/2.png')  no-repeat top center;" class="swiper-slide swiper-slide-2"></a>
+           <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=67930603&site=qq&menu=yes" style="background: url('/public/home/banner/3.png')  no-repeat top center;" class="swiper-slide swiper-slide-3"></a>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" style="margin-bottom: 26px;"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/public/home/plugs/swiper/dist/js/swiper.min.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        //grabCursor : true,
+        hashnav: false,
+        keyboardControl: true,
+        simulateTouch: false,
+        paginationClickable: true,
+
+        spaceBetween: 0,
+        loop: true,
+        speed: 600,
+        autoplay: 2000,
+        autoplayDisableOnInteraction: false
+    });
+    $(function () {
+        $('#swiper-container-id').mousemove(function () {
+            swiper.stopAutoplay();
+        })
+        $('#swiper-container-id').mouseleave(function () {
+            swiper.startAutoplay();
+        })
+    });
+</script>
+
+<div class="baottms_wrap clearfix">
+    <div class="ms_wrap clearfix">
+        <div class="ms_layer">应用大厅</div>
+    </div>
+    <div class="ms_topwrap clearfix">
+        <div class="ms_content clearfix">
+            <ul>
+                  <ul>
+                <?php foreach($list as $val) { ?>
+                <li>
+                    <?php if(!empty($val->qrcode)){?>
+                    <div style="display: none;" class="wxb_app_qrcode">
+                          <a  href="<?=url('/home/shop/detail',['miniapp_id'=>$val->miniapp_id])?>" >
+                            <img width="200" src="/attachs/uploads/<?=getImg($val->qrcode)?>"/>
+                             </a>
+                        </div>
+                    <?php }?>
+                
+                    <div class="wxb_app_img">
+                       <a  href="<?=url('/home/shop/detail',['miniapp_id'=>$val->miniapp_id])?>" >
+                           <img src="/attachs/uploads/<?=getImg($val->photo)?>" style="width: 280px; height: 188px;"></img>
+                        </a>
+                    </div>
+                    <div class="wxb_app_header">
+                        <div class="title overflow_clear"><a  href="<?=url('/home/shop/detail',['miniapp_id'=>$val->miniapp_id])?>" ><?=$val->title?></a></div>
+                        <a class="use" href="<?=url('/home/shop/detail',['miniapp_id'=>$val->miniapp_id])?>" >使用
+                    </div>
+                    <div class="wxb_app_details">
+                        <?=$val->describe?>
+                    </div>
+                    
+                </li>
+                <?php } ?>
+          
+            </ul>
+            <script>
+                $(".ms_content li").mouseover(function(){
+                    $(this).find('.wxb_app_qrcode').show();
+                }).mouseout(function(){
+                    $(this).find('.wxb_app_qrcode').hide();
+                });
+            </script>
+          
+            </ul>
+        </div>
+    </div>
+</div>
+
+

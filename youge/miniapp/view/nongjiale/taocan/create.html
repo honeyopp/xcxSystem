@@ -1,0 +1,469 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form action="<?=url('nongjiale.taocan/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+                    
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>所在城市：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->city_id)?$detail->city_id:''?>" placeholder="" id="city_id" name="city_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>游玩类型：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->nav_id)?$detail->nav_id:''?>" placeholder="" id="nav_id" name="nav_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>产品类型：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->type_id)?$detail->type_id:''?>" placeholder="" id="type_id" name="type_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>标题：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->title)?$detail->title:''?>" placeholder="" id="title" name="title"  class="form-control" /> 
+    </div>
+ </div>
+<link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+<script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+
+
+
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>图片：</label>
+    <div class="col-sm-9 ">      
+        
+        <div id="uploader-demo" style="max-width: 300px">
+            <!--用来存放item-->
+            <div id="photoList" class="uploader-list">
+                <?php if(isset($detail['photo'])){?>
+                <div  class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['photo']?>"><input type="hidden" value="<?=$detail['photo']?>" name="photo" id="photo"></div>
+                <?php }?>
+            </div>
+            <div id="photoPicker">选择图片</div>
+        </div>
+
+           
+    </div>
+</div>    
+        
+ 
+<script>
+
+
+    
+var uploaderphoto = WebUploader.create({
+    auto: true,
+    swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+    server: '<?=url("upload.upload/index",['mdl'=>"taocan_photo"])?>',
+    pick: '#photoPicker',
+    resize : false,  
+    duplicate :true
+});
+
+$(document).on('click','.file-item',function(){
+    $(this).remove();
+});
+
+// 当有文件添加进来的时候
+uploaderphoto.on( 'fileQueued', function( file ) {
+    var $li = $(
+            '<div id="' + file.id + '" class="file-item thumbnail">' +
+                '<img>' +
+                '<input type="hidden" value="" name="photo" id="photo">' +
+                '<div class="info">' + file.name + '</div>' +
+            '</div>'
+            ),
+        $img = $li.find('img');
+
+
+    // $list为容器jQuery实例
+    $("#photoList").html($li);
+
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploaderphoto.makeThumb( file, function( error, src ) {
+        if ( error ) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+
+        $img.attr( 'src', src );
+    }, 100,100 );
+});
+
+
+// 文件上传过程中创建进度条实时显示。
+uploaderphoto.on( 'uploadProgress', function( file, percentage ) {
+    var $li = $( '#'+file.id ),
+        $percent = $li.find('.progress span');
+
+    // 避免重复创建
+    if ( !$percent.length ) {
+        $percent = $('<p class="progress"><span></span></p>')
+                .appendTo( $li )
+                .find('span');
+    }
+
+    $percent.css( 'width', percentage * 100 + '%' );
+});
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploaderphoto.on( 'uploadSuccess', function( file ,response ) {
+    $( '#'+file.id ).addClass('upload-state-done');
+    $("#photo").val(response._raw);
+});
+
+// 文件上传失败，显示上传出错。
+uploaderphoto.on( 'uploadError', function( file ) {
+    var $li = $( '#'+file.id ),
+        $error = $li.find('div.error');
+
+    // 避免重复创建
+    if ( !$error.length ) {
+        $error = $('<div class="error"></div>').appendTo( $li );
+    }
+
+    $error.text('上传失败');
+});
+
+// 完成上传完了，成功或者失败，先删除进度条。
+uploaderphoto.on( 'uploadComplete', function( file ) {
+    $( '#'+file.id ).find('.progress').remove();
+});
+
+</script>
+<link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+<script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+
+
+
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>Banner：</label>
+    <div class="col-sm-9 ">      
+        
+        <div id="uploader-demo" style="max-width: 300px">
+            <!--用来存放item-->
+            <div id="bannerList" class="uploader-list">
+                <?php if(isset($detail['banner'])){?>
+                <div  class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['banner']?>"><input type="hidden" value="<?=$detail['banner']?>" name="banner" id="banner"></div>
+                <?php }?>
+            </div>
+            <div id="bannerPicker">选择图片</div>
+        </div>
+
+           
+    </div>
+</div>    
+        
+ 
+<script>
+
+
+    
+var uploaderbanner = WebUploader.create({
+    auto: true,
+    swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+    server: '<?=url("upload.upload/index",['mdl'=>"taocan_banner"])?>',
+    pick: '#bannerPicker',
+    resize : false,  
+    duplicate :true
+});
+
+$(document).on('click','.file-item',function(){
+    $(this).remove();
+});
+
+// 当有文件添加进来的时候
+uploaderbanner.on( 'fileQueued', function( file ) {
+    var $li = $(
+            '<div id="' + file.id + '" class="file-item thumbnail">' +
+                '<img>' +
+                '<input type="hidden" value="" name="banner" id="banner">' +
+                '<div class="info">' + file.name + '</div>' +
+            '</div>'
+            ),
+        $img = $li.find('img');
+
+
+    // $list为容器jQuery实例
+    $("#bannerList").html($li);
+
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploaderbanner.makeThumb( file, function( error, src ) {
+        if ( error ) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+
+        $img.attr( 'src', src );
+    }, 100,100 );
+});
+
+
+// 文件上传过程中创建进度条实时显示。
+uploaderbanner.on( 'uploadProgress', function( file, percentage ) {
+    var $li = $( '#'+file.id ),
+        $percent = $li.find('.progress span');
+
+    // 避免重复创建
+    if ( !$percent.length ) {
+        $percent = $('<p class="progress"><span></span></p>')
+                .appendTo( $li )
+                .find('span');
+    }
+
+    $percent.css( 'width', percentage * 100 + '%' );
+});
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploaderbanner.on( 'uploadSuccess', function( file ,response ) {
+    $( '#'+file.id ).addClass('upload-state-done');
+    $("#banner").val(response._raw);
+});
+
+// 文件上传失败，显示上传出错。
+uploaderbanner.on( 'uploadError', function( file ) {
+    var $li = $( '#'+file.id ),
+        $error = $li.find('div.error');
+
+    // 避免重复创建
+    if ( !$error.length ) {
+        $error = $('<div class="error"></div>').appendTo( $li );
+    }
+
+    $error.text('上传失败');
+});
+
+// 完成上传完了，成功或者失败，先删除进度条。
+uploaderbanner.on( 'uploadComplete', function( file ) {
+    $( '#'+file.id ).find('.progress').remove();
+});
+
+</script>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>评分：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->score)?$detail->score:''?>" placeholder="" id="score" name="score"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>起价：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->price)?$detail->price:''?>" placeholder="" id="price" name="price"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>经度：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lat)?$detail->lat:''?>" placeholder="" id="lat" name="lat"  class="form-control" /> 
+    </div>
+ </div>
+<link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+<script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+
+
+
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>纬度：</label>
+    <div class="col-sm-9 ">      
+        
+        <div id="uploader-demo" style="max-width: 300px">
+            <!--用来存放item-->
+            <div id="lngList" class="uploader-list">
+                <?php if(isset($detail['lng'])){?>
+                <div  class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['lng']?>"><input type="hidden" value="<?=$detail['lng']?>" name="lng" id="lng"></div>
+                <?php }?>
+            </div>
+            <div id="lngPicker">选择图片</div>
+        </div>
+
+           
+    </div>
+</div>    
+        
+ 
+<script>
+
+
+    
+var uploaderlng = WebUploader.create({
+    auto: true,
+    swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+    server: '<?=url("upload.upload/index",['mdl'=>"taocan_lng"])?>',
+    pick: '#lngPicker',
+    resize : false,  
+    duplicate :true
+});
+
+$(document).on('click','.file-item',function(){
+    $(this).remove();
+});
+
+// 当有文件添加进来的时候
+uploaderlng.on( 'fileQueued', function( file ) {
+    var $li = $(
+            '<div id="' + file.id + '" class="file-item thumbnail">' +
+                '<img>' +
+                '<input type="hidden" value="" name="lng" id="lng">' +
+                '<div class="info">' + file.name + '</div>' +
+            '</div>'
+            ),
+        $img = $li.find('img');
+
+
+    // $list为容器jQuery实例
+    $("#lngList").html($li);
+
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploaderlng.makeThumb( file, function( error, src ) {
+        if ( error ) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+
+        $img.attr( 'src', src );
+    }, 100,100 );
+});
+
+
+// 文件上传过程中创建进度条实时显示。
+uploaderlng.on( 'uploadProgress', function( file, percentage ) {
+    var $li = $( '#'+file.id ),
+        $percent = $li.find('.progress span');
+
+    // 避免重复创建
+    if ( !$percent.length ) {
+        $percent = $('<p class="progress"><span></span></p>')
+                .appendTo( $li )
+                .find('span');
+    }
+
+    $percent.css( 'width', percentage * 100 + '%' );
+});
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploaderlng.on( 'uploadSuccess', function( file ,response ) {
+    $( '#'+file.id ).addClass('upload-state-done');
+    $("#lng").val(response._raw);
+});
+
+// 文件上传失败，显示上传出错。
+uploaderlng.on( 'uploadError', function( file ) {
+    var $li = $( '#'+file.id ),
+        $error = $li.find('div.error');
+
+    // 避免重复创建
+    if ( !$error.length ) {
+        $error = $('<div class="error"></div>').appendTo( $li );
+    }
+
+    $error.text('上传失败');
+});
+
+// 完成上传完了，成功或者失败，先删除进度条。
+uploaderlng.on( 'uploadComplete', function( file ) {
+    $( '#'+file.id ).find('.progress').remove();
+});
+
+</script>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>地址：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->address)?$detail->address:''?>" placeholder="" id="address" name="address"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否上架：</label>
+    <div class="col-sm-9">        
+            <div class="radio i-checks">
+                <label>
+                  <input name="is_online" id="is_online" value="1" type="radio" <?php if(isset($detail->is_online)&& $detail->is_online==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                <label>
+                  <input name="is_online" id="is_online" value="0" type="radio" <?php if(isset($detail->is_online)&& $detail->is_online==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+            </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>预定限制：</label>
+    <div class="col-sm-9">
+        <textarea  name="restrict" placeholder="说点什么...最少输入10个字符" id="restrict"  cols="50" rows="10" class="form-control"><?=isset($detail->restrict)?$detail->restrict:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>使用时间：</label>
+    <div class="col-sm-9">
+        <textarea  name="usetime" placeholder="说点什么...最少输入10个字符" id="usetime"  cols="50" rows="10" class="form-control"><?=isset($detail->usetime)?$detail->usetime:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>服务：</label>
+    <div class="col-sm-9">
+        <textarea  name="service" placeholder="说点什么...最少输入10个字符" id="service"  cols="50" rows="10" class="form-control"><?=isset($detail->service)?$detail->service:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>使用方式：</label>
+    <div class="col-sm-9">
+        <textarea  name="method" placeholder="说点什么...最少输入10个字符" id="method"  cols="50" rows="10" class="form-control"><?=isset($detail->method)?$detail->method:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>其他：</label>
+    <div class="col-sm-9">
+        <textarea  name="other" placeholder="说点什么...最少输入10个字符" id="other"  cols="50" rows="10" class="form-control"><?=isset($detail->other)?$detail->other:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>加购：</label>
+    <div class="col-sm-9">
+        <textarea  name="plus" placeholder="说点什么...最少输入10个字符" id="plus"  cols="50" rows="10" class="form-control"><?=isset($detail->plus)?$detail->plus:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否热门：</label>
+    <div class="col-sm-9">        
+            <div class="radio i-checks">
+                <label>
+                  <input name="is_hot" id="is_hot" value="1" type="radio" <?php if(isset($detail->is_hot)&& $detail->is_hot==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                <label>
+                  <input name="is_hot" id="is_hot" value="0" type="radio" <?php if(isset($detail->is_hot)&& $detail->is_hot==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+            </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>排序：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->orderby)?$detail->orderby:''?>" placeholder="" id="orderby" name="orderby"  class="form-control" /> 
+    </div>
+ </div>
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

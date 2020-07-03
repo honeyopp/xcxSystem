@@ -1,0 +1,116 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('tongcheng.advert/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 <td>公告指向文章:<input class="form-control" name="info_id" id="info_id"  value="<?=$search['info_id']?>" type="text"  placeholder="请输入公告指向文章"  style=" width:200px"/></td>
+<td>备注信息:<input class="form-control" name="info" id="info"  value="<?=$search['info']?>" type="text"  placeholder="请输入备注信息"  style=" width:200px"/></td>
+<td>广告开始时间:<input class="form-control" name="bg_data" id="bg_data"  value="<?=$search['bg_data']?>" type="text"  placeholder="请输入广告开始时间"  style=" width:200px"/></td>
+<td>广告结束时间:<input class="form-control" name="end_data" id="end_data"  value="<?=$search['end_data']?>" type="text"  placeholder="请输入广告结束时间"  style=" width:200px"/></td>
+
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加首页广告" href="<?=url('tongcheng.advert/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加首页广告</a>
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>图片</th>
+<th>公告指向文章</th>
+<th>备注信息</th>
+<th>查看次数</th>
+<th>广告开始时间</th>
+<th>广告结束时间</th>
+<th>强制不显示</th>
+<th>排序</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td><?= $val->advert_id ?></td>
+                                        <td><img width="80" src="/attachs/uploads/<?=$val->photo?>"/></td>
+<td><?=$val->info_id?></td>
+<td><?=$val->info?></td>
+<td><?=$val->view_num?></td>
+<td><?=$val->bg_data?></td>
+<td><?=$val->end_data?></td>
+<td><?=$val->is_end?></td>
+<td><?=$val->orderby?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑首页广告"  href="<?=url('tongcheng.advert/edit','advert_id='.$val->advert_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除首页广告" mini="act"  href="<?=url('tongcheng.advert/delete','advert_id='.$val->advert_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

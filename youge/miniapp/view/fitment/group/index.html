@@ -1,0 +1,106 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('fitment.group/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>活动标题:<input class="form-control" name="title" id="title"
+                                                        value="<?=$search['title']?>" type="text" placeholder="请输入活动标题"
+                                                        style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加小区团装" href="<?=url('fitment.group/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加小区团装</a>
+                    </div>
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>活动标题</th>
+                                <th>列表图片</th>
+                                <th>立省</th>
+                                <th>参团人数</th>
+                                <th>开始日期</th>
+                                <th>结束日期</th>
+                                <th>活动介绍</th>
+                                <th>活动规则</th>
+                                <th>注意事项</th>
+                                <th>强制结束</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->group_id ?></td>
+                                    <td><textarea><?=$val->title?></textarea></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=$val->price?></td>
+                                    <td><?=$val->num?></td>
+                                    <td><?=$val->bg_date?></td>
+                                    <td><?=$val->end_date?></td>
+                                    <td><textarea><?=$val->introduce?></textarea></td>
+                                    <td><textarea><?=$val->rule?></textarea></td>
+                                    <td><textarea><?=$val->warning?></textarea></td>
+                                    <td><?=$val->is_end == 1 ? '<span class="label label-info">强制结束</span>' : '<span class="label label-success">正常</span>'?></td>
+
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑小区团装"
+                                               href="<?=url('fitment.group/edit','group_id='.$val->group_id)?>"
+                                               class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除小区团装" mini="act"
+                                               href="<?=url('fitment.group/delete','group_id='.$val->group_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/public/home/plugs/swiper/dist/css/swiper.css">
+<link rel="stylesheet" href="/public/home/css/comment.css?v=20170831"/>
+<link rel="stylesheet" href="/public/home/css/index.css?v=201708230932"/>
+<link rel="stylesheet" href="/public/home/css/wdetails.css"/>
+<div class="wdetails-top">
+        <span>应用中心</span>
+    </div>
+<div class="baottms_wrap clearfix">
+    
+    <div class="ms_topwrap clearfix">
+        <div class="ms_content clearfix">
+            <ul>
+                <?php foreach($list as $val) { ?>
+                <li>
+                    <?php if(!empty($val->qrcode)){?>
+                    <div style="display: none;" class="wxb_app_qrcode">
+                          <a  href="<?=url('/home/shop/detail',['miniapp_id'=>$val->miniapp_id])?>" >
+                            <img width="200" src="/attachs/uploads/<?=getImg($val->qrcode)?>"/>
+                             </a>
+                        </div>
+                    <?php }?>
+                
+                    <div class="wxb_app_img">
+                       <a  href="<?=url('/home/shop/detail',['miniapp_id'=>$val->miniapp_id])?>" >
+                           <img src="/attachs/uploads/<?=getImg($val->photo)?>" style="width: 280px; height: 188px;"></img>
+                        </a>
+                    </div>
+                    <div class="wxb_app_header">
+                        <div class="title overflow_clear"><a  href="<?=url('/home/shop/detail',['miniapp_id'=>$val->miniapp_id])?>" ><?=$val->title?></a></div>
+                        <a class="use" href="<?=url('/home/shop/detail',['miniapp_id'=>$val->miniapp_id])?>" >使用
+                    </div>
+                    <div class="wxb_app_details">
+                        <?=$val->describe?>
+                    </div>
+                    
+                </li>
+                <?php } ?>
+          
+            </ul>
+            <script>
+                $(".ms_content li").mouseover(function(){
+                    $(this).find('.wxb_app_qrcode').show();
+                }).mouseout(function(){
+                    $(this).find('.wxb_app_qrcode').hide();
+                });
+            </script>
+        </div>
+    </div>
+</div>
+
+

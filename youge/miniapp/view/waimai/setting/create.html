@@ -1,0 +1,48 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('waimai.setting/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>起送价格：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->qijia)?round($detail->qijia/100,2):0?>" placeholder="" id="qijia" name="qijia"  class="form-control" /> 
+                                0代表不限制
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>配送费用：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->peisong)?round($detail->peisong/100,2):0?>" placeholder="" id="peisong" name="peisong"  class="form-control" /> 
+                                0代表不收取配送费用
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">营业状态：</label>
+                            <div class="col-sm-9">        
+                                    <div class="radio i-checks">
+                                        <label>
+                                          <input name="is_online" id="is_online" value="1" type="radio" <?php if(isset($detail->is_online)&& $detail->is_online==1){?>checked="checked"<?php }?> > <i></i> 营业中</label>
+                                        <label>
+                                          <input name="is_online" id="is_online" value="0" type="radio" <?php if(isset($detail->is_online)&& $detail->is_online==0){?>checked="checked"<?php }?> > <i></i> 暂停营业</label>
+                                    </div>
+                            </div>
+</div>
+         
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('school.activity/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>活动标题:<input class="form-control" name="tite" id="tite" value="<?=$search['tite']?>" type="text" placeholder="请输入活动标题" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">搜索</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加活动报名" href="<?=url('school.activity/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加活动报名</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>活动标题</th>
+                                <th>活动图片</th>
+                                <th>活动时间</th>
+                                <th>价格</th>
+                                <th>集合地点</th>
+                                <th>最大报名人数</th>
+                                <th>已经报名数</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->activity_id ?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=getImg($val->photo)?>"></td>
+                                    <td><?=$val->date?></td>
+                                    <td>￥<?=$val->price == 0 ? '免费' :  sprintf("%.2f",$val->price)?></td>
+                                    <td><?=$val->addr?></td>
+                                    <td><?=$val->num?>人</td>
+                                    <td><?=$val->already_num?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="查看已报名人数" mini="load" w="90%" h="90%" href="<?=url('school.activityentry/index','activity_id='.$val->activity_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>查看已报名人数</a>
+                                            <a title="编辑活动报名" href="<?=url('school.activity/edit','activity_id='.$val->activity_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除活动报名" mini="act" href="<?=url('school.activity/delete','activity_id='.$val->activity_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,333 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('job.job/create')?>" id="form-create" method="post" class="form-horizontal"
+                          role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>所属公司：</label>
+                            <div class="col-sm-6">
+                                <input id="hotelname" type="text" disabled style="background-color: transparent;" value="" placeholder="请单击选择公司"  class="form-control"/>
+                                <input type="hidden" value="" name="company_id" id="company_id">
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/job.company/select')?>" class="btn btn-w-m btn-info">选择公司</button>
+                            </div>
+                            <script>
+                                function seleGs(name,company_id){
+                                    layer.closeAll();
+                                    layer.msg('操作成功！');
+                                    $("#hotelname").val(name);
+                                    $("#company_id").val(company_id);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>职位标题：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->title)?$detail->title:''?>" placeholder=""
+                                       id="title" name="title" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>招聘人数：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->people_num)?$detail->people_num:''?>" placeholder="填写最大招聘人数 如：10  则表示 招聘 1- 10 人 " id="people_num" name="people_num" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>工作经验：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="experience_id" id="experience_id">
+                                    <option value="0">请选择</option>
+                                    <?php foreach(config('jobsetting.experience') as $key=>$val) { ?>
+                                           <option value="<?=$key?>"><?=$val?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>学历要求：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="education_id" id="education_id">
+                                    <?php foreach(config('jobsetting.education') as $key=>$val) { ?>
+                                    <option value="<?=$key?>"><?=$val?></option>
+                                    <?php } ?>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>薪水：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="salary_id" id="salary_id">
+                                    <?php foreach(config('jobsetting.salary') as $key=>$val) { ?>
+                                    <option value="<?=$key?>"><?=$val?></option>
+                                    <?php } ?>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>联系人：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->name)?$detail->name:''?>" placeholder=""
+                                       id="name" name="name" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>联系方式：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->tel)?$detail->tel:''?>" placeholder=""
+                                       id="tel" name="tel" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">已申请数：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->apply_num)?$detail->apply_num:''?>" placeholder="" id="apply_num" name="apply_num" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">职位需求描述：</label>
+                            <div class="col-sm-9">
+                                <textarea name="describe" placeholder="说点什么...最少输入10个字符" id="describe" cols="50" rows="10" class="form-control"><?=isset($detail->describe)?$detail->describe:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">排序：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->orderby)?$detail->orderby:''?>"
+                                       placeholder="" id="orderby" name="orderby" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否招聘：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input checked name="is_online" id="is_online" value="1" type="radio" <?php if(isset($detail->is_online)&&$detail->is_online==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label><input name="is_online" id="is_online" value="0" type="radio" <?php if(isset($detail->is_online)&&$detail->is_online==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">是否包吃：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input name="is_eat" id="is_eat" value="1" type="radio" <?php if(isset($detail->is_eat)&& $detail->is_eat==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label><input name="is_eat" id="is_eat" value="0" type="radio" <?php if(isset($detail->is_eat)&& $detail->is_eat==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">是否包住：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_live" id="is_live" value="1" type="radio" <?php if(isset($detail->is_live)&&$detail->is_live==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_live" id="is_live" value="0" type="radio" <?php if(isset($detail->is_live)&&$detail->is_live==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">是否双休：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_weekend" id="is_weekend" value="1" type="radio" <?php if(isset($detail->is_weekend)&&$detail->is_weekend==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_weekend" id="is_weekend" value="0" type="radio" <?php if(isset($detail->is_weekend)&&$detail->is_weekend==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">是否有加班补助：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_overtime" id="is_overtime" value="1" type="radio" <?php if(isset($detail->is_overtime)&&$detail->is_overtime==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_overtime" id="is_overtime" value="0" type="radio" <?php if(isset($detail->is_overtime)&&$detail->is_overtime==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">是否有班车接送：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input name="is_vehicle" id="is_vehicle" value="1" type="radio" <?php if(isset($detail->is_vehicle)&&$detail->is_vehicle==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label><input name="is_vehicle" id="is_vehicle" value="0" type="radio" <?php if(isset($detail->is_vehicle)&&$detail->is_vehicle==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">交通补助：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input name="is_bus" id="is_bus" value="1" type="radio" <?php if(isset($detail->is_bus)&& $detail->is_bus==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label><input name="is_bus" id="is_bus" value="0" type="radio" <?php if(isset($detail->is_bus)&& $detail->is_bus==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">饭补：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_meal" id="is_meal" value="1" type="radio" <?php if(isset($detail->is_meal)&&$detail->is_meal==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_meal" id="is_meal" value="0" type="radio" <?php if(isset($detail->is_meal)&&$detail->is_meal==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">话补：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_phone" id="is_phone" value="1" type="radio" <?php if(isset($detail->is_phone)&&$detail->is_phone==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_phone" id="is_phone" value="0" type="radio" <?php if(isset($detail->is_phone)&&$detail->is_phone==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">房补：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_room" id="is_room" value="1" type="radio" <?php if(isset($detail->is_room)&&$detail->is_room==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_room" id="is_room" value="0" type="radio" <?php if(isset($detail->is_room)&&$detail->is_room==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">节日福利：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_festival" id="is_festival" value="1" type="radio" <?php if(isset($detail->is_festival)&&$detail->is_festival==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_festival" id="is_festival" value="0" type="radio" <?php if(isset($detail->is_festival)&&$detail->is_festival==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">五险：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_wuxian" id="is_wuxian" value="1" type="radio" <?php if(isset($detail->is_wuxian)&&$detail->is_wuxian==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_wuxian" id="is_wuxian" value="0" type="radio" <?php if(isset($detail->is_wuxian)&&$detail->is_wuxian==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">公积金：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input name="is_mpf" id="is_mpf" value="1" type="radio" <?php if(isset($detail->is_mpf)&& $detail->is_mpf==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label><input name="is_mpf" id="is_mpf" value="0" type="radio" <?php if(isset($detail->is_mpf)&& $detail->is_mpf==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">年终奖：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_bonus" id="is_bonus" value="1" type="radio" <?php if(isset($detail->is_bonus)&&$detail->is_bonus==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_bonus" id="is_bonus" value="0" type="radio" <?php if(isset($detail->is_bonus)&&$detail->is_bonus==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">带薪年假：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_newyear" id="is_newyear" value="1" type="radio" <?php if(isset($detail->is_newyear)&&$detail->is_newyear==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_newyear" id="is_newyear" value="0" type="radio" <?php if(isset($detail->is_newyear)&&$detail->is_newyear==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">健康体检：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input name="is_healthy" id="is_healthy" value="1" type="radio" <?php if(isset($detail->is_healthy)&&$detail->is_healthy==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label><input name="is_healthy" id="is_healthy" value="0" type="radio" <?php if(isset($detail->is_healthy)&&$detail->is_healthy==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">旅游奖励：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input name="is_tourism" id="is_tourism" value="1" type="radio" <?php if(isset($detail->is_tourism)&&$detail->is_tourism==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label><input name="is_tourism" id="is_tourism" value="0" type="radio" <?php if(isset($detail->is_tourism)&&$detail->is_tourism==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">培训学习：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_train" id="is_train" value="1"
+                                               type="radio" <?php if(isset($detail->is_train)&&
+                                        $detail->is_train==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_train" id="is_train" value="0"
+                                               type="radio" <?php if(isset($detail->is_train)&&
+                                        $detail->is_train==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">股票股权：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_shares" id="is_shares" value="1"
+                                               type="radio" <?php if(isset($detail->is_shares)&&
+                                        $detail->is_shares==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_shares" id="is_shares" value="0"
+                                               type="radio" <?php if(isset($detail->is_shares)&&
+                                        $detail->is_shares==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

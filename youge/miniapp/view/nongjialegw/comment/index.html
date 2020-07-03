@@ -1,0 +1,108 @@
+<style>.comment-photo img{ float: left;width: 6%;margin: 0 1%;margin-bottom: 2px;}</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-warning alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                请加盟商认真审核每条评论 尽快删除不良评论不良图片
+            </div>
+        </div>
+    </div>
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('nongjialegw.comment/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>评分:
+                                            <select name="score" class="form-control">
+                                                    <option  <?=$search['score'] == 0 ? 'selected' : '' ?> value="0">请选择</option>
+                                                    <option  <?=$search['score'] == 1 ? 'selected' : '' ?>  value="1">差评(1分-2分)</option>
+                                                    <option <?=$search['score'] == 2 ? 'selected' : '' ?>  value="2">中评(2.5分-3.5分)</option>
+                                                    <option <?=$search['score'] == 3 ? 'selected' : '' ?>  value="3">好评(4分-5分)</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content" style="padding-bottom: 0;">
+                <div class="row">
+                    <div class="table-responsive">
+                        <?php foreach($list as $val) { ?>
+                        <div class="social-feed-box" >
+                            <div class="pull-right social-action dropdown">
+                                <button mini="act" href="<?=url('/miniapp/nongjialegw.comment/delete',['comment_id'=>$val->comment_id])?>" title="删除此评论？" data-toggle="dropdown" class="dropdown-toggle btn-white" aria-expanded="false">删除此评论
+                                    <i class="fa fa-angle-down"></i>
+                                </button>
+                                <button mini="load" w="50%" h="50%" href="<?=url('/miniapp/nongjialegw.comment/reply',['comment_id'=>$val->comment_id])?>"  data-toggle="dropdown" class="dropdown-toggle btn-white" aria-expanded="false">回复
+                                    <i class="fa fa-angle-down"></i>
+                                </button>
+                            </div>
+                            <div class="social-avatar">
+                                <div class="media-body">
+                                    <span style="font-size: 2rem"><?=empty($user[$val->user_id]) ? '' :  $user[$val->user_id]->nick_name?> :<small class="text-muted"> <?=date('Y-m-d H:i:s',$val->add_time)?></small> 评分：<span style="color: red"><?=round($val->score/10,1)?></span> 分 </span>
+                                    <?php if($val->type == 1) { ?>
+                                    <button style="margin-left: 2rem"  data-toggle="dropdown" class="dropdown-toggle btn-white" aria-expanded="false"><?=empty($hotel[$val->product_id]) ? '' :  $hotel[$val->product_id]->title?>
+                                        <i class="fa fa-angle-down"></i>
+                                    </button>
+                                    <?php }elseif($val->type == 2) { ?>
+                                    <button style="margin-left: 2rem"  data-toggle="dropdown" class="dropdown-toggle btn-white" aria-expanded="false"><?=empty($room[$val->product_id]) ? '' :  $room[$val->product_id]->title?>
+                                        <i class="fa fa-angle-down"></i>
+                                    </button>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <div class="social-body">
+                                <p><?=$val->content?></p>
+                                <div class="comment-photo">
+                                    <?php if(!empty($photos[$val->comment_id])) { ?>
+                                    <?php foreach($photos[$val->comment_id] as $v) {  ?>
+                                    <img src="/attachs/uploads/<?=getImg($v->photo)?>" class="img-responsive ">
+                                    <?php } }?>
+                                </div>
+                            </div>
+                            <div style="clear: both"></div>
+                            <?php if(!empty($val->reply )) { ?>
+                            <div class="social-footer" style="margin-top: 1%">
+                                <div class="social-comment">
+                                    <div class="media-body">
+                                        <a href="#">
+                                            商家回复 <small class="text-muted"><b><?=date('Y-m-d H:i:s',$val->reply_time)?></b></small>:
+                                        </a> <?=$val->reply?>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </div>
+                        <?php } ?>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

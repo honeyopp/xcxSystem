@@ -1,0 +1,27 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form action="<?=url('admin.role/edit',['role_id'=>$detail->role_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right" for="form-field-1">角色名：</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" id="role_name" name="role_name"  value="<?=$detail->role_name?>" class="col-xs-10 col-sm-5" />
+                        </div>
+                     </div>
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+             </div></div>
+        </div>
+    </div>
+</div>

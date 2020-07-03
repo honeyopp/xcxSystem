@@ -1,0 +1,129 @@
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+
+
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form method="get" action="<?=url('admin.role/index')?>" role="form">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td style="width: 300px;">
+                                            <input type="text"  placeholder="请输入关键词"   name="role_name" id="role_name"  value="<?=$search['role_name']?>"  class="input-sm form-control" />
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" class="btn btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class=" tableTools-container">
+                        <a  title="添加角色" mini="load" w="800px" h="500px" href="<?=url('admin.role/create')?>"  class="btn btn-sm btn-success">
+                            <i class="ace-icon  fa glyphicon-plus align-top bigger-125"></i>
+                            添加角色
+                        </a>
+                        <a mini="list" for="mini_list" title="批量删除" href="<?=url('admin.role/delete')?>"   class="btn btn-sm btn-danger">
+                            <i class="ace-icon  fa fa-trash-o align-top bigger-125"></i>
+                            批量删除
+                        </a>     
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox"  class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th class="center">
+                                        ID
+                                    </th>
+                                    <th class="center">
+                                        角色名
+                                    </th>
+
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody  >
+                                    <?php foreach($list as $val){?>
+                                    <tr>
+                                        <td class="center">
+                                            <label class="pos-rel">
+                                                <input type="checkbox" name="role_id[]" id="role_id[]" value="<?=$val->role_id?>" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+                                        <td  class="center"><?=$val->role_id?></td>
+                                        <td  class="center"><?=$val->role_name?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑角色<?=$val->role_name?>" mini="load" w="800px" h="500px" href="<?=url('admin.role/edit','role_id='.$val->role_id)?>"   class="btn btn-xs btn-success">
+                                                    <i class="ace-icon fa fa-edit bigger-120"></i>
+                                                    编辑
+                                                </a>
+                                                <a   title="删除角色<?=$val->role_name?>" mini="act"  href="<?=url('admin.role/delete','role_id='.$val->role_id)?>"  class="btn btn-xs btn-danger">
+                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                    删除
+                                                </a>     
+
+                                                <a title="设置角色<?=$val->role_name?>" mini="load" w="800px" h="500px" href="<?=url('admin.role/setting','role_id='.$val->role_id)?>"   class="btn btn-xs btn-info">
+                                                    <i class="ace-icon fa fa-cog bigger-120"></i>
+                                                    设置
+                                                </a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php }?>
+
+                                </tbody>
+                            </form>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <?php echo $page;?>      
+                </div>
+            </div><!-- /.span -->
+
+
+        </div><!-- /.row -->
+
+
+
+
+    </div><!-- /.main-container -->
+</div>

@@ -1,0 +1,695 @@
+<link href="/public/admin/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css"/>
+<script src="/public/admin/js/star-rating.min.js" type="text/javascript"></script>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('hotel.hotel/create')?>" id="form-create" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>酒店名称：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->hotel_name)?$detail->hotel_name:''?>" placeholder="请输入酒店的名称" id="hotel_name" name="hotel_name" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>城市：</label>
+                            <div class="col-sm-6">
+                                <input id="cityname" type="text" disabled style="background-color: transparent;" value="<?=empty($city) ? '' : $city->city_name?>" placeholder="请单击选择城市"  class="form-control"/>
+                                <input type="hidden" value="<?=empty($city) ? '' : $city->city_id?>" name="city_id" id="city_id">
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/setting.city/select')?>" class="btn btn-w-m btn-info">选择该城市</button>
+                            </div>
+                            <script>
+                                function seleCity(city_name,city_id){
+                                    layer.closeAll();
+                                    layer.msg('操作成功！');
+                                    $("#cityname").val(city_name);
+                                    $("#city_id").val(city_id);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>酒店品牌：</label>
+                            <div class="col-sm-6">
+                                <input id="brandname" type="text" disabled style="background-color: transparent;" value="" placeholder="请单击选择酒店品牌"  class="form-control"/>
+                                <input type="hidden" value="" name="brand_id" id="brand_id">
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/hotel.hotelbrand/select')?>" class="btn btn-w-m btn-info">选择酒店品牌</button>
+                            </div>
+                            <script>
+                                function seletBrand(city_name,city_id){
+                                    layer.closeAll();
+                                    layer.msg('操作成功！');
+                                    $("#brandname").val(city_name);
+                                    $("#brand_id").val(city_id);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>酒店星级：</label>
+                            <div class="col-sm-9">
+                                 <select class="form-control" name="hotel_level">
+                                     <?php foreach(config('dataattr.hotellevelnames') as $k=>$v) { ?>
+                                      <option class="form-control" value="<?=$k?>"><?=$v?></option>
+                                     <?php } ?>
+                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>酒店电话：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->hotel_tel)?$detail->hotel_tel:''?>" placeholder="请输入酒店电话 如 ：座机 : 0551-65560407 , 手机 ： 15012345678 " id="hotel_tel" name="hotel_tel" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="c-red">*</span>最后装修日期：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->decoration_time)?$detail->decoration_time:''?>" placeholder="请输入您酒店的最后装修时间：如2017年末" id="decoration_time" name="decoration_time" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>营业时间：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="" placeholder="请填写营业时间：如 7*24小时 " id="opening_time" name="opening_time" class="form-control"/>
+                            </div>
+                        </div>
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>展示图片：</label>
+                            <div class="col-sm-9 ">
+                                <div id="uploader-demo" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="photoList" class="uploader-list">
+                                        <?php if(isset($detail['photo'])){?>
+                                        <div class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['photo']?>"><input type="hidden" value="<?=$detail['photo']?>" name="photo" id="photo">
+                                        </div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="photoPicker">选择图片</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+
+
+                            var uploaderphoto = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"hotel_photo"])?>',
+                                pick: '#photoPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderphoto.on('fileQueued', function (file) {
+                                var $li = $(
+                                        '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                        '<img>' +
+                                        '<input type="hidden" value="" name="photo" id="photo">' +
+                                        '<div class="info">' + file.name + '</div>' +
+                                        '</div>'
+                                    ),
+                                    $img = $li.find('img');
+
+
+                                // $list为容器jQuery实例
+                                $("#photoList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderphoto.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderphoto.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderphoto.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#photo").val(response._raw);
+                            });
+
+                            // 文件上传失败，显示上传出错。
+                            uploaderphoto.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderphoto.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>BANNER大图：</label>
+                            <div class="col-sm-9 ">
+                                <div id="uploader-demo1" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="photoList1" class="uploader-list">
+                                        <?php if(isset($detail['banner'])){?>
+                                        <div class="file-item thumbnail"><img width="110" src="/attachs/uploads/<?=$detail['banner']?>"><input type="hidden" value="<?=$detail['banner']?>" name="banner" id="banner">
+                                        </div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="photoPicker1">选择图片</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            var uploaderphoto1 = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"hotel_photo"])?>',
+                                pick: '#photoPicker1',
+                                resize: false,
+                                duplicate: true
+                            });
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+                            // 当有文件添加进来的时候
+                            uploaderphoto1.on('fileQueued', function (file) {
+                                var $li = $(
+                                        '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                        '<img>' +
+                                        '<input type="hidden" value="" name="banner" id="banner">' +
+                                        '<div class="info">' + file.name + '</div>' +
+                                        '</div>'
+                                    ),
+                                    $img = $li.find('img');
+                                // $list为容器jQuery实例
+                                $("#photoList1").html($li);
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderphoto1.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderphoto1.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderphoto1.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#banner").val(response._raw);
+                            });
+                            // 文件上传失败，显示上传出错。
+                            uploaderphoto1.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+                                $error.text('上传失败');
+                            });
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderphoto1.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>评分：</label>
+                            <div class="col-sm-9">
+                                <input name="score" id="input-21c" value="0" type="number" class="rating" min=0 max=5 step=0.5 data-size="md" data-stars="5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>附近位置：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->advantage)?$detail->advantage:''?>"
+                                       placeholder="如：合肥汇丰大厦附近" id="advantage" name="advantage" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>经度纬度：</label>
+                            <div class="col-sm-3"  style="margin-right: 0; padding-right: 0;">
+                                <input type="text" readonly style="background-color: transparent;" class="form-control"  value="<?=isset($detail->lat)?$detail->lat:'';?>" placeholder="" id="lat" name="lat"/>
+                            </div>
+                            <div class="col-sm-1" style="margin: 0;padding: 0;width: 1rem; line-height: 3rem">--</div>
+                            <div class="col-sm-3" style="margin-left: 0; padding-left: 0;" >
+                                <input type="text"  readonly style="background-color: transparent;" class="form-control" value="<?=isset($detail->lng)?$detail->lng:'';?>" placeholder="" id="lng" name="lng"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button"  mini="load" w="1000px" h="800px" href="<?=url('index/map',['callback'=>'showLatLng']);?>?lat=<?=isset($detail->lat)?$detail->lat:'0';?>&lng=<?=isset($detail->lng)?$detail->lng:'0';?>" class="btn btn-w-m btn-info">选择地址</button>
+                            </div>
+                            <script>
+                                function showLatLng(lat,lng){
+                                    layer.closeAll();
+                                    layer.msg('选取经纬度成功!');
+                                    $("#lat").val(lat);
+                                    $("#lng").val(lng);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>地址：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->address)?$detail->address:''?>"
+                                       placeholder="请输入酒店的地址" id="address" name="address" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>排序：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="" placeholder="排序：填写数字：越大越靠前：如999999" id="orderby" name="orderby" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>详情：</label>
+                            <div class="col-sm-9">
+                                <textarea name="describe" placeholder="说点什么...最少输入10个字符" id="describe" cols="50" rows="10" class="form-control"><?=isset($detail->describe)?$detail->describe:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>退订规则：</label>
+                            <div class="col-sm-9">
+                                <textarea name="unsubscribe" placeholder="说点什么...最少输入10个字符" id="unsubscribe" cols="50" rows="10" class="form-control"><?=isset($detail->unsubscribe)?$detail->unsubscribe:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>入住须知：</label>
+                            <div class="col-sm-9">
+                                <textarea name="check_otice" placeholder="说点什么...最少输入10个字符" id="check_otice" cols="50"
+                                          rows="10" class="form-control"><?=isset($detail->
+                                    check_otice)?$detail->check_otice:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有wif：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input  name="is_wifi" id="is_wifi1" value="1" type="radio"><i></i>是</label>
+                                    <label><input  name="is_wifi" id="is_wifi"  value="0" type="radio" > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有热水：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_water" id="is_water1" value="1" type="radio" > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_water" id="is_water" value="0" type="radio"> <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有吹风机：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_hairdrier" id="is_hairdrier1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_hairdrier" id="is_hairdrier" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有空调：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_airconditioner" id="is_airconditioner1" value="1" type="radio" > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_airconditioner" id="is_airconditioner" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有电梯：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_elevator" id="is_elevator1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_elevator" id="is_elevator" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有健生房：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_fitnessroom" id="is_fitnessroom1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_fitnessroom" id="is_fitnessroom" value="0" type="radio" > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有游泳池：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_swimmingpool" id="is_swimmingpool1" value="1" type="radio" > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_swimmingpool" id="is_swimmingpool" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有桑拿：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_sauna" id="is_sauna1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_sauna" id="is_sauna" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有西餐厅：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_westernfood" id="is_westernfood1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_westernfood" id="is_westernfood" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有中餐厅：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_chinesefood" id="is_chinesefood1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_chinesefood" id="is_chinesefood" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有残疾人专用房：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_disability" id="is_disability1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_disability" id="is_disability" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有无烟房：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_smokeless" id="is_smokeless1" value="1" type="radio" > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_smokeless" id="is_smokeless" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有免费停车：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label><input name="is_stop" id="is_stop1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label><input name="is_stop" id="is_stop" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有早餐服务：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_cereal" id="is_cereal1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_cereal" id="is_cereal" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有接机服务：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_airportpickup" id="is_airportpickup1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_airportpickup" id="is_airportpickup" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有接站服务：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_station" id="is_station1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_station" id="is_station" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有叫车服务：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_cabs" id="is_cabs1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_cabs" id="is_cabs" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有专职行李：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_luggage" id="is_luggage1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_luggage" id="is_luggage" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有租车服务：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_carrental" id="is_carrental1" value="1" type="radio" > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_carrental" id="is_carrental" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有残疾人设施：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_disabled" id="is_disabled1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_disabled" id="is_disabled" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有会议室：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_conference" id="is_conference1" value="1" type="radio" > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_conference" id="is_conference" value="0" type="radio" > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有邮政服务：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_express" id="is_express1" value="1" type="radio" > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_express" id="is_express" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有洗衣服务：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_washclothes" id="is_washclothes1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_washclothes" id="is_washclothes" value="0" type="radio" > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有商户中心：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_merchant" id="is_merchant1" value="1" type="radio"> <i></i> 是</label>
+                                    <label>
+                                        <input name="is_merchant" id="is_merchant" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有唤醒服务：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_awaken" id="is_awaken1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_awaken" id="is_awaken" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否有行李寄存：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_deposit" id="is_deposit1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_deposit" id="is_deposit" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有信用卡：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_creditcard" id="is_creditcard1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_creditcard" id="is_creditcard" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否有全天前台：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_reception" id="is_reception1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_reception" id="is_reception" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否接待外宾：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_foreignguests" id="is_foreignguests1" value="1" type="radio"  > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_foreignguests" id="is_foreignguests" value="0" type="radio"  > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否营业：</label>
+                            <div class="col-sm-9">
+                            <div class="radio i-checks">
+                                <label><input  name="is_online" id="is_online1" value="1" type="radio"><i></i>是</label>
+                                <label><input  name="is_online" id="is_online"  value="0" type="radio" > <i></i> 否</label>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

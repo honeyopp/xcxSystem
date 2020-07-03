@@ -1,0 +1,32 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="alert alert-block alert-success">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <i class="ace-icon fa fa-times"></i>
+                        </button>
+                        <i class="ace-icon fa fa-check green"></i>
+                        <?php if($result['errcode'] ==0){?>
+                            <?php if($result['status'] == 1){?>
+                              审核拒绝：<?=$result['reason'];?>
+                            <?php }?>
+                            
+                            <?php if($result['status'] == 0){?>
+                              审核成功，可以发布上线！
+                            <?php }?>
+                             <?php if($result['status'] == 2){?>
+                              还在审核中请耐心等待！可以提前在体验版本完善资料
+                            <?php }?>
+                        <?php }else{?>
+                            查询失败
+                        <?php }?>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form action="<?=url('hotel.comment/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+                    
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>小程序：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_miniapp_id)?$detail->member_miniapp_id:''?>" placeholder="" id="member_miniapp_id" name="member_miniapp_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>酒店：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->hotel_id)?$detail->hotel_id:''?>" placeholder="" id="hotel_id" name="hotel_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>订单：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->order_id)?$detail->order_id:''?>" placeholder="" id="order_id" name="order_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>房间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->room_id)?$detail->room_id:''?>" placeholder="" id="room_id" name="room_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>评分：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->score)?$detail->score:''?>" placeholder="" id="score" name="score"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">评论：</label>
+    <div class="col-sm-9">
+        <textarea  name="content" placeholder="说点什么...最少输入10个字符" id="content"  cols="50" rows="10" class="form-control"><?=isset($detail->content)?$detail->content:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">回复：</label>
+    <div class="col-sm-9">
+        <textarea  name="reply" placeholder="说点什么...最少输入10个字符" id="reply"  cols="50" rows="10" class="form-control"><?=isset($detail->reply)?$detail->reply:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">回复时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->reply_time)?$detail->reply_time:''?>" placeholder="" id="reply_time" name="reply_time"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">回复ip：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->reply_ip)?$detail->reply_ip:''?>" placeholder="" id="reply_ip" name="reply_ip"  class="form-control" /> 
+    </div>
+ </div>
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

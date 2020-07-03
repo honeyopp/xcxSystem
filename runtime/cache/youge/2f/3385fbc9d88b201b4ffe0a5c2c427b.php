@@ -1,0 +1,3 @@
+<?php
+//000000000600a:2:{s:5:"token";a:2:{s:1:"t";i:1516033159;s:5:"token";s:135:"5_-4heRlTcehI5Dtju4JZHBNkcZNit5PCB2Uhik9EsIdZKLWmJF01UyC3q9gEqnCEbs4p-rF_KPkPkhLUu9nN1JQA-gzKKIplFqe9EFjQlsNWtF0GJlptzse0gOIYPQSiACAYZB";}s:5:"agent";a:3:{i:1;a:2:{s:4:"name";s:15:"普通代理商";s:8:"discount";s:2:"90";}i:2;a:2:{s:4:"name";s:15:"一级代理商";s:8:"discount";s:2:"70";}i:3;a:2:{s:4:"name";s:12:"OME代理商";s:8:"discount";s:2:"10";}}}
+?>

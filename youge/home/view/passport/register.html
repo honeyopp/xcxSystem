@@ -1,0 +1,80 @@
+<body class="gray-bg">
+<div class="middle-box text-center loginscreen   animated fadeInDown">
+    <div class="row">
+        <p>创建一个微点应用新账户</p>
+        <form class="m-t" role="form" action="<?=url('passport/register')?>" method="post">
+            <div class="form-group col-sm-12 left">
+                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="请输入手机号" required="">
+            </div>
+            <div class="form-group col-sm-6">
+                <input type="password" name="code" class="form-control" placeholder="请输入验证码" required="">
+            </div>
+            <div class="form-group col-sm-6">
+                <a id="captcha" href="<?=url('passport/sendSms')?>" type="button"
+                   class="btn btn-primary block full-width m-b">获取验证码</a>
+            </div>
+            <div class="form-group col-sm-12">
+                <input type="password" class="form-control" name="password" placeholder="请输入密码" required="">
+            </div>
+            <div class="form-group col-sm-12">
+                <input type="password" class="form-control" name="password2" placeholder="确认密码" required="">
+            </div>
+            <div class="form-group col-sm-12">
+                <input type="text" class="form-control" name="nick_name" placeholder="昵称" required="">
+            </div>
+            <div class="form-group text-left col-sm-12">
+                <div class="checkbox i-checks">
+                    <label class="no-padding">
+                        点击注册表示已同意 <a>《我同意注册协议》</a></label>
+                </div>
+            </div>
+            <button mini="submit" type="submit" class="btn btn-primary block full-width m-b">注 册</button>
+            <p class="text-muted text-center">
+                <small>已经有账户了？</small>
+                <a href="<?=url('login/index')?>">点此登录</a>
+            </p>
+        </form>
+    </div>
+</div>
+<script>
+    var time_djs = 180;
+    //获取验证码
+    $(document).on('click', "#captcha", function (e) {
+        if (time_djs !== 180) {
+            return false;
+        }
+        var miniAct = $(this);
+        var href = $(this).attr('href');
+        var data = {mobile: $("#mobile").val(), countryCode: $("#countryCode").val()};
+        e.preventDefault();
+        layer.closeAll();//关闭所有的窗口
+        if (miniAct.attr('lock') != 1) {
+            miniAct.attr('lock', 1);
+            var load = layer.load(1);
+            $.get(href, data, function (data) {
+                miniAct.attr('lock', 0);
+                layer.close(load);//关闭所有的窗口
+                if (data.data !== 200) {
+                    layer.msg(data.msg);
+
+                } else {
+                    var t_obj = $("#captcha");
+                    t_obj.attr("disabled", "disabled");
+                    t_obj.text(time_djs + "s");
+                    var my_set = setInterval(function () {
+                        if (time_djs > 0) {
+                            time_djs--;
+                            t_obj.text(time_djs + "s");
+                        } else {
+                            t_obj.attr("disabled", "false");
+                            t_obj.text('重新获取');
+                            clearInterval(my_set);
+                            time_djs = 180;
+                        }
+                    }, 1000);
+                }
+
+            }, 'json');
+        }
+    });
+</script>

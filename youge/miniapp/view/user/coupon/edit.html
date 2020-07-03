@@ -1,0 +1,82 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('user.coupon/edit',['coupon_id'=>$detail->coupon_id])?>" id="form-create" method="post" class="form-horizontal"
+                          role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>满足多少才可以使用：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->need_money)?sprintf('%.2f',$detail->need_money/100):''?>"
+                                       placeholder="这里是指需要满足多少元才可以使用此优惠券 如：100 则表示 需要满足100 元才可以使用" id="need_money" name="need_money" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>面额：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->money)?sprintf('%.2f',$detail->money/100):''?>" placeholder=""
+                                       id="money" name="money" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="c-red">*</span>过期时间：</label>
+                            <div class="col-sm-9">
+                                <input value="<?=isset($detail->expir_time)?date('Y-m-d H:i:s',$detail->expir_time):'0'?>"
+                                       name="expir_time" id="expir_time" class="laydate-icon form-control layer-date">
+
+                            </div>
+                        </div>
+                        <script>
+                            laydate({
+                                elem: '#expir_time',
+                                event: 'focus',
+                                format: 'YYYY-MM-DD hh:mm:ss',
+                                istime: true
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="c-red">*</span>可以使用时间：</label>
+                            <div class="col-sm-9">
+                                <input value="<?=isset($detail->can_use_time)?date('Y-m-d H:i:s',$detail->can_use_time):'0'?>" name="can_use_time" id="can_use_time" class="laydate-icon form-control layer-date">
+                            </div>
+                        </div>
+                        <script>
+                            laydate({
+                                elem: '#can_use_time',
+                                event: 'focus',
+                                format: 'YYYY-MM-DD hh:mm:ss',
+                                istime: true
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>是否已使用：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_can" id="is_can" value="1" type="radio" <?php if(isset($detail->
+                                        is_can)&& $detail->is_can==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_can" id="is_can" value="0" type="radio" <?php if(isset($detail->
+                                        is_can)&& $detail->is_can==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

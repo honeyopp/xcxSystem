@@ -1,0 +1,82 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="alert alert-block alert-success">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <i class="ace-icon fa fa-times"></i>
+                        </button>
+                        <i class="ace-icon fa fa-check green"></i>
+                         优惠券（优惠券）设置
+                    </div>
+                    <!-- PAGE CONTENT ENDS -->
+                    <form action="<?=url('setting.coupon/index')?>" id="form-create" method="post" class="form-horizontal" role="form">
+                       <!--消费送优惠券-->
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><h2 style="color: red">新用户登录送优惠券设置</h2></label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">登录即送：</label>
+                            <div class="col-sm-1"><input class="form-control text-center"  type="text" value="<?=empty($coupon['login']['money']) ? 0 : sprintf('%.2f',$coupon['login']['money']/100)?>" placeholder=""  name="data[login][money]"/></div>
+                            <div class="col-sm-7" style="font-size:14px; padding: 5px; color:#a1a1a1;">优惠券单位元：如果为0元则表示不启用此活动</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">优惠券过期天数：</label>
+                            <div class="col-sm-1">
+                                <input type="text" class="form-control text-center"  value="<?=empty($coupon['login']['expire_day']) ? 7 : $coupon['login']['expire_day']?>" placeholder=""  name="data[login][expire_day]"/>
+                            </div>
+                            <div class="col-sm-7" style="font-size:14px; padding: 5px; color:#a1a1a1;">单位天:表示用户获得优惠卷几天后过期 不得小于1 否则默认 为 7天</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">优惠券可以使用时间：</label>
+                            <div class="col-sm-1">
+                                <input type="text" class="form-control text-center" value="<?=empty($coupon['login']['use_day']) ? 0 : $coupon['login']['use_day']?>" placeholder="" name="data[login][use_day]"/>
+                            </div>
+                            <div class="col-sm-7" style="font-size:14px; padding: 5px; color:#a1a1a1;">单位天:表示用户获得优惠卷几天后才可以使用 0 表示 立即就可以使用</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">该优惠券足多少钱可以使用：</label>
+                            <div class="col-sm-1"><input   class="form-control text-center"type="text" value="<?=empty($coupon['login']['need_money']) ? 0 : sprintf('%.2f',$coupon['login']['need_money']/100)?>" placeholder="" id="" name="data[login][need_money]"/></div>
+                            <div class="col-sm-7" style="font-size:14px; padding: 5px; color:#a1a1a1;">单位元：该优惠券需要满足消费多少元才可以使用 TIP:如果设置的值小于优惠券面额 系统则计算成最低消费</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><h2 style="color: red">新用户首单</h2></label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">下单即送：</label>
+                            <div class="col-sm-1"><input class="form-control text-center"  type="text" value="<?=empty($coupon['order']['money']) ? 0 : sprintf('%.2f',$coupon['order']['money']/100)?>" placeholder=""  name="data[order][money]"/></div>
+                            <div class="col-sm-7" style="font-size:14px; padding: 5px; color:#a1a1a1;">优惠券单位元：如果为0元则表示不启用此活动</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">优惠券过期天数：</label>
+                            <div class="col-sm-1">
+                                <input type="text" class="form-control text-center"  value="<?=empty($coupon['order']['expire_day']) ? 7 : $coupon['order']['expire_day']?>" placeholder=""  name="data[order][expire_day]"/>
+                            </div>
+                            <div class="col-sm-7" style="font-size:14px; padding: 5px; color:#a1a1a1;">单位天:表示用户获得优惠卷几天后过期 不得小于1 否则默认 为 7天</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">优惠券开始使用时间：</label>
+                            <div class="col-sm-1">
+                                <input type="text" class="form-control text-center" value="<?=empty($coupon['order']['use_day']) ? 0 : $coupon['order']['use_day']?>" placeholder="" name="data[order][use_day]"/>
+                            </div>
+                            <div class="col-sm-7" style="font-size:14px; padding: 5px; color:#a1a1a1;">单位天:表示用户获得优惠卷几天后才可以使用 0 表示 立即就可以使用</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">该优惠券足多少钱可以使用：</label>
+                            <div class="col-sm-1"><input   class="form-control text-center"type="text" value="<?=empty($coupon['order']['need_money']) ? 0 : sprintf('%.2f',$coupon['order']['need_money']/100)?>" placeholder="" id="data[]" name="data[order][need_money]"/></div>
+                            <div class="col-sm-7" style="font-size:14px; padding: 5px; color:#a1a1a1;">单位元：该优惠券需要满足消费多少元才可以使用 TIP:如果设置的值小于优惠券面额 系统则计算成最低消费</div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit"  for="form-create" class="btn btn-info" type="submit"><i class="ace-icon fa fa-check bigger-110"></i>确定保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

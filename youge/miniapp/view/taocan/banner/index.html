@@ -1,0 +1,87 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+        
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加banner管理" href="<?=url('taocan.banner/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加banner管理</a>
+     <a mini="list" for="mini_list" title="批量删除banner管理" href="<?=url('taocan.banner/delete')?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+    
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>bannert图</th>
+<th>连接地址</th>
+<th>备注</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td class="center">
+                                            <label class="pos-rel">
+                                                <input id="banner_id_<?=$val->banner_id;?>" name="banner_id[]" value="<?=$val->banner_id;?>" type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+
+                                        <td><?= $val->banner_id ?></td>
+                                        <td><img width="80" src="/attachs/uploads/<?=$val->photo?>"/></td>
+<td><?=$val->url?></td>
+<td><?=$val->note?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑banner管理"  href="<?=url('taocan.banner/edit','banner_id='.$val->banner_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除banner管理" mini="act"  href="<?=url('taocan.banner/delete','banner_id='.$val->banner_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

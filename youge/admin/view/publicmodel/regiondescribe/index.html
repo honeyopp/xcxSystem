@@ -1,0 +1,119 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('publicmodel.regiondescribe/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加区域描述" href="<?=url('publicmodel.regiondescribe/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加区域描述</a>
+     <a mini="list" for="mini_list" title="批量删除区域描述" href="<?=url('publicmodel.regiondescribe/delete')?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+    
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>区域id</th>
+<th>用户小程序id</th>
+<th>描述</th>
+<th>图片</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td class="center">
+                                            <label class="pos-rel">
+                                                <input id="describe_id_<?=$val->describe_id;?>" name="describe_id[]" value="<?=$val->describe_id;?>" type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+
+                                        <td><?= $val->describe_id ?></td>
+                                        <td><?=$val->region_id?></td>
+<td><?=$val->member_miniapp_id?></td>
+<td><?=$val->describe?></td>
+<td><img width="80" src="/attachs/uploads/<?=$val->photo?>"/></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑区域描述"  href="<?=url('publicmodel.regiondescribe/edit','describe_id='.$val->describe_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除区域描述" mini="act"  href="<?=url('publicmodel.regiondescribe/delete','describe_id='.$val->describe_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

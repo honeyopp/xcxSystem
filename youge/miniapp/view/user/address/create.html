@@ -1,0 +1,114 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('user.address/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>昵称：</label>
+                            <div class="col-sm-9">
+                                <input id="username" type="text" name="username"  value="" placeholder="请单击选择会员"  class="form-control"/>
+                                <input type="hidden" value="" name="user_id" id="user_id">
+                                <button id="show-btn1" style="display: none" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/user.user/select')?>" class="btn btn-w-m btn-info">选择会员</button>
+                                <script>
+                                    $("#username").focus(function () {
+                                        $("#show-btn1").click();
+                                    })
+                                    function seleUser(user_name,user_id){
+                                        layer.closeAll();
+                                        layer.msg('操作成功！');
+                                        $("#username").val(user_name);
+                                        $("#user_id").val(user_id);
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系人：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>手机号码：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>身份证：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->idcard)?$detail->idcard:''?>" placeholder="" id="idcard" name="idcard"  class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>具体地址：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->address)?$detail->address:''?>" placeholder="" id="address" name="address"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">GPS定位地址：</label>
+                            <div class="col-sm-9">
+                                <input type="text"  value="<?=isset($detail->gps_addr)?$detail->gps_addr:''?>" placeholder="" id="gps_addr" name="gps_addr"  class="form-control" /> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>经度纬度：</label>
+                            <div class="col-sm-3"  style="margin-right: 0; padding-right: 0;">
+                                <input type="text" readonly style="background-color: transparent;" class="form-control"  value="<?=isset($detail->lat)?$detail->lat:'';?>" placeholder="" id="lat" name="lat"/>
+                            </div>
+                            <div class="col-sm-1" style="margin: 0;padding: 0;width: 1rem; line-height: 3rem">--</div>
+                            <div class="col-sm-3" style="margin-left: 0; padding-left: 0;" >
+                                <input type="text"  readonly style="background-color: transparent;" class="form-control" value="<?=isset($detail->lng)?$detail->lng:'';?>" placeholder="" id="lng" name="lng"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button"  mini="load" w="1000px" h="800px" href="<?=url('index/map',['callback'=>'showLatLng']);?>?lat=<?=isset($detail->lat)?$detail->lat:'0';?>&lng=<?=isset($detail->lng)?$detail->lng:'0';?>" class="btn btn-w-m btn-info">选择地址</button>
+                            </div>
+                            <script>
+                                function showLatLng(lat, lng,addr) {
+                                    layer.closeAll();
+                                    layer.msg('选取经纬度成功！');
+                                    $("#lat").val(lat);
+                                    $("#lng").val(lng);
+                                    $("#gps_addr").val(addr);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">是否默认：</label>
+                            <div class="col-sm-9">        
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_default" id="is_default" value="1" type="radio" <?php if(isset($detail->is_default)&& $detail->is_default==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_default" id="is_default" value="0" type="radio" <?php if(isset($detail->is_default)&& $detail->is_default==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">是否删除：</label>
+                            <div class="col-sm-9">        
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_delete" id="is_delete" value="1" type="radio" <?php if(isset($detail->is_delete)&& $detail->is_delete==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_delete" id="is_delete" value="0" type="radio" <?php if(isset($detail->is_delete)&& $detail->is_delete==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div></div>
+        </div>
+    </div>
+</div>

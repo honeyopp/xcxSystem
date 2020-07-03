@@ -1,0 +1,196 @@
+<style>
+    .baototo_ico{text-align: center;width: 99px; border: 1px solid #ffffff;float: left;margin-left: 10px;}
+    .baototo_ico:hover{border: 1px solid #48be1a }
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('hair.category/create')?>" id="form-create" method="post"
+                          class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>分类名称：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->name)?$detail->name:''?>" placeholder="添加一个类型 如：基本造型，护发系列，染发系列"
+                                       id="name" name="name" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>基本描述：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->describe)?$detail->describe:''?>"
+                                       placeholder="对此分类简单的描述：如超值的基本造型" id="describe" name="describe" class="form-control"/>
+                            </div>
+                        </div>
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>系统ICO：</label>
+                            <div class="col-sm-9 ">
+                                <input type="hidden" id="photo" name="nav_ico">
+                                <?php foreach(config('dataattr.hari') as $val) {?>
+                                <div class="baototo_ico" url="<?=getImg($val['url'])?>" >
+                                    <img style="width: 50px;" src="/attachs/uploads/<?=getImg($val['url'])?>"/>
+                                </div>
+                                <?php } ?>
+                            </div>
+                            <input type="hidden" value="" id="ico" name="ico">
+                        </div>
+                        <script>
+
+
+                            var uploaderico = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"category_ico"])?>',
+                                pick: '#icoPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderico.on('fileQueued', function (file) {
+                                var $li = $(
+                                    '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                    '<img>' +
+                                    '<input type="hidden" value="" name="ico" id="ico">' +
+                                    '<div class="info">' + file.name + '</div>' +
+                                    '</div>'
+                                    ),
+                                    $img = $li.find('img');
+
+
+                                // $list为容器jQuery实例
+                                $("#icoList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderico.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+
+
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderico.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderico.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#ico").val(response._raw);
+                            });
+
+                            // 文件上传失败，显示上传出错。
+                            uploaderico.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderico.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+
+                        </script>
+                        <div id="type">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label no-padding-right"><span
+                                        class="c-red">*</span>服务项目：</label>
+                                <div class="col-sm-2">
+                                    项目名称
+                                    <input type="text" value="<?=isset($detail->name)?$detail->name:''?>" placeholder="如:小朋友剪发"
+                                            name="data[name][]" class="form-control"/>
+                                </div>
+                                <div class="col-sm-2">
+                                    价格
+                                    <input type="text" value="<?=isset($detail->price)?$detail->price:''?>" placeholder="价格"
+                                          name="data[price][]" class="form-control"/>
+                                </div>
+                                <div class="col-sm-2">
+                                    会员价格
+                                    <input type="text" value="<?=isset($detail->vip_price)?$detail->vip_price:''?>"
+                                           placeholder="本店VIP价格"  name="data[vip_price][]" class="form-control"/>
+                                </div>
+                                <div class="col-sm-2">
+                                    <i style="margin-top: 5%;margin-right: 10px;cursor:pointer"
+                                       class=" btn-add ace-icon fa fa-plus bigger-110 fa-3x"></i>
+                                    <i style="margin-top: 5%;cursor:pointer"
+                                       class="btn-del ace-icon fa  fa-minus bigger-110 fa-3x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).on('click', '.btn-add', function () {
+                                $("#type").append($(this).parent().parent().clone(true));
+                            })
+                            $(document).on('click', '.btn-del', function () {
+                                if ($('.btn-add').length <= 1) {
+                                    layer.msg('最少添加一个');
+                                } else {
+                                    var _this = $(this);
+                                    layer.confirm('确定删除吗?', {
+                                        btn: ['确定', '取消'] //按钮
+                                    }, function () {
+                                        layer.closeAll();//关闭所有的窗口
+                                        _this.parent().parent().remove();
+                                    });
+                                }
+                            })
+                        </script>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(".baototo_ico").click(function () {
+        $(".baototo_ico").css("border","1px solid #ffffff");
+        $(this).css("border"," 1px solid #48be1a");
+        $("#ico").val($(this).attr("url"));
+    })
+</script>

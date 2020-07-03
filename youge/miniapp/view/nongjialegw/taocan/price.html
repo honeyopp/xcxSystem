@@ -1,0 +1,70 @@
+<link href="/public/admin/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row ">
+        <div class="col-lg-8" style="margin-left: 25%">
+            <div class="form-group" id="data_1">
+                <form id="form-date" action="<?=url('/miniapp/nongjialegw.taocan/price')?>" method="get">
+                <div class="input-group date  col-lg-5" style="float: left">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <input id="date" type="text" name="date" class="form-control input-group-addon text-center" value="<?=$date?>">
+                </div>
+                    <input type="hidden" name="taocan_id" value="<?=$taocan->taocan_id?>">
+                 <div class="input-group col-lg-1" style="float: left">
+                    <button  type="submit" for="form-date" class="btn form-control btn-sm btn-primary">
+                        搜索
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12" style="margin-top: 3%">
+        <div class="ibox-content">
+            <div class="table-responsive">
+                <form id="form-price" action="<?=url('/miniapp/nongjialegw.taocan/setprice')?>"  method="post">
+                <table id="simple-table" class="table table-striped">
+                    <?php foreach($packages as $val) { ?>
+                    <tr>
+                        <td><img width="50" src="/attachs/uploads/<?=getImg($val['photo'])?>"></td>
+                        <td><?=$val['title']?></td>
+                        <td>房间剩余: <?=$val['surplus_num']?> 间</td>
+                        <td>价格:<input   name="data[<?=$val['package_id']?>][price]"  value="<?= sprintf('%.2f',$val['price']/100)?>"    class="form-control "  style="width: 150px;display: inherit;text-align: center">￥</td>
+                        <td>
+                            <div class="radio i-checks">
+                                当天上架
+                                <label><input  <?=$val['is_online'] == 1 ?  'checked' : ''?> name="data[<?=$val['package_id']?>][is_online]" id="is_elevator1" value="1" type="radio"  > <i></i> 是</label>
+                                <label><input  <?=$val['is_online'] == 0 ?  'checked' : ''?>  name="data[<?=$val['package_id']?>][is_online]" id="is_elevator" value="0" type="radio"  > <i></i> 否</label>
+                            </div>
+                        </td>
+                        <input type="hidden" value="<?=$val['price_id']?>" name="data[<?=$val['package_id']?>][taocanprice_id]">
+                        <input type="hidden" value="<?=$date?>" name="date">
+                    </tr>
+                    <?php } ?>
+                </table>
+                <div class="input-group col-lg-1" style="margin-left: 42%">
+                    <button type="submit" mini="submit" for="form-price"  class="btn form-control btn-sm btn-primary">
+                        提交修改
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).on('#date', 'click', function () {
+        $(".datepicker").css('left', '45%');
+    })
+</script>
+<script src="/public/admin/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="/public/admin/js/plugins/cropper/cropper.min.js"></script>
+<script>
+    $("#data_1 .input-group.date").datepicker({
+        todayBtn: "linked",
+        keyboardNavigation: !1,
+        forceParse: !1,
+        calendarWeeks: !0,
+        autoclose: !0,
+    })
+</script>

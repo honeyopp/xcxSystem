@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<title>后台管理中心</title>
+	<{include file="public/header"}>
+</head>
+<body class="fixed-sidebar full-height-layout gray-bg">
+<!--头部 begin-->
+<div class="head">
+    <nav class="navbar navbar-default">
+        <div>
+            <div class="navbar-header">
+                <a style="height:auto;overflow:hidden;display:block">
+                    <img src="<?=$miniapp->head_img?>" style="height: 55px;">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><!--<i class="wi wi-user color-gray"></i>-->
+                            <img src="<?=$miniapp->head_img?>" style="width:35px; height:35px; margin-right:10px;">
+                            <?=$miniapp->nick_name?> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu color-gray" role="menu">
+                            <li>
+                                <a href="<?=url('manage/passport/logout');?>" target="_top"><i class="wi wi-user color-gray"></i> 安全退出</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<!--头部 end-->
+<div class="main">
+    <div id="wrapper">
+        <{include file="public/left"}>
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row J_mainContent" style="width: 100%; height: 95%; margin:  0 auto; "   id="content-main">
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/miniapp/index/main" frameborder="0"  seamless></iframe>
+            </div>
+        </div>
+        <!--右侧部分结束-->
+    </div>
+</div>
+<script src="/public/admin/js/hplus.min.js?v=4.1.0"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<link href="/public/admin/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row ">
+        <div class="col-lg-8" style="margin-left: 25%">
+            <div class="form-group" id="data_1">
+                <form id="form-date" action="<?=url('/miniapp/nongjialegw.count/count')?>" method="get">
+                    <div class="input-group date  col-lg-5" style="float: left">
+                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input id="date" type="text" name="date" class="form-control input-group-addon text-center" value="<?=$date?>">
+                    </div>
+                    <div class="input-group col-lg-1" style="float: left">
+                        <button type="submit" for="form-date" class="btn form-control btn-sm btn-primary">
+                            搜索
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12" style="margin-top: 3%">
+        <div class="ibox-content">
+            <div class="table-responsive">
+                <form id="form-price" action="<?=url('/miniapp/nongjialegw.count/count')?>" method="post">
+                    <table id="simple-table" class="table table-striped">
+                        <?php foreach($list as $val) { ?>
+                        <tr>
+                            <td>
+                                <?php if($val->order_type == 1)  {?>
+                                  套餐：<?=empty($taocans[$val->product_id]) ? '' : $taocans[$val->product_id]->title;?>
+                                <?php } elseif($val->order_type == 2) { ?>
+                                 房间： <?=empty($rooms[$val->product_id]) ? '' : $rooms[$val->product_id]->title;?>
+                                <?php } ?>
+                            </td>
+                            <td>
+                                总收入:<?=sprintf("%.2f",$val->num/100)?>元
+                            </td>
+                            <?php if($val->order_type == 1) { ?>
+                            <td>
+                                <div class="input-group col-lg-1" style="margin-left: 42%">
+                                    <a mini="load" w="80%"  h="80%" href="<?=url('/miniapp/nongjialegw.count/detail',['product_id'=>$val->product_id])?>" class="btn form-control btn-sm btn-primary">
+                                        查看明细
+                                    </a>
+                                </div>
+                            </td>
+                            <?php  } ?>
+
+                        </tr>
+                        <?php } ?>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div><?=$page?></div>
+    </div>
+</div>
+<script>
+    $(document).on('#date', 'click', function () {
+        $(".datepicker").css('left', '45%');
+    })
+</script>
+<script src="/public/admin/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="/public/admin/js/plugins/cropper/cropper.min.js"></script>
+<script>
+    $("#data_1 .input-group.date").datepicker({
+        minViewMode: 1,
+        keyboardNavigation: !1,
+        forceParse: !1,
+        autoclose: !0,
+        todayHighlight: !0
+    })
+</script>

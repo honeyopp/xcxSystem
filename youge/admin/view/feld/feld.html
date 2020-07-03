@@ -1,0 +1,51 @@
+<div class="table-responsive">
+    <form method="post" action="" role="form">
+        <table class="table table-striped">
+            <tr>
+                <td style="width:70%"><input style="height: 34px;" name="table_name" id="username"
+                                             class="input-sm form-control"
+                                             value="<?=empty($table_name) ? '' : $table_name ?>" type="text"
+                                             placeholder=""/></td>
+                <td style="width: 30%">
+                    <div style="width: 100%;" class="input-group">
+                        <button style="width: 100%;margin-left: -16px;" type="submit"
+                                class="btn btn-sm btn-primary form-control">
+                            展示字段
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<a mini="act"  href="<?=url('/admin/feld/file','table_name='.$table_name)?>"  style="width: 49%;height: 50px;line-height: 50px;font-size: 20px;" title="生成text文本" href="javascript:void(0)"
+   class="btn btn-xs btn-success">生成text文本</a>
+<a style="width: 50%;height: 50px;line-height: 50px;font-size: 20px;float: right" title="隐藏删除按钮" data-on="1"
+   onclick="hiden($(this))" href="javascript:void(0)" class="btn btn-xs btn-danger">删除按钮</a>
+<table id="simple-table" class="table table-striped">
+    <tbody>
+    <{volist name="data" id="val"}>
+    <tr>
+        <td>字段名称:<{$val.COLUMN_NAME}></td>
+        <td>注释:<{$val.COLUMN_COMMENT}></td>
+        <td class="del"><a title="编辑管理员" href="javascript:void(0)" class="btn btn-xs btn-info"><i
+                class=" fa fa-edit bigger-120"></i>删除</a></td>
+    </tr>
+    <{/volist}>
+    </tbody>
+</table>
+<script>
+    function hiden(_this) {
+        if (_this.attr('data-on') == 1) {
+            _this.attr('data-on', 2)
+            $(".del").hide();
+        } else {
+            _this.attr('data-on', 1)
+            $(".del").show();
+        }
+
+    }
+    $(".del").click(function () {
+        $(this).parent().remove();
+    })
+</script>

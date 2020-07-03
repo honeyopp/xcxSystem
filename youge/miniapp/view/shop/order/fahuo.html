@@ -1,0 +1,27 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('shop.order/fahuo',['order_id'=>$order_id])?>" id="form-create" method="post" class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>快递信息：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($order->mail_number)?$order->mail_number:''?>" placeholder="推荐格式: 快递:圆通快递，快递单号：123456789" id="mail_number" name="mail_number" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    确认
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('user.user/manage')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>昵称（微信名称）:<input class="form-control" name="nick_name" id="nick_name" value="<?=$search['nick_name']?>" type="text" placeholder="请输入昵称" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                     <div class="tableTools-container">
+                        <a title="添加手机管理员" href="<?=url('user.user/managecreate')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加手机管理员</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>OPENID</th>
+                                <th>头像</th>
+                                <th>昵称</th>
+                                <th>真实姓名</th>
+                                <th>手机</th>
+                                <th>性别</th>
+                                <th>生日</th>
+                                <th>登录天数</th>
+                                <th>最后登录时间</th>
+                                <th>最后登录IP</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->user_id ?></td>
+                                    <td><?=$val->open_id?></td>
+                                    <td><img width="50" src="<?=$val->face?>"/></td>
+                                    <td><?=$val->nick_name?></td>
+                                    <td><?=$val->real_name?></td>
+                                    <td><?=$val->mobile?></td>
+                                    <td><?=$val->sex?></td>
+                                    <td><?=$val->birthday?></td>
+                                    <td><?=$val->day?></td>
+                                    <td><?=date("Y-m-d H:i:s",$val->last_time)?></td>
+                                    <td><?=$val->last_ip?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="取消管理员" mini="act" href="<?=url('user.user/unmanage','user_id='.$val->user_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-lock bigger-120"></i>取消管理员</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

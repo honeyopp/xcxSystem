@@ -1,0 +1,213 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('hospital.doctor/edit',['doctor_id'=>$detail->doctor_id])?>" id="form-create"
+                          method="post" class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>分类：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="category_id" id="category_id">
+                                    <option value="0">请选择</option>
+                                    <{volist name="category" id="val"}>
+                                    <option  <{$val.category_id == $detail.category_id ? 'selected' : ''}> value="<{$val.category_id}>" > <{$val.category_name}> </option>
+                                    <{/volist}>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>职工名称：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->doctor_name)?$detail->doctor_name:''?>"
+                                       placeholder="" id="doctor_name" name="doctor_name" class="form-control"/>
+                            </div>
+                        </div>
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>列表图片：</label>
+                            <div class="col-sm-9 ">
+
+                                <div id="uploader-demo" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="photoList" class="uploader-list">
+                                        <?php if(isset($detail['photo'])){?>
+                                        <div class="file-item thumbnail"><img width="110"
+                                                                              src="/attachs/uploads/<?=$detail['photo']?>"><input
+                                                type="hidden" value="<?=$detail['photo']?>" name="photo" id="photo">
+                                        </div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="photoPicker">选择图片</div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            var uploaderphoto = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"doctor_photo"])?>',
+                                pick: '#photoPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderphoto.on('fileQueued', function (file) {
+                                var $li = $(
+                                    '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                    '<img>' +
+                                    '<input type="hidden" value="" name="photo" id="photo">' +
+                                    '<div class="info">' + file.name + '</div>' +
+                                    '</div>'
+                                    ),
+                                    $img = $li.find('img');
+
+
+                                // $list为容器jQuery实例
+                                $("#photoList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderphoto.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderphoto.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderphoto.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#photo").val(response._raw);
+                            });
+
+                            // 文件上传失败，显示上传出错。
+                            uploaderphoto.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderphoto.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>临床经验：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->experience)?$detail->experience:''?>"
+                                       placeholder="" id="experience" name="experience" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>介绍：</label>
+                            <div class="col-sm-9">
+                                <textarea name="introduce" placeholder="说点什么...最少输入10个字符" id="introduce" cols="50"
+                                          rows="10" class="form-control"><?=isset($detail->
+                                    introduce)?$detail->introduce:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>专业擅长：</label>
+                            <div class="col-sm-9">
+                                <textarea name="major" placeholder="说点什么...最少输入10个字符" id="major" cols="50" rows="10"
+                                          class="form-control"><?=isset($detail->major)?$detail->major:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>学术荣誉：</label>
+                            <div class="col-sm-9">
+                                <textarea name="learning" placeholder="说点什么...最少输入10个字符" id="learning" cols="50"
+                                          rows="10" class="form-control"><?=isset($detail->
+                                    learning)?$detail->learning:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>感谢信：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->thank_num)?$detail->thank_num:''?>"
+                                       placeholder="" id="thank_num" name="thank_num" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>咨询量：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->consult_num)?$detail->consult_num:''?>"
+                                       placeholder="" id="consult_num" name="consult_num" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>预约数：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->enroll_num)?$detail->enroll_num:''?>"
+                                       placeholder="" id="enroll_num" name="enroll_num" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>排序：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->orderby)?$detail->orderby:''?>"
+                                       placeholder="" id="orderby" name="orderby" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

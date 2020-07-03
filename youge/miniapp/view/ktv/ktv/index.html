@@ -1,0 +1,109 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('ktv.ktv/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 <td>经度:<input class="form-control" name="lat" id="lat"  value="<?=$search['lat']?>" type="text"  placeholder="请输入经度"  style=" width:200px"/></td>
+
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加门店设置" href="<?=url('ktv.ktv/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加门店设置</a>
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>经度</th>
+<th>纬度</th>
+<th>地址</th>
+<th>营业时间</th>
+<th>联系方式</th>
+<th>介绍</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td><?= $val->member_miniapp_id ?></td>
+                                        <td><?=$val->lat?></td>
+<td><?=$val->lng?></td>
+<td><?=$val->address?></td>
+<td><?=$val->trade?></td>
+<td><?=$val->tel?></td>
+<td><?=$val->introduce?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑门店设置"  href="<?=url('ktv.ktv/edit','member_miniapp_id='.$val->member_miniapp_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除门店设置" mini="act"  href="<?=url('ktv.ktv/delete','member_miniapp_id='.$val->member_miniapp_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

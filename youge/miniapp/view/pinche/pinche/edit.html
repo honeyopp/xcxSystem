@@ -1,0 +1,116 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('pinche.pinche/edit',['pinche_id'=>$detail->pinche_id])?>" id="form-create" method="post"
+                          class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>类型：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="type" id="type">
+                                    <option value="0">请选择</option>
+                                    <?php foreach(config('dataattr.pinche') as $key=>$val) { ?>
+                                    <option  <?=$detail->type == $key ? 'selected' : '';?> value="<?=$key?>"><?=$val?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <script>
+                            $("#type").change(function () {
+                                var type = $(this).val();
+                                if(type == 2 ){
+                                    $("#chexing").show();
+                                }else if(type == 1){
+                                    $("#chexing").hide();
+                                }
+                            })
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>姓名：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>性别：</label>
+                            <div class="col-sm-9">
+                                <select class="form-control m-b" name="sex" id="sex">
+                                    <option  <?=$detail->sex == 1 ? 'selected' : ''?> value="1">男</option>
+                                    <option <?=$detail->sex == 2 ? 'selected' : ''?> value="2">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系方式：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>出发地：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->begin)?$detail->begin:''?>" placeholder=""
+                                       id="begin" name="begin" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>目的地：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->end)?$detail->end:''?>" placeholder="" id="end" name="end" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>途径：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->channel)?$detail->channel:''?>"
+                                       placeholder="" id="channel" name="channel" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="c-red">*</span>出发日期：</label>
+                            <div class="col-sm-9">
+                                <input value="<?=isset($detail->bg_time)?date('Y-m-d H:i:s',$detail->bg_time):''?>" name="bg_time" id="bg_time" class="laydate-icon form-control layer-date">
+                            </div>
+                        </div>
+                        <script>
+                            laydate({
+                                elem: '#bg_time',
+                                event: 'focus',
+                                format: 'YYYY-MM-DD hh:mm:ss',
+                                istime: true
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>空位（乘客数）：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->vacancy)?$detail->vacancy:''?>" placeholder="" id="vacancy" name="vacancy" class="form-control"/>
+                            </div>
+                        </div>
+                        <div id="chexing"  <?=$detail->type == 2 ? '' : 'style="display: none"'?> class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>车型：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->car)?$detail->car:''?>" placeholder="" id="car" name="car" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>留言：</label>
+                            <div class="col-sm-9">
+                                <textarea name="demand" placeholder="说点什么...最少输入10个字符" id="demand" cols="50" rows="10" class="form-control"><?=isset($detail->demand)?$detail->demand:''?></textarea>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

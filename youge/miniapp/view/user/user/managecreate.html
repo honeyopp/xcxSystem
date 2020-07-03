@@ -1,0 +1,43 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('user.user/managecreate')?>" id="form-create" method="post" class="form-horizontal"
+                          role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>昵称：</label>
+                            <div class="col-sm-9">
+                                <input id="username" type="text" name="username"  value="" placeholder="请单击选择会员"  class="form-control"/>
+                                <input type="hidden" value="" name="user_id" id="user_id">
+                                <button id="show-btn1" style="display: none" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/user.user/select')?>" class="btn btn-w-m btn-info">选择会员</button>
+                                <script>
+                                    $("#username").focus(function () {
+                                        $("#show-btn1").click();
+                                    })
+                                    function seleUser(user_name,user_id){
+                                        layer.closeAll();
+                                        layer.msg('操作成功！');
+                                        $("#username").val(user_name);
+                                        $("#user_id").val(user_id);
+                                    }
+                                </script>
+                            </div>
+                        </div>
+     
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

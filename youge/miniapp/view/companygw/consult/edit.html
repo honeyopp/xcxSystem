@@ -1,0 +1,63 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('companygw.consult/edit',['consult_id'=>$detail->consult_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>咨询产品：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->product_name)?$detail->product_name:''?>" placeholder="" id="product_name" name="product_name"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系人：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系方式：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->tel)?$detail->tel:''?>" placeholder="" id="tel" name="tel"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>备注：</label>
+    <div class="col-sm-9">
+        <textarea  name="remarks" placeholder="说点什么...最少输入10个字符" id="remarks"  cols="50" rows="10" class="form-control"><?=isset($detail->remarks)?$detail->remarks:''?></textarea>
+        
+    </div>
+ </div>
+<div class="form-group">
+   <label class="col-sm-3 control-label"><span class="c-red">*</span>申请时间：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->add_time)?date('Y-m-d H:i:s',$detail->add_time):''?>"   name="add_time" id="add_time"  class="laydate-icon form-control layer-date">
+       
+   </div>
+</div>
+<script>
+ laydate({
+    elem: '#add_time',
+    event: 'focus' ,
+    format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

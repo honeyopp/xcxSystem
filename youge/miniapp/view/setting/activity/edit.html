@@ -1,0 +1,156 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="alert alert-block alert-success">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <i class="ace-icon fa fa-times"></i>
+                        </button>
+                        <i class="ace-icon fa fa-check green"></i>
+                        该优惠券 所有的支出由您自己承担 请 合理设置优惠券的活动!!!
+                    </div>
+                    <form action="<?=url('setting.activity/edit',['activity_id'=>$detail->activity_id])?>"
+                          id="form-create" method="post"
+                          class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>标题：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->title)?$detail->title:''?>"
+                                       placeholder="您的活动标题 如：天降红包"
+                                       id="title" name="title" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>优惠券面额：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?= sprintf('%.2f',$detail->money/100)?>"
+                                       placeholder="优惠券的面额 如：200 单位元"
+                                       id="money" name="money" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>使用限制：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?= sprintf('%.2f',$detail->need_money/100)?>"
+                                       placeholder="这个里表示 该优惠券最低消费多少才可以使用：如 200 则表示 要消费200元才可以使用  默认 是红包面额的2倍 如果小于1 则按默认处理 单位天 "
+                                       id="need_money" name="need_money" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>过期天数：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->expire_day)?$detail->expire_day:''?>"
+                                       placeholder="过期天数：如：7 则表示 强盗优惠券后 7天后过期 默认 7天；不得小于 小于1天 按 7天处理" id="expire_day"
+                                       name="expire_day" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>可以使用天数：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->use_day)?$detail->use_day:''?>"
+                                       placeholder="可以使用的天数 这里表示可以使用的时间 如：1 则表示 1天后 才可以使用优惠券 0 表示立即可以使用 如果大于过期天数则按 0 处理"
+                                       id="use_day" name="use_day" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>优惠券数量：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->num)?$detail->num:''?>"
+                                       placeholder="优惠券发放数量 默认 100 小于 1 按 100 处理"
+                                       id="num" name="num" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="c-red">*</span>开始时间：</label>
+                            <div class="col-sm-9">
+                                <input value="<?=isset($detail->bg_date)?$detail->bg_date:''?>" name="bg_date"
+                                       placeholder="活动开始时间" id="bg_date" class="laydate-icon form-control layer-date">
+
+                            </div>
+                        </div>
+
+                        <script>
+                            laydate({
+                                elem: '#bg_date',
+                                event: 'focus',
+                                format: 'YYYY-MM-DD',
+                                istime: false
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"><span class="c-red">*</span>结束时间：</label>
+                            <div class="col-sm-9">
+                                <input value="<?=isset($detail->end_date)?$detail->end_date:''?>" name="end_date"
+                                       placeholder="结束时间" id="end_date" class="laydate-icon form-control layer-date">
+
+                            </div>
+                        </div>
+                        <script>
+                            laydate({
+                                elem: '#end_date',
+                                event: 'focus',
+                                format: 'YYYY-MM-DD',
+                                istime: false
+                            });
+                        </script>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>排序：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->orderby)?$detail->orderby:''?>"
+                                       placeholder="" id="orderby" name="orderby" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否允许新用户参与：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_newuser" id="is_newuser" value="1"
+                                               type="radio" <?php if(isset($detail->is_newuser)&&
+                                        $detail->is_newuser==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_newuser" id="is_newuser" value="0"
+                                               type="radio" <?php if(isset($detail->is_newuser)&&
+                                        $detail->is_newuser==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否启动该活动：</label>
+                            <div class="col-sm-9">
+                                <div class="radio i-checks">
+                                    <label>
+                                        <input name="is_online" id="is_online" value="1"
+                                               type="radio" <?php if(isset($detail->is_online)&&
+                                        $detail->is_online==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                                    <label>
+                                        <input name="is_online" id="is_online" value="0"
+                                               type="radio" <?php if(isset($detail->is_online)&&
+                                        $detail->is_online==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

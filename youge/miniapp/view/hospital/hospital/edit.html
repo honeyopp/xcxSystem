@@ -1,0 +1,72 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('hospital.hospital/edit',['member_miniapp_id'=>$detail->member_miniapp_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>经度：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lat)?$detail->lat:''?>" placeholder="" id="lat" name="lat"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>纬度：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lng)?$detail->lng:''?>" placeholder="" id="lng" name="lng"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>地址：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->address)?$detail->address:''?>" placeholder="" id="address" name="address"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>医院名称：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->hospital_name)?$detail->hospital_name:''?>" placeholder="" id="hospital_name" name="hospital_name"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系人：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->name)?$detail->name:''?>" placeholder="" id="name" name="name"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>联系方式：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>交通信息：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->traffic)?$detail->traffic:''?>" placeholder="" id="traffic" name="traffic"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>医院介绍：</label>
+    <div class="col-sm-9">
+        <textarea  name="introduce" placeholder="说点什么...最少输入10个字符" id="introduce"  cols="50" rows="10" class="form-control"><?=isset($detail->introduce)?$detail->introduce:''?></textarea>
+        
+    </div>
+ </div>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

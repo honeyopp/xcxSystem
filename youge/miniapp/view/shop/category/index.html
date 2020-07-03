@@ -1,0 +1,70 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container"><a title="添加商品分类" href="<?=url('shop.category/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加商品分类</a></div>
+                    <div id="nestable-menu">
+                        <button type="button" data-action="expand-all" class="btn btn-white btn-sm">展开所有</button>
+                        <button type="button" data-action="collapse-all" class="btn btn-white btn-sm">收起所有</button>
+                    </div>
+                    <div class="dd" id="nestable2">
+                        <?php $i=0; foreach($tree as $val) {$i++; ?>
+                        <ol class="dd-list">
+                            <li class="dd-item dd-nodrag" data-id="<?=$i?>">
+                                <div class="dd-handle  ">
+                                    <span class="label label-info"></span> <?=$val['category_name']?>
+                                    <a title="删除父类会删除所有子类 你确定要删除吗？" mini="act" href="<?=url('shop.category/delete',['category_id'=>$val['category_id']])?>" style="float: right;margin-left: 10px; color: red">删除</a>
+                                    <a mini="load" w="80%" h="80%" href="<?=url('shop.category/edit',['category_id'=>$val['category_id']])?>" style="float: right;margin-left: 10px;">修改</a>
+                                    <a mini="load" w="80%" h="80%" href="<?=url('shop.category/create',['pid'=>$val['category_id']])?>" style="float: right;margin-left: 10px;">添加子类</a>
+                                </div>
+                                <ol class="dd-list">
+                                    <?php $j=0; foreach($val['children'] as $v) {$j++; ?>
+                                    <li class="dd-item" data-id="<?=$j?>">
+                                        <div class="dd-handle">
+                                            <span class="label label-info"></span> <?=$v['category_name']?>
+                                            <a title=" 你确定要删除该子分类吗？" mini="act" href="<?=url('shop.category/delete',['category_id'=>$v['category_id']])?>" style="float: right;margin-left: 10px; color: red">删除</a>
+                                            <a mini="load" w="80%" h="80%" href="<?=url('shop.category/edit',['category_id'=>$v['category_id']])?>" style="float: right;margin-left: 10px;">修改</a>
+                                        </div>
+                                    </li>
+                                    <?php } ?>
+                                </ol>
+                            </li>
+                        </ol>
+                        <?php } ?>
+
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.main-container -->
+        </div>
+    </div>
+</div>
+</div>
+<script src="/public/admin/js/plugins/nestable/jquery.nestable.js"></script>
+<script>
+    $(document).ready(function () {
+        var updateOutput = function (e) {
+            var list = e.length ? e : $(e.target), output = list.data("output");
+            if (window.JSON) {
+                output.val(window.JSON.stringify(list.nestable("serialize")))
+            } else {
+                output.val("浏览器不支持")
+            }
+        };
+        $("#nestable").nestable({group: 1}).on("change", updateOutput);
+        $("#nestable2").nestable({group: 1}).on("change", updateOutput);
+        $("#nestable").data("output", $("#nestable-output"));
+        $("#nestable2").data("output", $("#nestable2-output"));
+        $('.dd').nestable({itemNodeName:'lli'});
+        $("#nestable-menu").on("click", function (e) {
+            var target = $(e.target), action = target.data("action");
+            if (action === "expand-all") {
+                $(".dd").nestable("expandAll")
+            }
+            if (action === "collapse-all") {
+                $(".dd").nestable("collapseAll")
+            }
+        })
+    });
+</script>

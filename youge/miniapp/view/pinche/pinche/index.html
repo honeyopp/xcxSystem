@@ -1,0 +1,91 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('pinche.pinche/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>姓名:<input class="form-control" name="name" id="name" value="<?=$search['name']?>" type="text" placeholder="请输入姓名" style=" width:200px"/></td>
+                                        <td>联系方式:<input class="form-control" name="mobile" id="mobile" value="<?=$search['mobile']?>" type="text" placeholder="请输入联系方式" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">搜索</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加拼车管理" href="<?=url('pinche.pinche/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加拼车管理</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>发布内容</th>
+                                <th>发布时间</th>
+                                <th>备注</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->pinche_id ?></td>
+                                    <td>
+                                        发布类型 :<?=empty(config('dataattr.pinche')[$val->type]) ? '' : config('dataattr.pinche')[$val->type];?></br>
+                                        出发地  :<?=$val->begin?> --- 目的地: <?=$val->end?><br>
+                                        出发时间:<?=date("Y-m-d H:i:s",$val->bg_time)?><br>
+                                        空位(乘客数):<?=$val->vacancy;?>人<br>
+                                        <?php if($val->type == 2) { ?>
+                                         车型:<?=$val->car;?>
+                                        <?php } ?>
+                                    </td>
+                                    <td>
+                                        发布人  :<?=empty($user[$val->user_id]) ? '系统发布' : $user[$val->user_id]->nick_name?><br>
+                                        发布时间：<?=date("Y-m-d H:i:s",$val->add_time)?><br>
+                                        联系人 ： <?=$val->name?><br>
+                                        联系方式：<?=$val->mobile?><br>
+                                    </td>
+                                    <td><textarea><?=$val->demand?></textarea></td>
+                                    <td><?=$val->status == 0 ? '<span class="label label-info">发布中</span>' : '<span class="label label-success">已完成</span>'?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑拼车管理" href="<?=url('pinche.pinche/edit','pinche_id='.$val->pinche_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <?php if( $val->status == 0) { ?>
+                                            <a title="设为已完成？" mini="act" href="<?=url('pinche.pinche/ok','pinche_id='.$val->pinche_id)?>" class="btn btn-xs btn-success">设为已完成</a>
+                                            <?php } ?>
+                                            <a title="删除拼车管理" mini="act" href="<?=url('pinche.pinche/delete','pinche_id='.$val->pinche_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

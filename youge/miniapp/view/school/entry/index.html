@@ -1,0 +1,93 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('school.entry/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>联系人:<input class="form-control" name="name" id="name" value="<?=$search['name']?>" type="text" placeholder="请输入联系人" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>课程</th>
+                                <th>联系人</th>
+                                <th>联系方式</th>
+                                <th>留言</th>
+                                <th>申请时间</th>
+
+                                <th>操作</th>
+
+
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->entry_id ?></td>
+                                    <td><?=empty($class[$val->class_id]) ? '反馈与咨询' : '报名课程:' . $class[$val->class_id]->title ?></td>
+                                    <td><?=$val->name?></td>
+                                    <td><?=$val->mobile?></td>
+                                    <td><?=$val->message?></td>
+                                    <td><?=date("Y-m-d H:i:s",$val->add_time)?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="删除报名咨询" mini="act" href="<?=url('school.entry/delete','entry_id='.$val->entry_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

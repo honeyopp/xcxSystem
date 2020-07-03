@@ -1,0 +1,113 @@
+<style>
+    .edit-a a{ margin-bottom: 2px;}
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('taocan.taocan/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>所在城市:<input class="form-control" name="city_id" id="city_id" value="<?=$search['city_id']?>" type="text" placeholder="请输入所在城市" style=" width:200px"/></td>
+                                        <td>导航(分类):<input class="form-control" name="nav_id" id="nav_id" value="<?=$search['nav_id']?>" type="text" placeholder="请输入导航(分类)" style=" width:200px"/></td>
+                                        <td>所属商家:<input class="form-control" name="stroe_id" id="stroe_id" value="<?=$search['stroe_id']?>" type="text" placeholder="请输入所属商家" style=" width:200px"/></td>
+                                        <td>套餐名称:<input class="form-control" name="taocan_name" id="taocan_name" value="<?=$search['taocan_name']?>" type="text" placeholder="请输入套餐名称" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>所在城市</th>
+                                <th>导航(分类)</th>
+                                <th>套餐类型</th>
+                                <th>所属商家</th>
+                                <th>套餐名称</th>
+                                <th>负责人电话</th>
+                                <th>图片</th>
+                                <th>banner</th>
+                                <th>评分</th>
+                                <th>订单数</th>
+                                <th>好评数</th>
+                                <th>差评数</th>
+                                <th>起价</th>
+                                <th>地址</th>
+                                <th>排序</th>
+                                <th>热门</th>
+                                <th>是否上架</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                                <tbody>
+                                <tr>
+                                    <td colspan="18" style="text-align: center">选择全部套餐（请根据实际情况选择）</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleTaocan('全部套餐','0');" href="javascript:void(0);" class="btn btn-xs btn-info">选择套餐</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?=$val->taocan_id ?></td>
+                                    <td><?=empty($citys[$val->city_id]) ? '' : $citys[$val->city_id]->city_name ?></td>
+                                    <td><?=empty($navs[$val->nav_id]) ? '' : $navs[$val->nav_id]->nav_name ?></td>
+                                    <td><?=empty(config('dataattr.taocantypenames')[$val->type] ) ? '' : config('dataattr.taocantypenames')[$val->type] ?></td>
+                                    <td><?=empty($stores[$val->store_id]) ? '' : $stores[$val->store_id]->store_name ?></td>
+                                    <td><?=$val->taocan_name?></td>
+                                    <td><?=$val->taocan_tel?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->banner?>"/></td>
+                                    <td><?=round($val->score/10)?>分</td>
+                                    <td><?=$val->order_num?>个</td>
+                                    <td><?=$val->praise_num?>个</td>
+                                    <td><?=$val->bad_num?>个</td>
+                                    <td>￥<?=sprintf("%.2f",$val->price/100)?>元</td>
+                                    <td><textarea><?=$val->address?></textarea></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td><?=$val->is_hot == 1 ? '<span class="label label-primary">是</span>' : '<span class="label label-warning">否</span>'?></td>
+                                    <td><?=$val->is_online == 1 ? '<span class="label label-primary">是</span>' : '<span class="label label-warning">否</span>'?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleTaocan('<?=$val->taocan_name?>',<?=$val->taocan_id?>);" href="javascript:void(0);" class="btn btn-xs btn-info">选择套餐</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('hotel.hotel/select')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>所在城市:
+                                            <input id="cityname" name="cityname" type="text" value="<?=$search['city_name']?>" placeholder="请单击选择城市"  class="form-control"/>
+                                            <input type="hidden" value="<?=$search['city_id']?>" name="city_id" id="city_id">
+                                            <button id="city-btn" style="display: none" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/setting.city/select')?>" class="btn btn-w-m btn-info">选择该城市</button>
+
+                                            <script>
+                                                $("#cityname").focus(function () {
+                                                    $("#city-btn").click();
+                                                })
+                                                function seleCity(city_name,city_id){
+                                                    layer.closeAll();
+                                                    layer.msg('操作成功！');
+                                                    $("#cityname").val(city_name);
+                                                    $("#city_id").val(city_id);
+                                                }
+                                            </script>
+                                        </td>
+                                        <td>酒店名称:<input class="form-control" name="hotel_name" id="hotel_name" value="<?=$search['hotel_name']?>" type="text" placeholder="请输入酒店名称" style=" width:200px"/></td>
+                                        <td>酒店等级:
+                                            <select class="form-control" name="hotel_level">
+                                                <option value="0">请选择</option>
+                                                <?php foreach(config("dataattr.hotellevelnames") as $key=>$val) { ?>
+                                                <option  <?=$search['hotel_level'] == $key ? 'selected' : ''?>  class="form-control"  value="<?=$key?>"><?=$val?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>所在城市</th>
+                                <th>酒店名称</th>
+                                <th>酒店星级</th>
+                                <th>酒店电话</th>
+                                <th>图片</th>
+                                <th>评分</th>
+                                <th>附近</th>
+                                <th>起价</th>
+                                <th>地址</th>
+                                <th>是否营业</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <tr>
+                                    <td colspan="11" style="text-align: center">选择全部酒店（请根据实际情况选择）</td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleHotel('全部酒店','0');" href="javascript:void(0);" class="btn btn-xs btn-info">选择全部酒店</a>                                    </div>
+                                    </td>
+                                </tr>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->hotel_id ?></td>
+                                    <td><?=empty($city[$val->city_id]) ? '' : $city[$val->city_id]->city_name?></td>
+                                    <td><?=$val->hotel_name?></td>
+                                    <td><?=empty(config('dataattr.hotellevelnames')[$val->hotel_level]) ? '' : config('dataattr.hotellevelnames')[$val->hotel_level]?></td>
+                                    <td><?=$val->hotel_tel?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=$val->score/10?>分</td>
+                                    <td><?=$val->advantage?></td>
+                                    <td><?=$val->price?></td>
+                                    <td><?=$val->address?></td>
+                                    <td><?=$val->is_online == 1 ? '<span class="label label-primary">营业中</span>' : '<span class="label label-warning">休息</span>' ?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleHotel('<?=$val->hotel_name?>','<?=$val->hotel_id?>');" href="javascript:void(0);" class="btn btn-xs btn-info">选择该酒店</a>                                    </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

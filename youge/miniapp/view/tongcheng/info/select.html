@@ -1,0 +1,108 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-success">
+                     请管理员认真查看每条信息 并及时删除不良信息！！！
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('tongcheng.info/select')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>发布会员:<input class="form-control" name="user_id" id="user_id" value="<?=$search['user_id']?>" type="text" placeholder="请输入发布会员" style=" width:200px"/></td>
+                                        <td>置顶过期时间:
+                                             <select class="form-control" >
+                                                 <option>请选择</option>
+                                                 <option>正在置顶中</option>
+                                             </select>
+                                        </td>
+                                        <td>发布时间:<input class="form-control" name="add_time" id="add_time" value="<?=$search['add_time']?>" type="text" placeholder="请输入发布时间" style=" width:200px"/></td>
+                                        <td>发布分类:
+                                            <select class="form-control">
+                                                <option>请选择</option>
+                                                <?php foreach($category as $val) {?>
+                                                          <option><?=$val->name?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>发布会员</th>
+                                <th>分类</th>
+                                <th>内容</th>
+                                <th>地址</th>
+                                <th>查看数</th>
+                                <th>评论数</th>
+                                <th>联系方式</th>
+                                <th>系统排序</th>
+                                <th>置顶过期时间</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?=$val->info_id ?></td>
+                                    <td><?=empty($user[$val->user_id]) ? '系统发布' : $user[$val->user_id]->nick_name?></td>
+                                    <td><?=empty($category[$val->category_id]) ? '已删除分类' : $category[$val->category_id]->name?></td>
+                                    <td><textarea><?=$val->info?></textarea></td>
+                                    <td><textarea><?=$val->address?></textarea></td>
+                                    <td><?=$val->view_num?></td>
+                                    <td><?=$val->comment_num?></td>
+                                    <td><?=$val->tel?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td><?=$val->expire_time == 0 ? '未置顶' :  date("Y-m-d H:i:s",$val->expire_time)?></td>
+                                    <td><?=date("Y-m-d H:i:s",$val->add_time)?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleInfo('<?=$val->info?>','<?=$val->info_id?>')" href="javascript:void(0);" class="btn btn-xs btn-info">选择该信息</a>                                    </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

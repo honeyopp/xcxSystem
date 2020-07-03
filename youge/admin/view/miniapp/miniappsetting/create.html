@@ -1,0 +1,400 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('miniapp.miniappsetting/create')?>" id="form-create" method="post"
+                          class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>授权小程序id：</label>
+                            <div class="col-sm-9">
+                                <input type="text"
+                                       value="<?=isset($detail->member_miniapp_id)?$detail->member_miniapp_id:''?>"
+                                       placeholder="" id="member_miniapp_id" name="member_miniapp_id"
+                                       class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>客服电话：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->service_tel)?$detail->service_tel:''?>"
+                                       placeholder="" id="service_tel" name="service_tel" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>投诉电话：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->complaint_tel)?$detail->complaint_tel:''?>"
+                                       placeholder="" id="complaint_tel" name="complaint_tel" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>关于我们：</label>
+                            <div class="col-sm-9">
+                                <textarea name="about" placeholder="说点什么...最少输入10个字符" id="about" cols="50" rows="10"
+                                          class="form-control"><?=isset($detail->about)?$detail->about:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">版权所有：</label>
+                            <div class="col-sm-9">
+                                <textarea name="copyright" placeholder="说点什么...最少输入10个字符" id="copyright" cols="50"
+                                          rows="10" class="form-control"><?=isset($detail->
+                                    copyright)?$detail->copyright:''?></textarea>
+
+                            </div>
+                        </div>
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>证书pem格式：</label>
+                            <div class="col-sm-9 ">
+
+                                <div id="uploader-demo" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="apiclient_certList" class="uploader-list">
+                                        <?php if(isset($detail['apiclient_cert'])){?>
+                                        <div class="file-item thumbnail"><img width="110"
+                                                                              src="/attachs/uploads/<?=$detail['apiclient_cert']?>"><input
+                                                type="hidden" value="<?=$detail['apiclient_cert']?>"
+                                                name="apiclient_cert" id="apiclient_cert"></div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="apiclient_certPicker">选择图片</div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <script>
+
+
+                            var uploaderapiclient_cert = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"miniappsetting_apiclient_cert"])?>',
+                                pick: '#apiclient_certPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderapiclient_cert.on('fileQueued', function (file) {
+                                var $li = $(
+                                        '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                        '<img>' +
+                                        '<input type="hidden" value="" name="apiclient_cert" id="apiclient_cert">' +
+                                        '<div class="info">' + file.name + '</div>' +
+                                        '</div>'
+                                    ),
+                                    $img = $li.find('img');
+
+
+                                // $list为容器jQuery实例
+                                $("#apiclient_certList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderapiclient_cert.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+
+
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderapiclient_cert.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderapiclient_cert.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#apiclient_cert").val(response._raw);
+                            });
+
+                            // 文件上传失败，显示上传出错。
+                            uploaderapiclient_cert.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderapiclient_cert.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+
+                        </script>
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>证书秘钥pem格式：</label>
+                            <div class="col-sm-9 ">
+
+                                <div id="uploader-demo" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="apiclient_cert_keyList" class="uploader-list">
+                                        <?php if(isset($detail['apiclient_cert_key'])){?>
+                                        <div class="file-item thumbnail"><img width="110"
+                                                                              src="/attachs/uploads/<?=$detail['apiclient_cert_key']?>"><input
+                                                type="hidden" value="<?=$detail['apiclient_cert_key']?>"
+                                                name="apiclient_cert_key" id="apiclient_cert_key"></div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="apiclient_cert_keyPicker">选择图片</div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <script>
+
+
+                            var uploaderapiclient_cert_key = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"miniappsetting_apiclient_cert_key"])?>',
+                                pick: '#apiclient_cert_keyPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderapiclient_cert_key.on('fileQueued', function (file) {
+                                var $li = $(
+                                        '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                        '<img>' +
+                                        '<input type="hidden" value="" name="apiclient_cert_key" id="apiclient_cert_key">' +
+                                        '<div class="info">' + file.name + '</div>' +
+                                        '</div>'
+                                    ),
+                                    $img = $li.find('img');
+
+
+                                // $list为容器jQuery实例
+                                $("#apiclient_cert_keyList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderapiclient_cert_key.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+
+
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderapiclient_cert_key.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderapiclient_cert_key.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#apiclient_cert_key").val(response._raw);
+                            });
+
+                            // 文件上传失败，显示上传出错。
+                            uploaderapiclient_cert_key.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderapiclient_cert_key.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+
+                        </script>
+                        <link rel="stylesheet" type="text/css" href="/public/common/webuploader-0.1.5/webuploader.css">
+                        <script type="text/javascript" src="/public/common/webuploader-0.1.5/webuploader.js"></script>
+
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>ci证书文件：</label>
+                            <div class="col-sm-9 ">
+
+                                <div id="uploader-demo" style="max-width: 300px">
+                                    <!--用来存放item-->
+                                    <div id="rootcaList" class="uploader-list">
+                                        <?php if(isset($detail['rootca'])){?>
+                                        <div class="file-item thumbnail"><img width="110"
+                                                                              src="/attachs/uploads/<?=$detail['rootca']?>"><input
+                                                type="hidden" value="<?=$detail['rootca']?>" name="rootca" id="rootca">
+                                        </div>
+                                        <?php }?>
+                                    </div>
+                                    <div id="rootcaPicker">选择图片</div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <script>
+
+
+                            var uploaderrootca = WebUploader.create({
+                                auto: true,
+                                swf: '/public/admin/Widget/webuploader-0.1.5/Uploader.swf',
+                                server: '<?=url("upload.upload/index",['mdl'=>"miniappsetting_rootca"])?>',
+                                pick: '#rootcaPicker',
+                                resize: false,
+                                duplicate: true
+                            });
+
+                            $(document).on('click', '.file-item', function () {
+                                $(this).remove();
+                            });
+
+                            // 当有文件添加进来的时候
+                            uploaderrootca.on('fileQueued', function (file) {
+                                var $li = $(
+                                        '<div id="' + file.id + '" class="file-item thumbnail">' +
+                                        '<img>' +
+                                        '<input type="hidden" value="" name="rootca" id="rootca">' +
+                                        '<div class="info">' + file.name + '</div>' +
+                                        '</div>'
+                                    ),
+                                    $img = $li.find('img');
+
+
+                                // $list为容器jQuery实例
+                                $("#rootcaList").html($li);
+
+                                // 创建缩略图
+                                // 如果为非图片文件，可以不用调用此方法。
+                                // thumbnailWidth x thumbnailHeight 为 100 x 100
+                                uploaderrootca.makeThumb(file, function (error, src) {
+                                    if (error) {
+                                        $img.replaceWith('<span>不能预览</span>');
+                                        return;
+                                    }
+
+                                    $img.attr('src', src);
+                                }, 100, 100);
+                            });
+
+
+                            // 文件上传过程中创建进度条实时显示。
+                            uploaderrootca.on('uploadProgress', function (file, percentage) {
+                                var $li = $('#' + file.id),
+                                    $percent = $li.find('.progress span');
+
+                                // 避免重复创建
+                                if (!$percent.length) {
+                                    $percent = $('<p class="progress"><span></span></p>')
+                                        .appendTo($li)
+                                        .find('span');
+                                }
+
+                                $percent.css('width', percentage * 100 + '%');
+                            });
+
+                            // 文件上传成功，给item添加成功class, 用样式标记上传成功。
+                            uploaderrootca.on('uploadSuccess', function (file, response) {
+                                $('#' + file.id).addClass('upload-state-done');
+                                $("#rootca").val(response._raw);
+                            });
+
+                            // 文件上传失败，显示上传出错。
+                            uploaderrootca.on('uploadError', function (file) {
+                                var $li = $('#' + file.id),
+                                    $error = $li.find('div.error');
+
+                                // 避免重复创建
+                                if (!$error.length) {
+                                    $error = $('<div class="error"></div>').appendTo($li);
+                                }
+
+                                $error.text('上传失败');
+                            });
+
+                            // 完成上传完了，成功或者失败，先删除进度条。
+                            uploaderrootca.on('uploadComplete', function (file) {
+                                $('#' + file.id).find('.progress').remove();
+                            });
+
+                        </script>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

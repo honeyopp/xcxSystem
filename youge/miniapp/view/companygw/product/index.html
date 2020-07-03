@@ -1,0 +1,108 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>搜索</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+
+                            <div class="table-responsive">
+                                <form class="form-search" method="get" action="<?=url('companygw.product/index')?>"
+                                      role="form">
+                                    <table>
+                                        <tr>
+                                            <td>产品标题:<input class="form-control" name="title" id="title"
+                                                            value="<?=$search['title']?>" type="text"
+                                                            placeholder="请输入产品标题" style=" width:200px"/></td>
+
+                                            <td>
+                                                <div class="input-group">
+                                                    <button type="submit" style="margin-top: 42%"
+                                                            class="btn form-control btn-sm btn-primary">
+                                                        搜索
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加产品" href="<?=url('companygw.product/create2')?>"
+                           class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加产品</a>
+
+                    </div>
+                </div>
+                <div class="table-responsive">
+
+                    <table id="simple-table" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>产品标题</th>
+                            <th>产品图片</th>
+                            <th>价格</th>
+                            <th>型号</th>
+                            <th>发布时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <form id="mini_list">
+                            <tbody>
+                            <?php foreach($list as $val){ ?>
+                            <tr>
+                                <td><?= $val->product_id ?></td>
+                                <td><?=$val->product_name?></td>
+                                <td><img width="50" src="/attachs/uploads/<?=getImg($val->photo)?>"></td>
+                                <td><?=empty($val->price) ? '不显示价格' : $val->price?></td>
+                                <td><?=empty($val->version) ? '不显示型号' : $val->version?></td>
+                                <td><?=date('Y-m-d H:i:s',$val->add_time);?></td>
+                                <td>
+                                    <div class="hidden-sm hidden-xs btn-group">
+                                        <a title="编辑产品"
+                                           href="<?=url('companygw.product/edit2','product_id='.$val->product_id)?>"
+                                           class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                        <a title="删除产品" mini="act"
+                                           href="<?=url('companygw.product/delete','product_id='.$val->product_id)?>"
+                                           class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php } ?>
+
+                            </tbody>
+                        </form>
+                    </table>
+
+                    <div>
+                        <?php echo $page; ?>
+                    </div>
+                </div><!-- /.row -->
+
+
+            </div><!-- /.main-container -->
+
+
+        </div>
+    </div>
+</div>
+</div>

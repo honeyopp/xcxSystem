@@ -1,0 +1,109 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('tongcheng.comment/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 <td>会员:<input class="form-control" name="user_id" id="user_id"  value="<?=$search['user_id']?>" type="text"  placeholder="请输入会员"  style=" width:200px"/></td>
+
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加信息评论" href="<?=url('tongcheng.comment/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加信息评论</a>
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>会员</th>
+<th>信息id</th>
+<th>内容</th>
+<th>回复</th>
+<th>回复时间</th>
+<th>赞数</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td><?= $val->comment_id ?></td>
+                                        <td><?=$val->user_id?></td>
+<td><?=$val->info_id?></td>
+<td><?=$val->content?></td>
+<td><?=$val->reply?></td>
+<td><?=$val->reply_time?></td>
+<td><?=$val->zan_num?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑信息评论"  href="<?=url('tongcheng.comment/edit','comment_id='.$val->comment_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除信息评论" mini="act"  href="<?=url('tongcheng.comment/delete','comment_id='.$val->comment_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

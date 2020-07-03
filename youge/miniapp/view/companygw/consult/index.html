@@ -1,0 +1,106 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('companygw.consult/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>咨询产品:<input class="form-control" name="product_name" id="product_name"
+                                                        value="<?=$search['product_name']?>" type="text"
+                                                        placeholder="请输入咨询产品" style=" width:200px"/></td>
+                                        <td>联系人:<input class="form-control" name="name" id="name"
+                                                       value="<?=$search['name']?>" type="text" placeholder="请输入联系人"
+                                                       style=" width:200px"/></td>
+                                        <td>联系方式:<input class="form-control" name="tel" id="tel"
+                                                        value="<?=$search['tel']?>" type="text" placeholder="请输入联系方式"
+                                                        style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>咨询产品</th>
+                                <th>联系人</th>
+                                <th>联系方式</th>
+                                <th>备注</th>
+                                <th>申请时间</th>
+
+                                <th>操作</th>
+
+
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->consult_id ?></td>
+                                    <td><?=$val->product_name?></td>
+                                    <td><?=$val->name?></td>
+                                    <td><?=$val->tel?></td>
+                                    <td><?=$val->remarks?></td>
+                                    <td><?=date("Y-m-d H:i:s",$val->add_time)?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="删除用户咨询" mini="act"
+                                               href="<?=url('companygw.consult/delete','consult_id='.$val->consult_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

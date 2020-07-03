@@ -1,0 +1,88 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('taocan.destination/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>标题:<input class="form-control" name="title" id="title" value="<?=$search['title']?>" type="text" placeholder="请输入标题" style=" width:200px"/></td>
+                                        <td>省份:
+                                            <select class="form-control" style="width:200px;" name="province_id">
+                                                <option style="font-size: 2rem">请选择</option>
+                                                <?php foreach($province as $k=>$v) {?>
+                                                <option disabled class="form-control"><h3><?=$k?></h3></option>
+                                                <?php foreach($v as $val) { ?>
+                                                <option  style="font-size: 2rem" <?=$search['province_id'] == $val['id'] ? 'selected' : ''?> value="<?=$val['id']?>">&nbsp;&nbsp;&nbsp;&nbsp;<?=$val['name']?></option>
+                                                <?php } ?>
+                                                <?php } ?>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加目的地推荐" href="<?=url('taocan.destination/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加目的地推荐</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>城市</th>
+                                <th>标题</th>
+                                <th>副标题</th>
+                                <th>图片</th>
+                                <th>是否热门</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?=$val->destination_id ?></td>
+                                    <td><?=empty($city[$val->city_id]) ? '' : $city[$val->city_id]->city_name ?></td>                                    <td><?=$val->title?></td>
+                                    <td><?=$val->title2?></td>
+                                    <td><img width="80" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=$val->is_hot == 1 ? '是' : '否'?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group"><a  onclick="parent.seleMudidi('<?=$val->title?>','<?=$val->destination_id?>');" href="javascript:void(0);" class="btn btn-xs btn-info">选择该目的地</a>                                    </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

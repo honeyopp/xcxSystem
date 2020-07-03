@@ -1,0 +1,76 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="alert alert-block alert-success">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+                            <i class="ace-icon fa fa-check green"></i>
+                            缩略图设置主要是前台生成缩略图使用; 小图就是small  中图是middle 大图是big;
+                        </div>
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                    <form action="<?=url('setting.setting/attachs')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">城市图片：</label>
+                            <div class="col-sm-9">
+                                <div class="col-md-2">小图
+                                    <input type="text" class=" form-control"   value="<?=isset($setting['attachs']['city_photo']['small']) ? $setting['attachs']['city_photo']['small']:''?>" placeholder="" id="data[city_photo][small]" name="data[city_photo][small]"  /></div>
+                            <div class="col-md-2"> 中图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['city_photo']['middle']) ? $setting['attachs']['city_photo']['middle']:''?>" placeholder="" id="data[city_photo][middle]" name="data[city_photo][middle]"  />
+                            </div></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">城市banner图片：</label>
+                    <div class="col-sm-9">
+                        <div class="col-md-2"> 小图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['city_banner']['small']) ? $setting['attachs']['city_banner']['small']:''?>" placeholder="" id="data[city_banner][small]" name="data[city_banner][small]"  />
+                        </div>  <div class="col-md-2"> 中图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['city_banner']['middle']) ? $setting['attachs']['city_banner']['middle']:''?>" placeholder="" id="data[city_banner][middle]" name="data[city_banner][middle]"  />
+                        </div> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">会员头像：</label>
+                    <div class="col-sm-9">
+                        <div class="col-md-2">  超级小图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['user_face']['small2']) ? $setting['attachs']['user_face']['small2']:''?>" placeholder="" id="data[user_face][small2]" name="data[user_face][small2]"  />
+                        </div> <div class="col-md-2">   极小图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['user_face']['small1']) ? $setting['attachs']['user_face']['small1']:''?>" placeholder="" id="data[user_face][small1]" name="data[user_face][small1]"  />
+                        </div> <div class="col-md-2">  小图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['user_face']['small']) ? $setting['attachs']['user_face']['small']:''?>" placeholder="" id="data[user_face][small]" name="data[user_face][small]"  />
+                        </div>  <div class="col-md-2">  中图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['user_face']['middle']) ? $setting['attachs']['user_face']['middle']:''?>" placeholder="" id="data[user_face][middle]" name="data[user_face][middle]"  />
+                        </div></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">发现专题：</label>
+                    <div class="col-sm-9">
+                        <div class="col-md-2"> 小图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['faxian_photo']['small']) ? $setting['attachs']['faxian_photo']['small']:''?>" placeholder="" id="data[faxian_photo][small]" name="data[faxian_photo][small]"  />
+                        </div> <div class="col-md-2"> 中图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['faxian_photo']['middle']) ? $setting['attachs']['faxian_photo']['middle']:''?>" placeholder="" id="data[faxian_photo][middle]" name="data[faxian_photo][middle]"  />
+                        </div></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">房屋图片：</label>
+                    <div class="col-sm-9">
+                        <div class="col-md-2">小图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['room_photo']['small']) ? $setting['attachs']['room_photo']['small']:''?>" placeholder="" id="data[room_photo][small]" name="data[room_photo][small]"  />
+                        </div> <div class="col-md-2">中图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['room_photo']['middle']) ? $setting['attachs']['room_photo']['middle']:''?>" placeholder="" id="data[room_photo][middle]" name="data[room_photo][middle]"  />
+                        </div></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right">积分产品：</label>
+                    <div class="col-sm-9">
+                        <div class="col-md-2">小图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['goods_photo']['small']) ? $setting['attachs']['goods_photo']['small']:''?>" placeholder="" id="data[goods_photo][small]" name="data[goods_photo][small]"  />
+                        </div> <div class="col-md-2"> 中图<input type="text" class=" form-control"  value="<?=isset($setting['attachs']['goods_photo']['middle']) ? $setting['attachs']['goods_photo']['middle']:''?>" placeholder="" id="data[goods_photo][middle]" name="data[goods_photo][middle]"  />
+                        </div> </div>
+                </div>
+
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                            <i class="ace-icon fa fa-check bigger-110"></i>
+                            确定保存
+                        </button>
+                    </div>
+                </div>
+                </form>
+            </div></div>
+    </div>
+</div>
+</div>

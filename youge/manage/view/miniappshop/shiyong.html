@@ -1,0 +1,53 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('miniappshop/shiyong2',['miniapp_id'=>$miniapp_id])?>"  id="form-create" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">试用模板：</label>
+                            <div class="col-sm-9">
+                                 <img width="200" href="200" alt="image" class="img-responsive"
+                         src="/attachs/uploads/<?=getImg($detail->photo)?>">
+                            </div>
+                        </div>
+                          <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">模板名称：</label>
+                            <div class="col-sm-9">
+                                <?=$detail->title?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">试用结束：</label>
+                            <div class="col-sm-9">
+                                <?=date('Y-m-d',time()+$detail->expire_day * 86400);?>
+                            </div>
+                        </div>
+                        <?php if(!$member_miniapp_id){?>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">选择我小程序：</label>
+                            <div class="col-sm-9">
+                                <select  class="form-control"  id="member_miniapp_id" name="member_miniapp_id">
+                                    <?php foreach($myApp as $val){?>
+                                    <option  value="<?=$val->member_miniapp_id;?>"><?=$val->nick_name;?></option>
+                                    <?php }?>
+                                </select>
+                            </div>
+                        </div>
+                        <?php }else{?>
+                        <input type="hidden" name='member_miniapp_id' id='member_miniapp_id' value="<?=$member_miniapp_id;?>"/>
+                        <?php }?>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="submit">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    确定试用
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div></div>
+        </div>
+    </div>
+</div>

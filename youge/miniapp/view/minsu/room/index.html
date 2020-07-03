@@ -1,0 +1,114 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('minsu.room/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td style="width: 300px;">
+                                            民宿:
+                                                <input id="minsuname" type="text"  value="<?=empty($minsu[$search['minsu_id']]) ? '' : $minsu[$search['minsu_id']]->minsu_name?>" placeholder="请单击选择民宿"  class="form-control"/>
+                                                <input type="hidden" value="" name="minsu_id" id="minsu_id">
+                                                <button id="show-btn" style="display: none" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/minsu.minsu/select')?>" class="btn btn-w-m btn-info">选择民宿</button>
+                                            <script>
+                                                $("#minsuname").focus(function () {
+                                                        $("#show-btn").click();
+                                                })
+                                                function seleminsu(minsu_name,minsu_id){
+                                                    layer.closeAll();
+                                                    layer.msg('操作成功！');
+                                                    $("#minsuname").val(minsu_name);
+                                                    $("#minsu_id").val(minsu_id);
+                                                }
+                                            </script>
+                                        </td>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加民宿房间" href="<?=url('minsu.room/create',['minsu_id'=>$search['minsu_id']])?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加民宿房间</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>民宿</th>
+                                <th>标题</th>
+                                <th>面积</th>
+                                <th>图片</th>
+                                <th>房屋类型</th>
+                                <th>日常价格</th>
+                                <th>床的类型</th>
+                                <th>床宽</th>
+                                <th>床长</th>
+                                <th>床的数量</th>
+                                <th>单日最大预定</th>
+                                <th>是否有WIFI</th>
+                                <th>是否上架</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->room_id ?></td>
+                                    <td><?=empty($minsu[$val->minsu_id]) ? '' : $minsu[$val->minsu_id]->minsu_name?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><?=$val->area?> ㎡</td>
+                                    <td><img width="80" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=empty(config('dataattr.minsuroomtypenames')[$val->room_type]) ? ' ' : config('dataattr.minsuroomtypenames')[$val->room_type] ?></td>
+                                    <td><?=sprintf("%.2f",$val->price/100)?></td>
+                                    <td><?=empty(config('dataattr.minsubedtype')[$val->bed_type]) ? ' ' : config('dataattr.minsubedtype')[$val->bed_type] ?></td>
+                                    <td><?=$val->bed_width?> m</td>
+                                    <td><?=$val->bed_logn?> m</td>
+                                    <td><?=$val->bed_num?> 张</td>
+                                    <td><?=$val->day_num?></td>
+                                    <td><?=$val->is_wifi == 1 ? '<span class="label label-primary">有</span>' : '<span class="label label-warning">无</span>'?></td>
+                                    <td><?=$val->is_online == 1 ? '<span class="label label-primary">上架</span>' : '<span class="label label-warning">下架</span>'?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="<?=$val->is_online == 1 ? '下架民宿' :  '上架民宿'?>" mini="act" href="<?=url('minsu.room/online','room_id='.$val->room_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i><?=$val->is_online == 1 ? '下架民宿' :  '上架民宿'?></a>
+                                            <a title="编辑民宿房间" href="<?=url('minsu.room/edit','room_id='.$val->room_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除民宿房间" mini="act" href="<?=url('minsu.room/delete','room_id='.$val->room_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

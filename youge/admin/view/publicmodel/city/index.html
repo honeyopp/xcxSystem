@@ -1,0 +1,140 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('publicmodel.city/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 <td>用户小程序id:<input class="form-control" name="member_miniapp_id" id="member_miniapp_id"  value="<?=$search['member_miniapp_id']?>" type="text"  placeholder="请输入用户小程序id"  style=" width:200px"/></td>
+<td>省份:<input class="form-control" name="province_id" id="province_id"  value="<?=$search['province_id']?>" type="text"  placeholder="请输入省份"  style=" width:200px"/></td>
+<td>城市名称:<input class="form-control" name="city_name" id="city_name"  value="<?=$search['city_name']?>" type="text"  placeholder="请输入城市名称"  style=" width:200px"/></td>
+
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加城市设置" href="<?=url('publicmodel.city/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加城市设置</a>
+     <a mini="list" for="mini_list" title="批量删除城市设置" href="<?=url('publicmodel.city/delete')?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+    
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>用户小程序id</th>
+<th>省份</th>
+<th>城市名称</th>
+<th>纬度</th>
+<th>经度</th>
+<th>拼音（全拼）</th>
+<th>拼音（首字母）</th>
+<th>景点个数</th>
+<th>商圈个数</th>
+<th>行政区域个数</th>
+<th>车站个数</th>
+<th>高校个数</th>
+<th>医院个数</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td class="center">
+                                            <label class="pos-rel">
+                                                <input id="city_id_<?=$val->city_id;?>" name="city_id[]" value="<?=$val->city_id;?>" type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+
+                                        <td><?= $val->city_id ?></td>
+                                        <td><?=$val->member_miniapp_id?></td>
+<td><?=$val->province_id?></td>
+<td><?=$val->city_name?></td>
+<td><?=$val->lat?></td>
+<td><?=$val->lng?></td>
+<td><?=$val->pinyin?></td>
+<td><?=$val->initial?></td>
+<td><?=$val->scenic_spot_num?></td>
+<td><?=$val->area_num?></td>
+<td><?=$val->administration_num?></td>
+<td><?=$val->station_num?></td>
+<td><?=$val->colleges_num?></td>
+<td><?=$val->Hospital_num?></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑城市设置"  href="<?=url('publicmodel.city/edit','city_id='.$val->city_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除城市设置" mini="act"  href="<?=url('publicmodel.city/delete','city_id='.$val->city_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,193 @@
+<link href="/public/admin/css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
+<style>.lightBoxGallery img {  margin: 1rem;  width: 14%;  }
+.text-p::first-letter
+{
+    font-size: 3rem;
+}
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="col-sm-12 ">
+        <div class="widget style1" style="background-color: #ffffff">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img width="200" href="200" alt="image" class="img-responsive"
+                         src="/attachs/uploads/<?=getImg($detail->photo)?>">
+                </div>
+                <div class="col-sm-10 text-left" style=" line-height: 4rem;">
+                    <h2 style=" margin-bottom: 1%;" class="font-bold"><?=$detail->title?></h2>
+                    <p>模板价格 <b>:</b><span style="color: red;margin-left: 2%"> ￥<?= sprintf("%.2f",$detail->price/100)?></span></p>
+                    <p>服务周期 <b>:</b><a class="btn btn-white btn-bitbucket" style="margin-left: 2%; border-color: #00a0e9"><?=config('setting.service_day')?>天</a></p>
+                    <p><?php if($detail->type == 1) { ?>
+                        <button onclick="show(1)" style="margin-right: 2%;" data-toggle="button" class="btn btn-primary btn-outline" type="button">试用(<?=$detail->expire_day?>)天
+                        </button>
+                        <?php } ?>
+                        <button data-toggle="button" class="btn btn-primary btn-outline" onclick="pay()" type="button">
+                            立即购买
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--相册-->
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <h1>模板截图：</h1>
+                        <div class="lightBoxGallery">
+                            <?php foreach($photos as $val) {?>
+                            <a href="/attachs/uploads/<?=getImg($val->photo)?>" title="图片" data-gallery=""><img src="/attachs/uploads/<?=getImg($val->photo)?>"></a>
+                            <?php } ?>
+                            <div id="blueimp-gallery" class="blueimp-gallery">
+                                <div class="slides"></div>
+                                <h3 class="title"></h3>
+                                <a class="prev"><</a>
+                                <a class="next">></a>
+                                <a class="close">×</a>
+                                <a class="play-pause"></a>
+                                <ol class="indicator"></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--图文介绍-->
+    <div class="row">
+        <div class="col-lg-12 ">
+            <div class="ibox" style="padding: 0 14px;">
+                <div class="ibox-content">
+                    <div class="pull-right">
+                        <button class="btn btn-white btn-xs" type="button"><?=$detail->title?></button>
+                        <button class="btn btn-white btn-xs" type="button">价格：<?=sprintf("%.2f",$detail->price/100)?>元
+                        </button>
+                        <button class="btn btn-white btn-xs" type="button">试用<?=$detail->expire_day?>天</button>
+                    </div>
+                    <div class="text-center article-title">
+                        <h1>
+                            <span style="font-size: 4rem">模板介绍</span>（<?=$detail->title?>）
+                        </h1>
+                    </div>
+                    <?php foreach($describes as $val) { ?>
+                    <p class="text-p" style="text-indent:2em;font-size: 2rem;">
+                        <?=str_replace("\r\n", "<br>",$val->describe);    ?>
+                        <?php if(!empty($val->photo)) { ?>
+                        <img style="width: 100%;height: 50%; max-width: 100%" alt="image" class="img-responsive" src="/attachs/uploads/<?=getImg($val->photo)?>">
+                        <?php } ?>
+                    </p>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/admin/js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+<script>
+    function pay() {
+        //示范一个公告层
+        layer.open({
+            type: 1
+            ,
+            title: false //不显示标题栏
+            ,
+            closeBtn: false
+            ,
+            area: '300px;'
+            ,
+            shade: 0.8
+            ,
+            id: 'LAY_layuipro' //设定一个id，防止重复弹出
+            ,
+            btn: ['立即购买', '我在看看']
+            ,
+            moveType: 1 //拖拽模式，0或者1
+            ,
+            content: ' <div style=" line-height: 22px; padding-left: 50px;  font-weight: 300;"> <h2>总价格 :<span  style="color: red">￥<span id="price"><?=sprintf("%.2f",$detail->price/100)?></span></span></h2> <h3 style="float: left;margin-right: 1rem">服务周期:</h3><a style="float: left;margin-right: 1%" on="0"  onclick="price($(this))" id="add" class="btn btn-white btn-price btn-bitbucket">-</a><input id="num" class="form-control"  readonly="readonly"  name="price" value="1" type="text" placeholder="" style=" width:50px;text-align: center;background-color: #ffffff;float: left"/><a style="float: left;margin-left: 1%" on="1" onclick="price($(this))" class="btn btn-price btn-white btn-bitbucket">+</a> </div>'
+            ,
+            success: function (layero) {
+                var btn = layero.find('.layui-layer-btn');
+                btn.css('text-align', 'center');
+                btn.find('.layui-layer-btn0').attr({
+                    onclick: 'show(2)'
+                    , target: '_blank'
+                });
+            }
+        });
+    }
+</script>
+<script>
+    function price(_this) {
+        var on = _this.attr('on');
+        var num = $("#num").val();
+        var price = ($("#price").html() * 100);
+        var _price = '<?=$detail->price?>';
+        if (on == 0) {
+            if (num == 1) {
+                return false;
+            } else {
+                num--;
+                price = (num * _price) / 100;
+                price = price.toFixed(2);
+                $("#price").html(price);
+                $("#num").val(num);
+            }
+        } else if (on == 1) {
+            num++
+            price = (num * _price) / 100;
+            price = price.toFixed(2);
+            $("#price").html(price);
+            $("#num").val(num);
+        }
+
+    }
+    /**
+     * @param  $type int 1:试用；2购买；
+     * @param  $miniapp_id : 模板id;
+     * @param  $member_miniapp_id int 用户小程序模板；
+     * @param  $service int 服务周期数；default 1；
+     *
+     *
+     */
+    function show(_type) {
+        var load = layer.load(1);
+        //
+        //
+        var num = $("#num").val();
+        $.ajax({
+            url: '/manage/miniappshop/payminiapp',// 跳转到 action
+            data: {
+                type: _type,
+                miniapp_id: '<?=$detail->miniapp_id?>',
+                service: num,
+            },
+            type: 'post',
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                layer.close(load);
+                if(data.code == 0){
+                    layer.msg(data.msg);
+                }
+                if(data.code == 1){
+                    layer.msg(data.msg);
+                    window.location.href= data.url;
+                }
+            },
+            error: function () {
+                // view("异常！");
+                alert("异常！");
+            }
+        });
+    }
+</script>
+<script src="/public/common/layer/extend/layer.ext.js"></script>
+<script>
+    //调用示例
+    layer.photos({
+        photos: '#layer-photos-demo'
+        ,shift: 1 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+    });
+</script>

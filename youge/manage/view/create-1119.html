@@ -1,0 +1,128 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form action="<?=url('magane.magane/create')?>"  id="form-create" method="post" class="form-horizontal" role="form"> 
+                    
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>授权了那个小程序：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_miniapp_id)?$detail->member_miniapp_id:''?>" placeholder="" id="member_miniapp_id" name="member_miniapp_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>商户id：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_id)?$detail->member_id:''?>" placeholder="" id="member_id" name="member_id"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->app_key)?$detail->app_key:''?>" placeholder="" id="app_key" name="app_key"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->authorizer_appid)?$detail->authorizer_appid:''?>" placeholder="" id="authorizer_appid" name="authorizer_appid"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>管理员账号：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->mobile)?$detail->mobile:''?>" placeholder="" id="mobile" name="mobile"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>授权人密码：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->password)?$detail->password:''?>" placeholder="" id="password" name="password"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>授权人角色名称：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->role_name)?$detail->role_name:''?>" placeholder="" id="role_name" name="role_name"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>授权人姓名：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->mange_name)?$detail->mange_name:''?>" placeholder="" id="mange_name" name="mange_name"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>是否锁定：</label>
+    <div class="col-sm-9">        
+            <div class="radio i-checks">
+                <label>
+                  <input name="is_lock" id="is_lock" value="1" type="radio" <?php if(isset($detail->is_lock)&& $detail->is_lock==1){?>checked="checked"<?php }?> > <i></i> 是</label>
+                <label>
+                  <input name="is_lock" id="is_lock" value="0" type="radio" <?php if(isset($detail->is_lock)&& $detail->is_lock==0){?>checked="checked"<?php }?> > <i></i> 否</label>
+            </div>
+    </div>
+</div>
+<div class="form-group">
+   <label class="col-sm-3 control-label"><span class="c-red">*</span>最后登录时间：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->last_time)?date('Y-m-d H:i:s',$detail->last_time):''?>"   name="last_time" id="last_time"  class="laydate-icon form-control layer-date">
+       
+   </div>
+</div>
+<script>
+ laydate({
+    elem: '#last_time',
+    event: 'focus' ,
+    format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>最后登录时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->last_time)?$detail->last_time:''?>" placeholder="" id="last_time" name="last_time"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>最后登录ip：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->last_ip)?$detail->last_ip:''?>" placeholder="" id="last_ip" name="last_ip"  class="form-control" /> 
+    </div>
+ </div>
+<div class="form-group">
+   <label class="col-sm-3 control-label"><span class="c-red">*</span>添加时间：</label>
+   <div class="col-sm-9">
+       <input  value="<?=isset($detail->add_time)?date('Y-m-d H:i:s',$detail->add_time):''?>"   name="add_time" id="add_time"  class="laydate-icon form-control layer-date">
+       
+   </div>
+</div>
+<script>
+ laydate({
+    elem: '#add_time',
+    event: 'focus' ,
+    format: 'YYYY-MM-DD hh:mm:ss',
+    istime: true
+});
+</script>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>添加时间：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->add_time)?$detail->add_time:''?>" placeholder="" id="add_time" name="add_time"  class="form-control" /> 
+    </div>
+ </div>
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

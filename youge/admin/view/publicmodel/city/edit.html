@@ -1,0 +1,101 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form  action="<?=url('publicmodel.city/edit',['city_id'=>$detail->city_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                     
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>用户小程序id：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->member_miniapp_id)?$detail->member_miniapp_id:''?>" placeholder="" id="member_miniapp_id" name="member_miniapp_id"  class="form-control" /> 小程序id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>省份：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->province_id)?$detail->province_id:''?>" placeholder="" id="province_id" name="province_id"  class="form-control" /> 省份id
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>城市名称：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->city_name)?$detail->city_name:''?>" placeholder="" id="city_name" name="city_name"  class="form-control" /> 城市名称
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>纬度：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lat)?$detail->lat:''?>" placeholder="" id="lat" name="lat"  class="form-control" /> 经度
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>经度：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->lng)?$detail->lng:''?>" placeholder="" id="lng" name="lng"  class="form-control" /> 纬度
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>拼音（全拼）：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->pinyin)?$detail->pinyin:''?>" placeholder="" id="pinyin" name="pinyin"  class="form-control" /> 拼音全拼
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>拼音（首字母）：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->initial)?$detail->initial:''?>" placeholder="" id="initial" name="initial"  class="form-control" /> 拼音首字母
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>景点个数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->scenic_spot_num)?$detail->scenic_spot_num:''?>" placeholder="" id="scenic_spot_num" name="scenic_spot_num"  class="form-control" /> 关联景点个数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>商圈个数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->area_num)?$detail->area_num:''?>" placeholder="" id="area_num" name="area_num"  class="form-control" /> 关联商圈个数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>行政区域个数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->administration_num)?$detail->administration_num:''?>" placeholder="" id="administration_num" name="administration_num"  class="form-control" /> 关联行政个数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>车站个数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->station_num)?$detail->station_num:''?>" placeholder="" id="station_num" name="station_num"  class="form-control" /> 关联车站个数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>高校个数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->colleges_num)?$detail->colleges_num:''?>" placeholder="" id="colleges_num" name="colleges_num"  class="form-control" /> 关高校个数
+    </div>
+ </div>
+<div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>医院个数：</label>
+    <div class="col-sm-9">
+            <input type="text"  value="<?=isset($detail->Hospital_num)?$detail->Hospital_num:''?>" placeholder="" id="Hospital_num" name="Hospital_num"  class="form-control" /> 关医院个数
+    </div>
+ </div>
+
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                            </div>
+                    </div>
+                   </form>
+
+               </div></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+
+<link rel="stylesheet" href="/public/home/css/dynamic.css"/>
+<link rel="stylesheet" href="/public/home/css/index.css"/>
+<!-- 顶部Tab-->
+<style>
+    #page{margin: 0 auto; width: 60%; text-align: center;height: 50px; margin-top: 10px;}
+    .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 0 auto;
+        border-radius: 4px;
+
+    }
+    .pagination li {
+        float: left;
+    }
+    .pagination > li > a, .pagination > li > span {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.428571429;
+        text-decoration: none;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+    }
+    .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+        z-index: 2;
+        color: #ffffff;
+        cursor: default;
+        background-color: #428bca;
+        border-color: #428bca;
+    }
+</style>
+<div class="dynamic-body">
+    <div class="dynamic-list">
+        <ul>
+            <div class="dynamic-title">最新动态</div>
+            <?php foreach($list as $val) {?>
+            <a href="<?=url('news/detail',['news_id'=>$val->news_id])?>">
+            <li >
+                <div class="dynamic-item-title"><?=$val->title?></div>
+                <div class="dynamic-item-date">
+                    <span>发布时间:<?=date("Y-m-d",$val->add_time)?></span>
+                    <img src="/public/home/images/icon_arrow.png"/>
+                </div>
+            </li>
+            </a>
+            <?php } ?>
+        </ul>
+    </div>
+</div>
+<div id="page"><?=$page?></div>

@@ -1,0 +1,336 @@
+<div class="row">
+    <div class="col-sm-6  col-sm-offset-3">
+        <div class="wrapper wrapper-content animated fadeInUp">
+            <!--基本资料-->
+            <div style="" class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>基本资料</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <dl class="dl-horizontal">
+                            <dt >姓名：</dt>
+                            <dd><{$data.resume.name}></dd>
+                            <dt>性别：</dt>
+                            <dd><{$data.resume.sex}></dd>
+                            <dt>出生日期：</dt>
+                            <dd><{$data.resume.birthday}></dd>
+                            <dt>户口所在地：</dt>
+                            <dd><{$data.resume.census_register}></dd>
+                            <dt>现居住地：</dt>
+                            <dd><{$data.resume.residence}></dd>
+                            <dt>开始工作年份：</dt>
+                            <dd><{$data.resume.workingyears}></dd>
+                            <dt>手机号：</dt>
+                            <dd><{$data.resume.mobile}></dd>
+                            <dt>邮箱：</dt>
+                            <dd><{$data.resume.emal}></dd>
+                            <dt>QQ：</dt>
+                            <dd><{$data.resume.qq}></dd>
+                            <dt>亲友电话（备用电话）：</dt>
+                            <dd><{$data.resume.relative_tel}></dd>
+                            <dt>政治面貌：</dt>
+                            <dd><{$data.resume.politicalstatus}></dd>
+                            <dt>婚姻状态：</dt>
+                            <dd><{$data.resume.marriage}></dd>
+                            <dt>身高：</dt>
+                            <dd><{$data.resume.height}></dd>
+                            <dt>简历公开状态：</dt>
+                            <dd><{$data.resume.open_status == 1 ? '只对申请的企业开放' : '任何企业都可以查看'}></dd>
+                            <dt>自我介绍：</dt>
+                            <dd><{$data.introduction}></dd>
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!--求职意向-->
+            <div <{:empty($data['intention']) ? 'style="display:none"' : ''}> class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>求职意向</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <dl class="dl-horizontal">
+                            <dt>求职性质：</dt>
+                            <dd><{$data.intention.nature_id}></dd>
+                            <dt>月薪要求：</dt>
+                            <dd><{$data.intention.salary}></dd>
+                            <dt>行业要求：</dt>
+                            <dd><{$data.intention.industrys}></dd>
+                            <dt>职能意向：</dt>
+                            <dd><{$data.intention.skills}></dd>
+                            <dt>工作地点：</dt>
+                            <dd><{$data.intention.work_address}></dd>
+                            <dt>求职状态：</dt>
+                            <dd><{$data.intention.status}></dd>
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!--教育经历-->
+            <div  <{:empty($data['school']) ? 'style="display:none"' : ''}> class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>教育经历</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <{volist name="data.school" id="val"}>
+                        <dl class="dl-horizontal">
+                            <dt>开始时间：</dt>
+                            <dd><{$val.bgdate}></dd>
+                            <dt>结束时间：</dt>
+                            <dd><{$val.enddate}></dd>
+                            <dt>学校名字：</dt>
+                            <dd><{$val.school_name}></dd>
+                            <dt>获得学历：</dt>
+                            <dd><{$val.education_id}></dd>
+                            <dt>是否是统招：</dt>
+                            <dd><{$val.is_tz == 1 ? '是' : '否'}></dd>
+                            <dt>专业：</dt>
+                            <dd><{$val.major}></dd>
+                        </dl>
+                        <hr>
+                        <{/volist}>
+                    </div>
+                </div>
+            </div>
+            <!--工作经历-->
+            <div  <{:empty($data['company']) ? 'style="display:none"' : ''}> class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>工作经历</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                       <{volist name="data.company" id="val"}>
+                        <dl class="dl-horizontal">
+                            <dt>开始时间：</dt>
+                            <dd><{$val.bgdate}></dd>
+                            <dt>结束时间：</dt>
+                            <dd><{$val.enddate}></dd>
+                            <dt>公司名称：</dt>
+                            <dd><{$val.company_name}></dd>
+                            <dt>所属行业：</dt>
+                            <dd><{$val.company_industry}></dd>
+                            <dt>公司性质：</dt>
+                            <dd><{$val.company_type}></dd>
+                            <dt>所属部门：</dt>
+                            <dd><{$val.company_division}></dd>
+                            <dt>职位：</dt>
+                            <dd><{$val.company_position}></dd>
+                            <dt>平均薪水：</dt>
+                            <dd><{$val.company_salary}></dd>
+                            <dt>职位描述：</dt>
+                            <dd><{$val.company_detail}></dd>
+                        </dl>
+                        <hr>
+                        <{/volist}>
+                    </div>
+                </div>
+            </div>
+            <!--项目经验-->
+            <div  <{:empty($data['project']) ? 'style="display:none"' : ''}> class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>项目经验</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <{volist name="data.project" id="val" }>
+                        <dl class="dl-horizontal">
+                            <dt>开始时间：</dt>
+                            <dd><{$val.bg_date}></dd>
+                            <dt>结束时间：</dt>
+                            <dd><{$val.end_date}></dd>
+                            <dt>项目名称：</dt>
+                            <dd><{$val.project_name}></dd>
+                            <dt>公司名称：</dt>
+                            <dd><{$val.company_name}></dd>
+                            <dt>项目描述：</dt>
+                            <dd><{$val.project_describe}></dd>
+                            <dt>职责描述：</dt>
+                            <dd><{$val.duty_describe}></dd>
+                        </dl>
+                        <hr>
+                        <{/volist}>
+                    </div>
+                </div>
+            </div>
+            <!--培训经历-->
+            <div <{:empty($data['train']) ? 'style="display:none"' : ''}> class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>培训经历</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <{volist name="data.train" id="val"}>
+                        <dl class="dl-horizontal">
+                            <dt>开始时间：</dt>
+                            <dd><{$val.bg_date}></dd>
+                            <dt>结束时间：</dt>
+                            <dd><{$val.end_date}></dd>
+                            <dt>培训单位：</dt>
+                            <dd><{$val.train_name}></dd>
+                            <dt>培训课程：</dt>
+                            <dd><{$val.train_calss}></dd>
+                            <dt>培训描述：</dt>
+                            <dd><{$val.train_describe}></dd>
+                        </dl>
+                        <hr>
+                        <{/volist}>
+                    </div>
+                </div>
+            </div>
+            <!--语言能力-->
+            <div <{:empty($data['language']) ? 'style="display:none"' : ''}>  class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>语言能力</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <{volist name="data.language" id="val"}>
+                        <dl class="dl-horizontal">
+                            <dt>语种：</dt>
+                            <dd><{$val.language}></dd>
+                            <dt>熟练度：</dt>
+                            <dd><{$val.level}></dd>
+                        </dl>
+                        <hr>
+                        <{/volist}>
+                    </div>
+                </div>
+            </div>
+            <!--证书获得情况-->
+            <div <{:empty($data['certificate']) ? 'style="display:none"' : ''}>  class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>证书</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <{volist name="data.certificate" id="val"}>
+                        <dl class="dl-horizontal">
+                            <dt>获得时间：</dt>
+                            <dd><{$val.date}></dd>
+                            <dt>证书名称：</dt>
+                            <dd><{$val.certificate_name}></dd>
+                            <dt>成绩：</dt>
+                            <dd><{$val.score}></dd>
+                        </dl>
+                        <hr>
+                        <{/volist}>
+                    </div>
+
+                </div>
+            </div>
+            <!--荣誉经历-->
+            <div <{:empty($data['honor']) ? 'style="display:none"' : ''}>  class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>荣誉经历</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <dl class="dl-horizontal">
+                            <{volist name="data.honor" id="val" }>
+                            <dt>获得时间：</dt>
+                            <dd><{$val.date}></dd>
+                            <dt>奖项名称：</dt>
+                            <dd><{$val.honor_name}></dd>
+                            <hr>
+                            <{/volist}>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!--校内职务-->
+            <div <{:empty($data['position']) ? 'style="display:none"' : ''}> class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>校内职务</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <{volist name="data.position" id="val"}>
+                        <dl class="dl-horizontal">
+                            <dt>开始时间：</dt>
+                            <dd><{$val.bg_date}></dd>
+                            <dt>结束时间：</dt>
+                            <dd><{$val.end_date}></dd>
+                            <dt>职务名称：</dt>
+                            <dd><{$val.position_name}></dd>
+                            <dt>职务描述：</dt>
+                            <dd><{$val.position_describe}></dd>
+                        </dl>
+                        <hr>
+                        <{/volist}>
+                    </div>
+                </div>
+            </div>
+            <!--社会实践-->
+            <div <{:empty($data['practice']) ? 'style="display:none"' : ''}> class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <div class="m-b-md">
+                            <h2>社会实践</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6  col-sm-offset-3">
+                        <{volist name="data.practice" id="val"}>
+                        <dl class="dl-horizontal">
+                            <dt>开始时间：</dt>
+                            <dd><{$val.bg_date}></dd>
+                            <dt>结束时间：</dt>
+                            <dd><{$val.end_date}></dd>
+                            <dt>实践名称：</dt>
+                            <dd><{$val.practice_name}></dd>
+                            <dt>实践描述：</dt>
+                            <dd><{$val.practice_describe}></dd>
+                        </dl>
+                        <hr>
+                        <{/volist}>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

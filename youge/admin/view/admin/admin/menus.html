@@ -1,0 +1,80 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                   <form action="<?=url('admin.admin/menus',['admin_id'=>$detail->admin_id])?>" id="form-create" method="post" class="form-horizontal" role="form"> 
+                    <table class="table table-striped table-bordered table-hover" id="sample-table">
+                        <thead>
+                            <tr>
+                                <th>权限</th>
+                                <th style="width:100px;">操作</th>
+                            </tr>
+                        </thead>
+                     
+                        <tbody>
+                             <?php foreach($menus as $val){?>
+                             <tr>
+                                 <td colspan="2">
+                                     <?=$val['name']?>
+                                 </td>
+                             </tr>
+                             <?php foreach($val['menu'] as $k=>$val1){?>
+                            <tr id="jq_tr_<?=$k?>">
+                              
+                                <td style=" text-align: left;">
+                                    <label> 
+                                        <input type="checkbox" name="menu_id[]" <?php if(strstr($detail->auth_code,$val1['link'])){?>  checked="checked"<?php }?>  value="<?=$val1['link']?>"/> 
+                                        <?=$val1['name']?> 
+                                    </label>
+                                      <?php foreach($val1['sub'] as $val2){?>
+                                         <label>
+                                             <input type="checkbox" name="menu_id[]"  <?php if(strstr($detail->auth_code,$val1['link'])){?>   checked="checked"<?php }?>   value="<?=$val2['link']?>"/>
+                                            <?=$val2['name']?>
+                                        </label>
+                                       <?php }?>
+                                </td>
+                                <td>
+                                    <a class="jq_select" rel="jq_tr_<?=$k?>" href="javascript:void(0);">全选</a>/ <a class="jq_clean" rel="jq_tr_<?=$k?>" href="javascript:void(0);">清空</a>
+                                </td>
+                            </tr>
+                                <?php }?>
+                             <?php }?>
+                        </tbody>
+                         
+                    </table>
+                       
+                       
+                       
+                    <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                    <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                            保存
+                                    </button>
+
+                                    &nbsp; &nbsp; &nbsp;
+                                    <button class="btn" type="reset">
+                                            <i class="ace-icon fa fa-undo bigger-110"></i>
+                                            重置
+                                    </button>
+                            </div>
+                    </div>
+                   </form>
+                </div></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $(".jq_select").click(function(){
+            $("#"+$(this).attr('rel')).find('input').prop('checked',true);
+           
+        });
+        $(".jq_clean").click(function(){
+            $("#"+$(this).attr('rel')).find('input').prop('checked',false);
+        });
+        
+    });
+</script>

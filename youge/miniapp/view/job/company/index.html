@@ -1,0 +1,109 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('job.company/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>公司名称:<input class="form-control" name="company_name" id="company_name" value="<?=$search['company_name']?>" type="text" placeholder="请输入公司名称" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">搜索</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加公司管理" href="<?=url('job.company/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加公司管理</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>公司简称</th>
+                                <th>公司LOGO</th>
+                                <th>地址</th>
+                                <th>公司负责人</th>
+                                <th>vip等级</th>
+                                <th>vip过期时间</th>
+                                <th>浏览数</th>
+                                <th>电话数</th>
+                                <th>赞</th>
+                                <th>分享数</th>
+                                <th>审核状态</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->company_id ?></td>
+                                    <td><?=$val->sort_name?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->logo?>"/></td>
+                                    <td><textarea><?=$val->address?></textarea></td>
+                                    <td><?=$val->name?></td>
+                                    <td><?=$val->vip?></td>
+                                    <td>
+                                        <?php if(empty($val->vip_expire)) { ?>
+                                        <span class="label label-success">未开通</span>
+                                        <?php }elseif($val->vip_expire < time() ) { ?>
+                                        <span class="label label-success">已过期 过期时间:  <?=date("Y-m-d H:i:s",$val->vip_expire);?></span>
+                                        <?php }else{ ?>
+                                          <?=date("Y-m-d H:i:s",$val->vip_expire);?>
+                                        <?php  } ?>
+                                    </td>
+                                    <td><?=$val->view_num?></td>
+                                    <td><?=$val->tel_num?></td>
+                                    <td><?=$val->zan_num?></td>
+                                    <td><?=$val->share_num?></td>
+                                    <td>
+                                        <?php if($val->audit == 0) { ?>
+                                             <span class="label label-success">审核中</span>
+                                        <?php }elseif($val->audit == 1) { ?>
+                                            <span class="label label-success">审核通过</span>
+                                        <?php }elseif($val->audit == 2) { ?>
+                                            <span class="label label-success">审核拒绝</span>
+                                        <?php } ?>
+                                    </td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="相册管理" mini="load" w="80%" h="80%" href="<?=url('job.company/photo','company_id='.$val->company_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>相册管理</a>
+                                            <a title="编辑公司管理" href="<?=url('job.company/edit','company_id='.$val->company_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除公司管理" mini="act" href="<?=url('job.company/delete','company_id='.$val->company_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,93 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('zhuangxiu.offer/create')?>" id="form-create" method="post"
+                          class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>卧室每间估价：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->bedroom)? sprintf('%.2f',$detail->bedroom/100):''?>"
+                                       placeholder="" id="bedroom" name="bedroom" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>客厅每间估价：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->livingroom)?sprintf('%.2f',$detail->livingroom/100):''?>"
+                                       placeholder="" id="livingroom" name="livingroom" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>厨房每间估价：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->kitchen)?sprintf('%.2f',$detail->kitchen/100):''?>"
+                                       placeholder="" id="kitchen" name="kitchen" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>卫生间每间估价：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->toilet)?sprintf('%.2f',$detail->toilet/100):''?>" placeholder=""
+                                       id="toilet" name="toilet" class="form-control"/>
+                            </div>
+                        </div>
+                        <div  class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>阳台每间价格：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->balcony)?sprintf('%.2f',$detail->balcony/100):''?>"
+                                       placeholder="" id="balcony" name="balcony" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>人工费总价百分比：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->artificial)?$detail->artificial:''?>"
+                                       placeholder=" 设置 1 表示 人工费 占总价的 %1  " id="artificial" name="artificial" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>材料费百分比：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->material)?$detail->material:''?>"
+                                       placeholder="设置 1 表示 材料费 占总价的 %1  " id="material" name="material" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>设计费：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->design)?$detail->design:''?>" placeholder="设置 1 表示 设计费 占总价的 %1  "
+                                       id="design" name="design" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>质检费百分比：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->inspect)?$detail->inspect:''?>"
+                                       placeholder=" 设置 1 表示 质检费 占总价的 %1 " id="inspect" name="inspect" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

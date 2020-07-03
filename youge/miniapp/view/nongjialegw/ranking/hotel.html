@@ -1,0 +1,91 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('hotel.ranking/hotel')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>开始时间<input name="bg_time" class="form-control layer-date" id="bg_time"
+                                                       value="<?=$search['bg_date']?>" type="text"
+                                                       onclick="laydate({istime: false, format: 'YYYY-MM-DD'})"
+                                                       placeholder="输入开始时间" style=" width:200px"/></td>
+                                        <td>结束时间<input name="end_time" class="form-control layer-date" id="end_time"
+                                                       value="<?=$search['end_date']?>" type="text"
+                                                       onclick="laydate({istime: false, format: 'YYYY-MM-DD'})"
+                                                       placeholder="输入结束时间" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="wrapper wrapper-content animated fadeInRight">
+
+                        <div class="ibox-content m-b-sm border-bottom">
+                            <div class="p-xs">
+                                <div class="pull-left col-sm-5 text-right">
+                                    <i class="fa fa-globe text-navy mid-icon"></i>
+                                </div>
+                                <h2>商家销量排名</h2>
+                            </div>
+                        </div>
+                        <div class="ibox-content forum-container">
+                            <?php foreach($data as $val) { ?>
+                            <div class="forum-item active">
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <div class="forum-icon">
+                                            <i style="color: <?=$val['corlor']?> " class="fa jinse fa-trophy"></i>
+                                        </div>
+                                        <div class="forum-sub-title">
+                                            <h1 class="forum-item-title"><?=$val['hotel_name']?></h1>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1 forum-info">
+                                        <span class="views-number">
+                                            第<?=$val['level']?>名
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-1 forum-info">
+                                        <span class="views-number">
+                                            <?=$val['num']?>
+                                        </span>
+                                        <div>
+                                            <small>订单数</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div>
+                        <?php echo $page ?>
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.main-container -->
+        </div>
+    </div>
+</div>
+

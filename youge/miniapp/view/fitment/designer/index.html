@@ -1,0 +1,85 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('fitment.designer/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>设计师名称:<input class="form-control" name="name" id="name" value="<?=$search['name']?>" type="text" placeholder="请输入设计师名称" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加设计师" href="<?=url('fitment.designer/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加设计师</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>设计师名称</th>
+                                <th>头像</th>
+                                <th>头衔</th>
+                                <th>设计经验</th>
+                                <th>设计理念</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->designer_id ?></td>
+                                    <td><?=$val->name?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=$val->level?></td>
+                                    <td><?=$val->experience?></td>
+                                    <td><textarea><?=$val->introduce?></textarea></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="添加案例" mini="load" w="90%" h="90%" href="<?=url('fitment.sjsal/index','designer_id='.$val->designer_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>设计师案例</a>
+                                            <a title="编辑设计师" href="<?=url('fitment.designer/edit','designer_id='.$val->designer_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除设计师" mini="act" href="<?=url('fitment.designer/delete','designer_id='.$val->designer_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>

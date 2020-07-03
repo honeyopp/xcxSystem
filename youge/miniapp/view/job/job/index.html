@@ -1,0 +1,106 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('job.job/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input id="hotelname" type="text"  name="name"   value="<{:input('get.name')}>" placeholder="请选择公司"  class="form-control"/>
+                                            <input type="hidden" value="<?=$search['company_id']?>" name="company_id" id="company_id">
+                                            <button style="display: none" id="but" type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/job.company/select')?>" class="btn btn-w-m btn-info">选择公司</button>
+                                            <script>
+                                                $("#hotelname").focus(function () {
+                                                        $("#but").click();
+                                                });
+                                                function seleGs(name,company_id){
+                                                    layer.closeAll();
+                                                    layer.msg('操作成功！');
+                                                    $("#hotelname").val(name);
+                                                    $("#company_id").val(company_id);
+                                                }
+                                            </script>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 10%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加招聘信息" href="<?=url('job.job/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加招聘信息</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>所属公司</th>
+                                <th>职位标题</th>
+                                <th>招聘人数</th>
+                                <th>工作经验</th>
+                                <th>学历要求</th>
+                                <th>薪水</th>
+                                <th>描述</th>
+                                <th>联系人</th>
+                                <th>联系方式</th>
+                                <th>是否招聘</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?=$val->job_id ?></td>
+                                    <td><?=empty($company[$val->company_id]) ? '请删除' : $company[$val->company_id]->company_name ?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><?=$val->people_num?>人</td>
+                                    <td><?=empty(config('jobsetting.experience')[$val->experience_id]) ? '' : config('jobsetting.experience')[$val->experience_id] ?></td>
+                                    <td><?=empty(config('jobsetting.education')[$val->education_id]) ? '' :  config('jobsetting.education')[$val->education_id]?></td>
+                                    <td><?=empty(config('jobsetting.salary')[$val->salary_id]) ? '未填写' : config('jobsetting.salary')[$val->salary_id]?></td>
+                                    <td><textarea><?=$val->describe?></textarea></td>
+                                    <td><?=$val->name?></td>
+                                    <td><?=$val->tel?></td>
+                                    <td><?=$val->is_online == 1 ? '<span class="label label-success">正在招聘中</span>' : '<span class="label label-warning">已停止招聘</span>'?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑招聘信息" href="<?=url('job.job/edit','job_id='.$val->job_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除招聘信息" mini="act" href="<?=url('job.job/delete','job_id='.$val->job_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

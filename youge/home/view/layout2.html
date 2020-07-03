@@ -1,0 +1,645 @@
+﻿<!DOCTYPE html>
+<html dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>微点应用</title>
+		<meta name="keywords" content="微点应用,微信小程序,小程序,小程序源码,小程序开发,拼团小程序,商城小程序,门店小程序,小程序代理,小程序加盟,微信小程序开发" />
+		<meta name="description" content="微点应用-微信小程序生成平台|微信小程序开发|微信小程序源码|小程序代理" />
+		<link type="text/css" rel="stylesheet" href="/public/styles/css/welcome.css">
+		<link type="text/css" rel="stylesheet" href="/public/styles/css/common.css">
+		<link type="text/css" rel="stylesheet" href="/public/styles/css/joincss.css">
+		<link type="text/css" rel="stylesheet" href="/public/styles/css/aboutcss.css">
+		<link type="text/css" rel="stylesheet" href="/public/styles/css/welcome2.css">
+		<link type="text/css" rel="stylesheet" href="/public/styles/css/welcome3.css">
+		<link type="text/css" rel="stylesheet" href="/public/styles/css/layer.css">
+		<script type="text/javascript" src="/public/styles/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="/public/styles/js/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="/public/styles/js/layer.js"></script>
+	</head>
+	<body>
+	  <style>
+    #main article { border-bottom: none; }
+	body{font: 500 .875em PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;}
+	#canvas {position: fixed;z-index: 5;top: 0;left: 0;bottom: 0;right: 0;cursor: none;}
+	.m-topLogo{width: 111px;height: 35px;background: url(/public/styles/images/vvez7fzn5nt5fn6yc2nvjt5nyv6tq1.png) no-repeat;background-size: 111px auto;}
+	.m-topLogo.solid{background: url(/public/styles/images/m6imenbfx85rllz5jnlixx76finzjm.png) no-repeat;background-size: 111px auto;height: 35px;}
+		</style>
+		<div class="g-topNav moveDown" style="z-index: 11;top: 0px;">
+			<div class="wrapper">
+				<a href="#" target="_self">
+					<div class="m-topLogo ">
+						<h1> 微点应用</h1>
+					</div>
+				</a>
+				<div class="m-topNav ">
+					<ul class="menu">
+						<li class="product">
+							<a href="<?=url('index/index')?>">
+								首页<?=$footer == 1 ? '<span class="u-icon-caret"></span>' : ''?>
+							</a>
+						</li>
+						<li class="product">
+							<a href="<?=url('shop/index')?>">
+								应用大厅<?=$footer == 2 ? '<span class="u-icon-caret"></span>' : ''?>
+							</a>
+						</li>
+						<li class="kehu">
+							<a href="<?=url('news/index')?>">
+								最新动态<?=$footer == 3 ? '<span class="u-icon-caret"></span>' : ''?>
+							</a>
+						</li>
+						<li >
+							<a href="<?=url('faq/index')?>">
+								帮助中心<?=$footer == 4? '<span class="u-icon-caret"></span>' : ''?>
+							</a>
+						</li>
+						<li >
+							<a href="<?=url('member/index')?>">
+								招商加盟<?=$footer == 6 ? '<span class="u-icon-caret"></span>' : ''?>
+							</a>
+						</li>
+						<!--<li class="qa">
+							<a href="javascript:;" onclick="help();">
+								帮助中心
+								<span class="u-icon-caret"></span>
+							</a>
+						</li>-->
+												<li >
+							<a href="<?=url('about/index')?>">
+								关于我们<?=$footer == 6 ? '<span class="u-icon-caret"></span>' : ''?>
+							</a>
+						</li>
+											</ul>
+				</div>
+								<div class="m-login ">
+					<a href="/manage/passport/login.html" class="u-btn signin">登录</a>
+					<a href="/manage/passport/register.html" class="u-btn signup">注册</a>
+				</div>
+							</div>
+		</div>
+		<!--<script type="text/javascript">
+			function help() {
+				layer.open({
+					type: 2,
+					title: '帮助中心',
+					shadeClose: true,
+					shade: 0.8,
+					area: ['90%', '90%'],
+					content: "faq/index"
+				});
+			}
+		</script>--><style type="text/css">
+	.m-swiper-main .swiper-slide.view_left .group_bg {
+	    position: absolute;
+	    right: -370px;
+	    top: 0;
+	    text-align: right;
+	    z-index: 1;
+	}
+</style>
+{__CONTENT__}
+<script>
+	window.onload = function() {
+		var xpadFlag = false;
+		$(document).on("touchend", function() {
+			$(".m-topNav .panel").hide();
+		});
+		$(".m-topNav li").on('touchend', function(e) {
+			xpadFlag = true;
+			e.stopPropagation();
+			$(this).toggleClass("open");
+			$(".m-topNav .panel").hide();
+			$(this).children(".panel").show();
+		}).children("a").on("click", function(e) {
+			e.stopPropagation();
+			if($(this).next(".panel").length && xpadFlag) {
+				e.preventDefault();
+			}
+		});
+	}
+</script>
+<script>
+	/* 顶部导航动画 */
+	$(window).on('scroll', function() {
+		if($(document).scrollTop() > 10) {
+			$('.g-topNav').addClass('solid');
+			$('.g-topNav .m-topLogo').addClass('solid');
+			$('.g-topNav .m-topNav').addClass('solid');
+			$('.g-topNav .m-login').addClass('solid');
+			$('.g-topNav').removeClass('moveDown');
+			$('.g-yixin').addClass('moveUp');
+		} else {
+			$('.g-topNav').removeClass('solid');
+			$('.g-topNav .solid').removeClass('solid');
+			$('.g-topNav').addClass('moveDown');
+			$('.g-yixin').removeClass('moveUp');
+		}
+	});
+</script>
+<script>
+	$(".m-modalTipDemo .close").on("click", function() {
+		$(".m-modalTipDemo").hide();
+		$(document.body).css("overflow", "auto");
+	});
+	$(document).on("keydown", function(event) {
+		if(event.keyCode == 27) {
+			$(".m-modalTipDemo").hide();
+			$(document.body).css("overflow", "auto");
+		}
+	});
+</script>
+<link rel="stylesheet" href="/public/styles/css/global.css">
+<div class="qc-footer-service"  style="background-color: #191b1f"  >
+	<div class="footer-service" >
+		<div class="fs-list">
+			<div class="fs-ct">
+				<p href="" class="item" target="_blank">
+					<span class="icon icon-1"></span>
+					<span class="term">百倍故障赔偿</span>
+				</p>
+			</div>
+			<div class="fs-ct">
+				<p href="" class="item" target="_blank">
+					<span class="icon icon-2"></span>
+					<span class="term">5天无理由退款</span>
+				</p>
+			</div>
+			<div class="fs-ct">
+				<p href="" class="item" target="_blank">
+					<span class="icon icon-3"></span>
+					<span class="term">阿里云异地灾备</span>
+				</p>
+			</div>
+			<div class="fs-ct">
+				<p href="" class="item" target="_blank">
+					<span class="icon icon-4"></span>
+					<span class="term">1V1大客户服务</span>
+				</p>
+			</div>
+			<div class="fs-ct item-last">
+				<p href="" class="item" target="_blank">
+					<span class="icon icon-5"></span>
+					<span class="term">7x24小时服务</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<footer id="footer">
+			<div class="footer-top" style="background-color: #191b1f;padding-top: 25px;padding-bottom: 25px;" >
+				<div class="wrap">
+					<dl>
+						<dt>产品服务</dt>
+												<dd>
+							<a href="">微站</a>
+						</dd>
+												<dd>
+							<a href="">门店</a>
+						</dd>
+												<dd>
+							<a href="">商城</a>
+						</dd>
+												<dd>
+							<a href="">拼团</a>
+						</dd>
+											</dl>
+					<dl>
+						<dt>关于</dt>
+							<dd><a href="<?=url('index/index')?>">官网首页</a></dd>
+							<dd><a href="<?=url('shop/index')?>">应用大厅</a></dd>
+							<dd><a href="<?=url('news/index')?>" >最新动态</a></dd>
+							<dd><a href="<?=url('faq/index')?>" >帮助中心</a></dd>
+							<dd><a href="<?=url('member/index')?>" >招商加盟</a></dd>
+							<dd><a href="<?=url('about/index')?>" >关于我们</a></dd>
+			
+					</dl>
+					<dl>
+						<dt>联系我们</dt>
+						<dd>
+							<a href="javascript:;">联系电话：15169991113</a>
+						</dd>
+						<dd>
+							<a href="javascript:;">QQ：67930603</a>
+						</dd>
+						<dd>
+							<a href="javascript:;">微信：yanervip</a>
+						</dd>
+						<dd>
+							<a href="javascript:;">地址：微点应用小程序研发中心</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+
+		</footer>
+
+<div class="qc-footer J-qc-footer">
+	<div class="qc-footer-blogroll" style="background-color: #15161a;padding-bottom: 15px;padding-top: 15px;" >
+			<div class="blogroll-inner" style="text-align: center">
+				<div class="link-set">
+
+					<div class="links">
+						<p class="line copyright">
+							<span class="slide">
+							Copyright (c)2015 - 2017 微点应用版权所有 版权所有 | 鲁ICP备16033895号-1						</span>
+						</p>
+					</div>
+				</div>
+				<div class="locale J-footerSwitchLang">
+					<a href="" class="locale-link">   </a>
+				</div>
+			</div>
+	</div>
+</div>
+
+
+
+
+
+
+		<div id="toolitembar">
+			<a href="http://wpa.qq.com/msgrd?v=3&uin=67930603&site=qq&menu=yes" id="toolitembar-support"><i class="icon-live-help"></i>
+				<span>在线客服</span>
+			</a>
+			<a href="tel:15169991113" id="toolitembar-phone"><i class="icon-call"></i>
+				<span>电话咨询</span>
+			</a>
+			<a href="javascript:;" id="toolitembar-info"><i class="icon-info"></i>
+				<span>查看演示</span>
+			</a>
+			<a href="/manage/passport/register.html" id="toolitembar-signin"><i class="icon-description"></i>
+				<span>免费注册</span>
+			</a>
+			<a href="javascript:;" id="back-top"><i class="icon-chevron-thin-up"></i>
+				<span>返回顶部</span>
+			</a>
+		</div>
+	</body>
+	
+	
+<canvas id="canvas"></canvas>	
+<script src="/public/styles/js/hovertreewelcome.js"></script>
+<script src="hovertreewelcome.js"></script>
+<script type="text/javascript">
+
+        ; (function (window) {
+
+            var ctx,
+                hue,
+                logo,
+                form,
+                buffer,
+                target = {},
+                tendrils = [],
+                settings = {};
+
+            settings.debug = true;
+            settings.friction = 0.5;
+            settings.trails = 20;
+            settings.size = 50;
+            settings.dampening = 0.25;
+            settings.tension = 0.98;
+
+            Math.TWO_PI = Math.PI * 2;
+
+            // ========================================================================================
+            // Oscillator 何问起
+            // ----------------------------------------------------------------------------------------
+
+            function Oscillator(options) {
+                this.init(options || {});
+            }
+
+            Oscillator.prototype = (function () {
+
+                var value = 0;
+
+                return {
+
+                    init: function (options) {
+                        this.phase = options.phase || 0;
+                        this.offset = options.offset || 0;
+                        this.frequency = options.frequency || 0.001;
+                        this.amplitude = options.amplitude || 1;
+                    },
+
+                    update: function () {
+                        this.phase += this.frequency;
+                        value = this.offset + Math.sin(this.phase) * this.amplitude;
+                        return value;
+                    },
+
+                    value: function () {
+                        return value;
+                    }
+                };
+
+            })();
+
+            // ========================================================================================
+            // Tendril hovertree.com
+            // ----------------------------------------------------------------------------------------
+
+            function Tendril(options) {
+                this.init(options || {});
+            }
+
+            Tendril.prototype = (function () {
+
+                function Node() {
+                    this.x = 0;
+                    this.y = 0;
+                    this.vy = 0;
+                    this.vx = 0;
+                }
+
+                return {
+
+                    init: function (options) {
+
+                        this.spring = options.spring + (Math.random() * 0.1) - 0.05;
+                        this.friction = settings.friction + (Math.random() * 0.01) - 0.005;
+                        this.nodes = [];
+
+                        for (var i = 0, node; i < settings.size; i++) {
+
+                            node = new Node();
+                            node.x = target.x;
+                            node.y = target.y;
+
+                            this.nodes.push(node);
+                        }
+                    },
+
+                    update: function () {
+
+                        var spring = this.spring,
+                            node = this.nodes[0];
+
+                        node.vx += (target.x - node.x) * spring;
+                        node.vy += (target.y - node.y) * spring;
+
+                        for (var prev, i = 0, n = this.nodes.length; i < n; i++) {
+
+                            node = this.nodes[i];
+
+                            if (i > 0) {
+
+                                prev = this.nodes[i - 1];
+
+                                node.vx += (prev.x - node.x) * spring;
+                                node.vy += (prev.y - node.y) * spring;
+                                node.vx += prev.vx * settings.dampening;
+                                node.vy += prev.vy * settings.dampening;
+                            }
+
+                            node.vx *= this.friction;
+                            node.vy *= this.friction;
+                            node.x += node.vx;
+                            node.y += node.vy;
+
+                            spring *= settings.tension;
+                        }
+                    },
+
+                    draw: function () {
+
+                        var x = this.nodes[0].x,
+                            y = this.nodes[0].y,
+                            a, b;
+
+                        ctx.beginPath();
+                        ctx.moveTo(x, y);
+
+                        for (var i = 1, n = this.nodes.length - 2; i < n; i++) {
+
+                            a = this.nodes[i];
+                            b = this.nodes[i + 1];
+                            x = (a.x + b.x) * 0.5;
+                            y = (a.y + b.y) * 0.5;
+
+                            ctx.quadraticCurveTo(a.x, a.y, x, y);
+                        }
+
+                        a = this.nodes[i];
+                        b = this.nodes[i + 1];
+
+                        ctx.quadraticCurveTo(a.x, a.y, b.x, b.y);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                };
+
+            })();
+
+            // ----------------------------------------------------------------------------------------
+
+            function init(event) {
+
+                document.removeEventListener('mousemove', init);
+                document.removeEventListener('touchstart', init);
+
+                document.addEventListener('mousemove', mousemove);
+                document.addEventListener('touchmove', mousemove);
+                document.addEventListener('touchstart', touchstart);
+
+                mousemove(event);
+                reset();
+                loop();
+            }
+
+            function reset() {
+
+                tendrils = [];
+
+                for (var i = 0; i < settings.trails; i++) {
+
+                    tendrils.push(new Tendril({
+                        spring: 0.45 + 0.025 * (i / settings.trails)
+                    }));
+                }
+            }
+
+            function loop() {
+
+                if (!ctx.running) return;
+
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.fillStyle = 'rgba(8,5,16,0.4)';
+                ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                ctx.globalCompositeOperation = 'lighter';
+                ctx.strokeStyle = 'hsla(' + Math.round(hue.update()) + ',90%,50%,0.25)';
+                ctx.lineWidth = 1;
+
+                if (ctx.frame % 60 == 0) {
+                    console.log(hue.update(), Math.round(hue.update()), hue.phase, hue.offset, hue.frequency, hue.amplitude);
+                }
+
+                for (var i = 0, tendril; i < settings.trails; i++) {
+                    tendril = tendrils[i];
+                    tendril.update();
+                    tendril.draw();
+                }
+
+                ctx.frame++;
+                ctx.stats.update();
+                requestAnimFrame(loop);
+            }
+
+            function resize() {
+                ctx.canvas.width = window.innerWidth;
+                ctx.canvas.height = window.innerHeight;
+            }
+
+            function start() {
+                if (!ctx.running) {
+                    ctx.running = true;
+                    loop();
+                }
+            }
+
+            function stop() {
+                ctx.running = false;
+            }
+
+            function mousemove(event) {
+                if (event.touches) {
+                    target.x = event.touches[0].pageX;
+                    target.y = event.touches[0].pageY;
+                } else {
+                    target.x = event.clientX
+                    target.y = event.clientY;
+                }
+                event.preventDefault();
+            }
+
+            function touchstart(event) {
+                if (event.touches.length == 1) {
+                    target.x = event.touches[0].pageX;
+                    target.y = event.touches[0].pageY;
+                }
+            }
+
+            function keyup(event) {
+
+                switch (event.keyCode) {
+                    case 32:
+                        save();
+                        break;
+                    default:
+                        // console.log(event.keyCode); hovertree.com
+                }
+            }
+
+            function letters(id) {
+
+                var el = document.getElementById(id),
+                    letters = el.innerHTML.replace('&amp;', '&').split(''),
+                    heading = '';
+
+                for (var i = 0, n = letters.length, letter; i < n; i++) {
+                    letter = letters[i].replace('&', '&amp');
+                    heading += letter.trim() ? '<span class="letter-' + i + '">' + letter + '</span>' : '&nbsp;';
+                }
+
+                el.innerHTML = heading;
+                setTimeout(function () {
+                    el.className = 'transition-in';
+                }, (Math.random() * 500) + 500);
+            }
+
+            function save() {
+
+                if (!buffer) {
+
+                    buffer = document.createElement('canvas');
+                    buffer.width = screen.availWidth;
+                    buffer.height = screen.availHeight;
+                    buffer.ctx = buffer.getContext('2d');
+
+                    form = document.createElement('form');
+                    form.method = 'post';
+                    form.input = document.createElement('input');
+                    form.input.type = 'hidden';
+                    form.input.name = 'data';
+                    form.appendChild(form.input);
+
+                    document.body.appendChild(form);
+                }
+
+                buffer.ctx.fillStyle = 'rgba(8,5,16)';
+                buffer.ctx.fillRect(0, 0, buffer.width, buffer.height);
+
+                buffer.ctx.drawImage(canvas,
+                    Math.round(buffer.width / 2 - canvas.width / 2),
+                    Math.round(buffer.height / 2 - canvas.height / 2)
+                );
+
+                buffer.ctx.drawImage(logo,
+                    Math.round(buffer.width / 2 - logo.width / 4),
+                    Math.round(buffer.height / 2 - logo.height / 4),
+                    logo.width / 2,
+                    logo.height / 2
+                );
+
+                window.open(buffer.toDataURL(), 'wallpaper', 'top=0,left=0,width=' + buffer.width + ',height=' + buffer.height);
+
+                // form.input.value = buffer.toDataURL().substr(22);
+                // form.submit(); hovertree.com
+            }
+
+            window.requestAnimFrame = (function () {
+                return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (fn) { window.setTimeout(fn, 1000 / 60) };
+            })();
+
+            window.onload = function () {
+
+                ctx = document.getElementById('canvas').getContext('2d');
+                ctx.stats = new Stats();
+                ctx.running = true;
+                ctx.frame = 1;
+
+               
+
+                hue = new Oscillator({
+                    phase: Math.random() * Math.TWO_PI,
+                    amplitude: 85,
+                    frequency: 0.0015,
+                    offset: 285
+                });
+
+             
+
+                document.addEventListener('mousemove', init);
+                document.addEventListener('touchstart', init);
+                document.body.addEventListener('orientationchange', resize);
+                window.addEventListener('resize', resize);
+                window.addEventListener('keyup', keyup);
+                window.addEventListener('focus', start);
+                window.addEventListener('blur', stop);
+
+                resize();
+
+                if (window.DEBUG) {
+
+                    var gui = new dat.GUI();
+
+                    // gui.add(settings, 'debug');
+                    settings.gui.add(settings, 'trails', 1, 30).onChange(reset);
+                    settings.gui.add(settings, 'size', 25, 75).onFinishChange(reset);
+                    settings.gui.add(settings, 'friction', 0.45, 0.55).onFinishChange(reset);
+                    settings.gui.add(settings, 'dampening', 0.01, 0.4).onFinishChange(reset);
+                    settings.gui.add(settings, 'tension', 0.95, 0.999).onFinishChange(reset);
+
+                    document.body.appendChild(ctx.stats.domElement);
+                }
+            };
+
+        })(window);
+
+    </script>
+</html>

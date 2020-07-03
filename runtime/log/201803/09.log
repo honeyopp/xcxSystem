@@ -1,0 +1,823 @@
+[ 2018-03-09T13:20:05+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.demo2.com/ [运行时间：1.066061s][吞吐率：0.94req/s] [内存消耗：2,964.44kb] [文件加载：82]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\WWW\demo2\youge\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [1045]SQLSTATE[HY000] [1045] Access denied for user 'class'@'localhost' (using password: YES)[D:\WWW\demo2\thinkphp\library\think\db\Connection.php:287]
+
+---------------------------------------------------------------
+[ 2018-03-09T13:20:05+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.037002s][吞吐率：27.03req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:20:38+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.demo2.com/ [运行时间：1.077061s][吞吐率：0.93req/s] [内存消耗：2,964.77kb] [文件加载：82]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\WWW\demo2\youge\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [1045]SQLSTATE[HY000] [1045] Access denied for user 'class'@'localhost' (using password: YES)[D:\WWW\demo2\thinkphp\library\think\db\Connection.php:287]
+
+---------------------------------------------------------------
+[ 2018-03-09T13:20:38+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.046002s][吞吐率：21.74req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:41+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.demo2.com/ [运行时间：1.094063s][吞吐率：0.91req/s] [内存消耗：3,307.93kb] [文件加载：84]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\WWW\demo2\youge\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\demo2/youge/home\view\index\index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:42+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.126008s][吞吐率：7.94req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:44+08:00 ] 127.0.0.1 127.0.0.1 GET /home/shop/index.html
+[ log ] www.demo2.com/home/shop/index.html [运行时间：1.124064s][吞吐率：0.89req/s] [内存消耗：3,371.09kb] [文件加载：84]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'shop',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.demo2.com/',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Shop->index[ D:\WWW\demo2\youge\home\controller\Shop.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\demo2/youge/home\view\shop\index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:45+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.048003s][吞吐率：20.83req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:46+08:00 ] 127.0.0.1 127.0.0.1 GET /home/news/index.html
+[ log ] www.demo2.com/home/news/index.html [运行时间：1.103063s][吞吐率：0.91req/s] [内存消耗：3,309.20kb] [文件加载：87]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'news',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.demo2.com/home/shop/index.html',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\News->index[ D:\WWW\demo2\youge\home\controller\News.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\demo2/youge/home\view\news\index.html [ array (
+  0 => 'footer',
+  1 => 'page',
+  2 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:46+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.046003s][吞吐率：21.74req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:47+08:00 ] 127.0.0.1 127.0.0.1 GET /home/faq/index.html
+[ log ] www.demo2.com/home/faq/index.html [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：2,191.55kb] [文件加载：75]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'faq',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.demo2.com/home/news/index.html',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Faq->index[ D:\WWW\demo2\youge\home\controller\Faq.php ]
+[ info ] [ VIEW ] D:\WWW\demo2/youge/home\view\faq\index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:47+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.036002s][吞吐率：27.78req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:48+08:00 ] 127.0.0.1 127.0.0.1 GET /home/member/index.html
+[ log ] www.demo2.com/home/member/index.html [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,218.28kb] [文件加载：75]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.demo2.com/home/faq/index.html',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Member->index[ D:\WWW\demo2\youge\home\controller\Member.php ]
+[ info ] [ VIEW ] D:\WWW\demo2/youge/home\view\member\index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:48+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:49+08:00 ] 127.0.0.1 127.0.0.1 GET /home/about/index.html
+[ log ] www.demo2.com/home/about/index.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,187.59kb] [文件加载：75]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'about',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.demo2.com/home/member/index.html',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\About->index[ D:\WWW\demo2\youge\home\controller\About.php ]
+[ info ] [ VIEW ] D:\WWW\demo2/youge/home\view\about\index.html [ array (
+  0 => 'footer',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:21:49+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:22:08+08:00 ] 127.0.0.1 127.0.0.1 GET //admin
+[ log ] www.demo2.com//admin [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：2,022.52kb] [文件加载：71]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:22:08+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/login/index.html
+[ log ] www.demo2.com/admin/login/index.html [运行时间：0.061004s][吞吐率：16.39req/s] [内存消耗：2,210.70kb] [文件加载：75]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'set_options=set05; _ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\WWW\demo2\youge\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\WWW\demo2/youge/admin\view\login\index.html [ array (
+  0 => 'leftCheck',
+  1 => 'urlHere',
+  2 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:22:08+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.040002s][吞吐率：25.00req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:22:26+08:00 ] 127.0.0.1 127.0.0.1 POST /admin/login/loging.html
+[ log ] www.demo2.com/admin/login/loging.html [运行时间：1.087063s][吞吐率：0.92req/s] [内存消耗：3,135.83kb] [文件加载：86]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'loging',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.demo2.com/admin/login/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'x-requested-with' => 'XMLHttpRequest',
+  'content-length' => '32',
+  'cookie' => 'set_options=set05; _ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '111111aa',
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Login->loging[ D:\WWW\demo2\youge\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:22:31+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/index.html
+[ log ] www.demo2.com/admin/index/index.html [运行时间：1.124065s][吞吐率：0.89req/s] [内存消耗：3,221.16kb] [文件加载：85]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.demo2.com/admin/login/index.html',
+  'cookie' => 'set_options=set05; _ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\WWW\demo2\youge\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\WWW\demo2/youge/admin\view\index\index.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:22:32+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/index/main
+[ log ] www.demo2.com/admin/index/main [运行时间：1.107064s][吞吐率：0.90req/s] [内存消耗：3,157.08kb] [文件加载：84]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.demo2.com/admin/index/index.html',
+  'cookie' => 'set_options=set05; _ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->main[ D:\WWW\demo2\youge\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\WWW\demo2/youge/admin\view\index\main.html [ array (
+  0 => 'adminInfo',
+  1 => 'adminRole',
+  2 => 'leftCheck',
+  3 => 'urlHere',
+  4 => 'leftMenus',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:22:32+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:30:16+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.demo2.com/ [运行时间：1.093062s][吞吐率：0.91req/s] [内存消耗：3,307.79kb] [文件加载：84]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\WWW\demo2\youge\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\demo2/youge/home\view\index\index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:30:16+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.054004s][吞吐率：18.52req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:30:24+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.demo2.com/ [运行时间：1.088062s][吞吐率：0.92req/s] [内存消耗：3,308.31kb] [文件加载：84]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ D:\WWW\demo2\youge\home\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\demo2/youge/home\view\index\index.html [ array (
+  0 => 'footer',
+  1 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-09T13:30:24+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] www.demo2.com/favicon.ico [运行时间：0.045003s][吞吐率：22.22req/s] [内存消耗：1,719.75kb] [文件加载：66]
+[ info ] [ LANG ] D:\WWW\demo2\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.demo2.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:58.0) Gecko/20100101 Firefox/58.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => '_ga=GA1.2.1790452606.1516508017; pgv_pvi=9591567360; username=18005151538; userid=368; PHPSESSID=9plrpm0jc99k2o3u2mkjkp1gl3',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

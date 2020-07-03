@@ -1,0 +1,125 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="baobiao" >
+                <div id="main" style="width: 100%;height:600px; float: left"></div>
+                <div id="main1" style="width: 100%;height:600px; float: left"></div>
+                <div id="main2" style="width: 100%;height:600px; float: left"></div>
+            </div>
+            <!--这里是放table的-->
+        </div>
+    </div>
+</div>
+<script src="/public/admin/js/echarts.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    // 指定图表的配置项和数据
+ option = {
+     title: {
+        text: '访问来源'
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: [<?=$data['data1']?>]
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: [<?=$data['dayArr']?>]
+    },
+    series: [
+       <?=$data['series1'];?>
+    ]
+};
+    myChart.setOption(option);
+</script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main2'));
+    // 指定图表的配置项和数据
+ option = {
+     title: {
+        text: '访问时长'
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: [<?=$data['data2']?>]
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: [<?=$data['dayArr']?>]
+    },
+    series: [
+       <?=$data['series2'];?>
+    ]
+};
+    myChart.setOption(option);
+</script>
+
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main1'));
+    // 指定图表的配置项和数据
+ option = {
+     title: {
+        text: '平均访问深度'
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: [<?=$data['data3']?>]
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: [<?=$data['dayArr']?>]
+    },
+    series: [
+       <?=$data['series3'];?>
+    ]
+};
+    myChart.setOption(option);
+</script>

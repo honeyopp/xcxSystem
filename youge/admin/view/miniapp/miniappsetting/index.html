@@ -1,0 +1,127 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+
+         <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                                  <form class="form-search" method="get"  action="<?=url('miniapp.miniappsetting/index')?>" role="form">
+                                          <table>
+                                              <tr>
+                                                 
+                                                  <td>
+                                                        <div class="input-group">
+                                                            <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                                搜索
+                                                            </button>
+                                                        </div>
+                                                  </td>
+                                              </tr>
+
+                                          </table>
+
+                                    </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+     <a title="添加授权小程序设置" href="<?=url('miniapp.miniappsetting/create')?>"  class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加授权小程序设置</a>
+     <a mini="list" for="mini_list" title="批量删除授权小程序设置" href="<?=url('miniapp.miniappsetting/delete')?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+    
+</div>
+
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table"  class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>授权小程序id</th>
+<th>客服电话</th>
+<th>投诉电话</th>
+<th>关于我们</th>
+<th>版权所有</th>
+<th>证书pem格式</th>
+<th>证书秘钥pem格式</th>
+<th>ci证书文件</th>
+              
+                                    <th >操作</th>
+
+
+                                </tr>
+                            </thead>
+                            <form  id="mini_list">
+                                <tbody>
+                                    <?php foreach($list as $val){ ?>
+                                    <tr>
+                                        <td class="center">
+                                            <label class="pos-rel">
+                                                <input id="setting_id_<?=$val->setting_id;?>" name="setting_id[]" value="<?=$val->setting_id;?>" type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+
+                                        <td><?= $val->setting_id ?></td>
+                                        <td><?=$val->member_miniapp_id?></td>
+<td><?=$val->service_tel?></td>
+<td><?=$val->complaint_tel?></td>
+<td><?=$val->about?></td>
+<td><?=$val->copyright?></td>
+<td><img width="80" src="/attachs/uploads/<?=$val->apiclient_cert?>"/></td>
+<td><img width="80" src="/attachs/uploads/<?=$val->apiclient_cert_key?>"/></td>
+<td><img width="80" src="/attachs/uploads/<?=$val->rootca?>"/></td>
+
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs btn-group">
+                                                <a title="编辑授权小程序设置"  href="<?=url('miniapp.miniappsetting/edit','setting_id='.$val->setting_id)?>"  class="btn btn-xs btn-info" ><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                                <a title="删除授权小程序设置" mini="act"  href="<?=url('miniapp.miniappsetting/delete','setting_id='.$val->setting_id)?>"  class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                            </div>                                      
+                                        </td>
+                                    </tr>
+                                    <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>      
+                        </div>
+                    </div><!-- /.row -->
+
+
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('zhuangxiu.tender/index')?>"
+                                  role="form">
+                                <table>
+                                    <tr>
+                                        <td>姓名:<input class="form-control" name="name" id="name"
+                                                      value="<?=$search['name']?>" type="text" placeholder="请输入姓名"
+                                                      style=" width:200px"/></td>
+                                        <td>联系方式:<input class="form-control" name="mobile" id="mobile"
+                                                        value="<?=$search['mobile']?>" type="text" placeholder="请输入联系方式"
+                                                        style=" width:200px"/></td>
+                                        <td>内容能:<input class="form-control" name="content" id="content"
+                                                       value="<?=$search['content']?>" type="text" placeholder="请输入内容能"
+                                                       style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加会员招标" href="<?=url('zhuangxiu.tender/create')?>" class="btn btn-sm btn-success"><i
+                                class=" fa fa-plus"></i>添加会员招标</a>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>卧室数量</th>
+                                <th>客厅数量</th>
+                                <th>厨房数量</th>
+                                <th>卫生间数量</th>
+                                <th>阳台数量</th>
+                                <th>面积</th>
+                                <th>姓名</th>
+                                <th>联系方式</th>
+                                <th>内容能</th>
+
+                                <th>操作</th>
+
+
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->tender_id ?></td>
+                                    <td><?=$val->bedroom?></td>
+                                    <td><?=$val->livingroom?></td>
+                                    <td><?=$val->kitchen?></td>
+                                    <td><?=$val->toilet?></td>
+                                    <td><?=$val->balcony?></td>
+                                    <td><?=$val->area?></td>
+                                    <td><?=$val->name?></td>
+                                    <td><?=$val->mobile?></td>
+                                    <td><?=$val->content?></td>
+
+
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="删除会员招标" mini="act"
+                                               href="<?=url('zhuangxiu.tender/delete','tender_id='.$val->tender_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

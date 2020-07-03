@@ -1,0 +1,102 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('news.news/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>动态标题:<input class="form-control" name="title" id="title" value="" type="text" placeholder="请输入动态标题" style=" width:200px"/></td>
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%" class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加动态管理" href="<?=url('news.news/create')?>" class="btn btn-sm btn-success"><i
+                                class=" fa fa-plus"></i>添加动态管理</a>
+                        <a mini="list" for="mini_list" title="批量删除动态管理" href="<?=url('news.news/delete')?>"
+                           class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>批量删除</a>
+
+                    </div>
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th class="center">
+                                    <label class="pos-rel">
+                                        <input type="checkbox" class="ace"/>
+                                        <span class="lbl"></span>
+                                    </label>
+                                </th>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>标题2（显示在列表页）</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input id="news_id_<?=$val->news_id;?>" name="news_id[]"
+                                                   value="<?=$val->news_id;?>" type="checkbox" class="ace"/>
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td><?= $val->news_id ?></td>
+                                    <td><?=$val->title2?></td>
+                                    <td><?=$val->title?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑动态管理" href="<?=url('news.news/edit','news_id='.$val->news_id)?>"
+                                               class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除动态管理" mini="act"
+                                               href="<?=url('news.news/delete','news_id='.$val->news_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

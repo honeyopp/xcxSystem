@@ -1,0 +1,177 @@
+<style>
+    .weixin-p{font-size: 26px;  margin-top: 20px; font-weight: bolder}
+</style>
+<div class="wrapper wrapper-content animated fadeInRight" xmlns="http://www.w3.org/1999/html">
+    <!-- PAGE CONTENT BEGINS -->
+    <?php if($is_expir) { ?>
+    <div class="alert alert-danger alert-dismissable" style="">
+             <b style="font-size: 5rem">您的模板已到期!!!</b>
+    </div>
+    <?php } ?>
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="widget style1 lazur-bg">
+            <div class="row">
+                <div class="col-sm-1">
+                    <i class="fa fa-weixin fa-5x"></i>
+                </div>
+                <div class="col-sm-3 text-left ">
+                    <p  class="weixin-p" style="">小程序名：<?=$miniapp->nick_name?></p>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <p class="weixin-p" style="">模板:<?=empty($muabn) ? '' : $muabn->title?></p>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <p class="weixin-p" style="">服务： <?= round(($miniapp->expir_time - time()) /86400) < 0 ? 0 : round(($miniapp->expir_time - time()) /86400) ;?> 天</p>
+                </div>
+                <div class="col-sm-2 text-center">
+                    <p class="weixin-p" style="">短信：<?=$miniapp->sms_num?> 条</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="row">
+    <div style="width: 98%; margin: 0 auto; " class=" row border-bottom white-bg dashboard-header">
+
+        <div class="col-sm-3">
+            <h2>体验二维码</h2>
+            <small>先上传代码后才可以访问</small>
+            <br>
+            <br>
+                <?php if($miniapp->status>0){?><img src="<?=url('index/qrcode');?>" width="100%" style="max-width:264px;"><?php }else{ ?>
+                等待上传代码
+            <?php }?>   
+            <br>
+        </div>
+        <div class="col-sm-5">
+            <h2>
+                小程序发布说明
+            </h2>
+            <p>
+                1、第一步：上传代码
+                2、第二步：完善网站的部分内容，以备腾讯微信审核！
+                3、第三步：选择分类及设置网站的被搜索的关键字！
+                4、第四步：提交审核！审核通过后 点击发布线上就能正常访问
+                5、第五步:如果有新版本升级，可以重复上传代码然后提交发布审核
+                6、如果误点上传代码，改变了现在的状态不用当心，等下次更新的时候再上传一次再提交也是可以的！
+            </p>
+            
+            <?php if($miniapp->status>0){?>
+            <p>
+                <b>当前版本：</b><?=$miniapp->version;?>
+            </p>
+            <p>
+                <b>系统最新版本：</b><span class="label label-warning"><?=$muabn->version;?></span>
+            </p>
+            <?php }?>
+            
+            <p>
+                <b>当前状态：</b>
+                       <?php if($miniapp->status ==0){?> 
+                       <span class="label label-warning">等待上传代码</span>
+                       <?php }?>
+                        <?php if($miniapp->status ==1){?> 
+                       <span class="label label-info">等待提交发布审核</span>
+                       <?php }?>
+                        <?php if($miniapp->status ==2){?> 
+                       <span class="label label-primary">等待腾讯微信审核</span>
+                       <?php }?>
+                            <?php if($miniapp->status ==3){?> 
+                       <span class="label label-primary">等待发布上线</span>
+                       <?php }?>
+                        <?php if($miniapp->status ==8){?> 
+                       <span class="label label-success">上线运营中</span>
+                       <?php }?>
+                        <?php if($miniapp->status ==4){?> 
+                       <span class="label label-warning">审核拒绝</span>
+                       <?php }?>
+            </p>
+            
+            <br>
+            <p>
+                <a mini="act" href="<?=url('index/upload');?>" class="btn btn-success btn-outline">
+                    上传代码点我
+                </a>
+                <?php if($miniapp->status==1||$miniapp->status==4){?> 
+                <a mini="load" title="提交腾讯审核" w="800px" h="500px"  href="<?=url('index/commit');?>" class="btn btn-white btn-bitbucket">
+                    提交腾讯审核
+                </a>
+                <?php }?>
+                <?php if($miniapp->status==2){?> 
+                    <a mini="load"  w="500px" h="400px"  title="查看审核状态"  href="<?=url('index/look');?>" class="btn btn-info btn-outline">
+                        查看审核状态
+                    </a>
+                <?php }?>
+                
+                <?php if($miniapp->status==3){?> 
+                <a mini="act" title="发布上线"  href="<?=url('index/fabu');?>" class="btn btn-info btn-outline">
+                    发布上线
+                </a>
+                <?php }?>
+            </p>
+           
+        </div>
+        <?php if($miniapp->status ==4){?>
+        <div  class="col-sm-4">
+            <h4>审核拒绝</h4>
+            <p>
+                <?=$miniapp->error;?>
+            </p>
+        </div>
+        
+        <?php }?>
+
+    </div>
+</div>
+    
+    <div class="col-xs-12" style="margin-top: 10rem">
+        <!--这里是放table的-->
+        <div id="baobiao">
+            <div id="main" style="width: 100%;height:500px; float: left"></div>
+        </div>
+    </div>
+</div>
+<script src="/public/admin/js/echarts.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+     option = {
+    title: {
+        text: '概况趋势'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:[<?php echo $data2['legend'];?>]
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: [<?php echo $data2['date'];?>]
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+       <?php echo $data2['series'];?>
+    ]
+};
+   
+    
+    myChart.setOption(option);
+</script>

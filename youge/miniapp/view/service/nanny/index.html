@@ -1,0 +1,113 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+
+
+        <div class="col-xs-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>搜索</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="table-responsive">
+                            <form class="form-search" method="get" action="<?=url('service.nanny/index')?>" role="form">
+                                <table>
+                                    <tr>
+                                        <td>名称:<input class="form-control" name="name" id="name"
+                                                      value="<?=$search['name']?>" type="text" placeholder="请输入名称"
+                                                      style=" width:200px"/></td>
+
+                                        <td>
+                                            <div class="input-group">
+                                                <button type="submit" style="margin-top: 42%"
+                                                        class="btn form-control btn-sm btn-primary">
+                                                    搜索
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加阿姨管理" href="<?=url('service.nanny/create')?>" class="btn btn-sm btn-success"><i
+                                class=" fa fa-plus"></i>添加阿姨管理</a>
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>头像</th>
+                                <th>价格</th>
+                                <th>该价格 服务多少天</th>
+                                <th>预约需要支付的价格</th>
+                                <th>预约数</th>
+                                <th>浏览数</th>
+                                <th>排序</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?= $val->nanny_id ?></td>
+                                    <td><?=$val->name?></td>
+                                    <td><img width="50" src="/attachs/uploads/<?=$val->photo?>"/></td>
+                                    <td><?=$val->prie?></td>
+                                    <td><?=$val->day?></td>
+                                    <td><?=round($val->yv_price/100,2)?></td>
+                                    <td><?=$val->yvyue_num?></td>
+                                    <td><?=$val->views_num?></td>
+
+                                    <td><?=$val->orderby?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑阿姨管理"
+                                               href="<?=url('service.nanny/edit','nanny_id='.$val->nanny_id)?>"
+                                               class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除阿姨管理" mini="act"
+                                               href="<?=url('service.nanny/delete','nanny_id='.$val->nanny_id)?>"
+                                               class="btn btn-xs btn-warning"><i
+                                                    class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
+                                </tbody>
+                            </form>
+                        </table>
+
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+
+
+                </div><!-- /.main-container -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

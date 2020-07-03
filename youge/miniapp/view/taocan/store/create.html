@@ -1,0 +1,110 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <form action="<?=url('taocan.store/create')?>" id="form-create" method="post" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span class="c-red">*</span>城市：</label>
+                            <div class="col-sm-6">
+                                <input id="cityname" type="text" disabled style="background-color: transparent;" value="<?=empty($city) ? '' : $city->city_name?>" placeholder="请单击选择城市"  class="form-control"/>
+                                <input type="hidden" value="<?=empty($city) ? '' : $city->city_id?>" name="city_id" id="city_id">
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" mini="load" w="95%" h="95%" href="<?=url('miniapp/taocan.city/select')?>" class="btn btn-w-m btn-info">选择该城市</button>
+                            </div>
+                            <script>
+                                function seleCity(city_name,city_id){
+                                    layer.closeAll();
+                                    layer.msg('操作成功！');
+                                    $("#cityname").val(city_name);
+                                    $("#city_id").val(city_id);
+                                }
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>商家名称：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->store_name)?$detail->store_name:''?>"
+                                       placeholder="" id="store_name" name="store_name" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>商家详情：</label>
+                            <div class="col-sm-9">
+                                <textarea name="stroe_detail" placeholder="说点什么...最少输入10个字符" id="stroe_detail" cols="50"
+                                          rows="10" class="form-control"><?=isset($detail->
+                                    stroe_detail)?$detail->stroe_detail:''?></textarea>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>负责人手机号：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->store_tel)?$detail->store_tel:''?>"
+                                       placeholder="" id="store_tel" name="store_tel" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>负责人身份证：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->store_idcard)?$detail->store_idcard:''?>"
+                                       placeholder="" id="store_idcard" name="store_idcard" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>现居住地址：</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="<?=isset($detail->stroe_address)?$detail->stroe_address:''?>"
+                                       placeholder="" id="address" name="stroe_address" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right"><span
+                                    class="c-red">*</span>经度纬度：</label>
+                            <div class="col-sm-3" style="margin-right: 0; padding-right: 0;">
+                                <input type="text" readonly style="background-color: transparent;" class="form-control"
+                                       value="<?=isset($detail->lat)?$detail->lat:'';?>" placeholder="" id="lat"
+                                       name="lat"/>
+                            </div>
+                            <div class="col-sm-1" style="margin: 0;padding: 0;width: 1rem; line-height: 3rem">--</div>
+                            <div class="col-sm-3" style="margin-left: 0; padding-left: 0;">
+                                <input type="text" readonly style="background-color: transparent;" class="form-control"
+                                       value="<?=isset($detail->lng)?$detail->lng:'';?>" placeholder="" id="lng"
+                                       name="lng"/>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" mini="load" w="1000px" h="800px"
+                                        href="<?=url('index/map',['callback'=>'showLatLng']);?>?lat=<?=isset($detail->lat)?$detail->lat:'0';?>&lng=<?=isset($detail->lng)?$detail->lng:'0';?>"
+                                        class="btn btn-w-m btn-info">选择地址
+                                </button>
+                            </div>
+                            <script>
+                                function showLatLng(lat, lng) {
+                                    layer.closeAll();
+                                    layer.msg('选取经纬度成功！');
+                                    $("#lat").val(lat);
+                                    $("#lng").val(lng);
+                                }
+                            </script>
+                        </div>
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button mini="submit" for="form-create" class="btn btn-info" type="button">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    保存
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

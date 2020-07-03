@@ -1,0 +1,64 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!-- PAGE CONTENT BEGINS -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="tableTools-container">
+                        <a title="添加活动" href="<?=url('setting.activity/create')?>" class="btn btn-sm btn-success"><i class=" fa fa-plus"></i>添加活动</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="simple-table" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>优惠券面额</th>
+                                <th>使用限制</th>
+                                <th>过期天数</th>
+                                <th>可以使用天数</th>
+                                <th>优惠剩余券数量</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>排序</th>
+                                <th>是否允许新用户参与</th>
+                                <th>是否启动该活动</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <form id="mini_list">
+                                <tbody>
+                                <?php foreach($list as $val){ ?>
+                                <tr>
+                                    <td><?=$val->activity_id ?></td>
+                                    <td><?=$val->title?></td>
+                                    <td><?=sprintf("%.2f",$val->money/100)?>元</td>
+                                    <td><?=sprintf("%.2f",$val->need_money/100)?>元</td>
+                                    <td><?=$val->expire_day?>天</td>
+                                    <td><?=$val->use_day?>天</td>
+                                    <td><?=$val->num?>个</td>
+                                    <td><?=$val->bg_date?></td>
+                                    <td><?=$val->end_date?></td>
+                                    <td><?=$val->orderby?></td>
+                                    <td><?=$val->is_newuser ==1 ? '<span class="label label-primary">允许</span>' : '<span class="label label-warning">不允许</span>'?></td>
+                                    <td><?=$val->is_online == 1 ? '<span class="label label-primary">活动进行中</span>' : '<span class="label label-warning">活动未启用</span>'?></td>
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <a title="编辑activity" href="<?=url('setting.activity/edit','activity_id='.$val->activity_id)?>" class="btn btn-xs btn-info"><i class=" fa fa-edit bigger-120"></i>编辑</a>
+                                            <a title="删除activity" mini="act" href="<?=url('setting.activity/delete','activity_id='.$val->activity_id)?>" class="btn btn-xs btn-warning"><i class="fa fa-trash bigger-120"></i>删除</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </form>
+                        </table>
+                        <div>
+                            <?php echo $page; ?>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.main-container -->
+            </div>
+        </div>
+    </div>
+</div>
